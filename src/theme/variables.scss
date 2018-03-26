@@ -4,6 +4,21 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
+$text-input-md-highlight-color-invalid: transparent;
+$text-input-md-highlight-color-valid: transparent;
+$text-input-md-show-invalid-highlight: transparent;
+$text-input-md-highlight-color: transparent;
+$text-input-md-show-valid-highlight: transparent;
+
+
+
+$segment-button-ios-background-color-activated:#ffb822;
+
+
+
+// $segment-button-md-border-bottom-width: 2px;
+$segment-button-md-border-color-activated:#ffb822;
+$segment-button-md-text-color-activated: #ffb822;
 
 
 // The app direction is used to include
@@ -38,7 +53,11 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  fcmb: #5c2684, 
+  fcmb2: 
+  #ffb822,
+  money: #ffffff
 );
 
 
@@ -79,6 +98,7 @@ $colors: (
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
+@import "../assets/fonts/fontawesome/fontawesome-all";
 
 
 // Fonts

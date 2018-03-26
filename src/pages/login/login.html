@@ -1,0 +1,49 @@
+<ion-content padding>
+  
+
+  <!-- Logo -->
+  <div text-center class="animated fadeInDown">
+    <div class="logo">
+      <img src="assets/imgs/fcmb.png">
+    </div>
+    <h2 style="color:white" ion-text class="text-primary"><strong>Welcome</strong>
+      <!-- <strong>Welcome</strong>  -->
+    </h2>
+  </div>
+
+  <div class="text" text-center>
+    <!-- <h2>Log in to
+      <strong >FCMB</strong> Trade</h2> -->
+    <p style="color:peru">Log in to continue</p>
+  </div>
+  
+    <!-- Login form -->
+    <div>
+      <ion-item no-lines  style="color:white"  class="item1">
+        <ion-icon color="money" name="mail" item-start ></ion-icon>
+        <ion-input  [(ngModel)]="userName" placeholder="Enter Username" type="text"></ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+
+      <ion-item no-lines style="color:white" class="item2">
+        <ion-icon color="money" name="lock" item-start ></ion-icon>
+        <ion-input [(ngModel)]="passWord" placeholder="Enter your password" type="password"></ion-input>
+      </ion-item>
+    </div> 
+
+    <p style="color:white" text-center ion-text color="dark" tappable (click)="forgot()">
+      <strong>Forgot Password?</strong>
+    </p>
+
+    <div>
+      <button class="button" icon-start ion-button round block tappable color="fcmb2" (click)="Login()" [disabled]="disableButton"> 
+        <!-- <ion-icon name="log-in"></ion-icon> -->
+        <span style="font-weight:bold; color:white"> LOG IN</span>
+      </button>
+      </div>
+
+  
+
+</ion-content>

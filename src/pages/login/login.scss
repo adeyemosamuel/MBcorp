@@ -1,0 +1,38 @@
+page-login {
+
+    ion-content {
+       background: #AA076B;  /* fallback for old browsers */
+       background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+   
+.button{
+    height: 50px;
+}
+
+.logo{
+    
+    margin: 0 auto;
+    margin-top: 80px;
+    height: 80px;
+    width: 80px;
+}
+
+.text{
+    margin-top: 30px;
+}
+
+.item1{
+    border: 1px solid #ffb822;
+    border-radius: 20px;
+    background-color: rgba(255,184,34,1);
+}
+
+.item2{
+    border: 1px solid #ffb822;
+    border-radius: 20px;
+    background-color: rgba(255,184,34,1);
+    margin-top: 30px
+}
+}
