@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">FORM A</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item-sliding [ngClass]="a.status" *ngFor="let a of FormArray">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6 text-left>
+              <span>{{a.name}}</span>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <p>{{a.status}}</p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-6 text-left>
+              <span>{{a.formnumber}}</span>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <p>{{a.date}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button clear (click)="editItem(a)" color="fcmb">
+          <ion-icon name="trash" item-start></ion-icon>
+          Edit
+        </button>
+        <button ion-button clear (click)="removeItem(a)" color="fcmb">
+          <ion-icon name="trash" item-start></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+
+
+    </ion-item-sliding>
+
+
+  </ion-list>
+  <ion-fab right bottom (click)="fab()"> 
+      <button ion-fab color="fcmb2"><ion-icon name="add"></ion-icon></button>
+      
+    </ion-fab>
+
+</ion-content>
