@@ -53,7 +53,7 @@ export class FormaPage {
   }
 
   fab() {
-    this.navCtrl.push('FormafPage');
+    this.navCtrl.push('AddformaPage');
   }
 
 }

@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar color="fcmb">
+      <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems($event)" ></ion-searchbar>
+
+      <ion-buttons end>
+        <button ion-button (click)="selectCancel()">CANCEL</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header> 
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item no-lines *ngFor="let b of bdata" (click)="itemTapped(b)" >
+      <p>{{b.bname}}</p>
+    </ion-item>
+    
+  </ion-list>
+
+</ion-content>

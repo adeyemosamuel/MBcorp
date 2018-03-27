@@ -1,0 +1,261 @@
+<ion-header>
+
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">FORM A</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group>
+
+    <ion-item-divider (click)="mikilo()">
+      <span>BENEFICIARY DETAILS</span>
+      <i *ngIf="!hideButton" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton" padding>
+      <button class="add" color="fcmb" ion-button small item-end>Add New Beneficiary</button>
+
+      <ion-list>
+        <ion-item no-lines (click)="searchModal()">
+          <span>Search Beneficiaries</span>
+          <i class="fas fa-search" item-end></i>
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-label stacked>Beneficiary Name*</ion-label>
+            <ion-input  [readonly]="isReadonly()"  [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
+          </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Account Number*</ion-label>
+          <ion-input  [readonly]="isReadonly()"  [ngModel]="selectedItem?.baccount" (ngModelChange)="selectedItem.baccount= $event" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Account Name*</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text" ></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Swift Code*</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbswiftcode" (ngModelChange)="selectedItem.bbswiftcode= $event" type="number"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo2()">
+      <span>INTERMEDIARY BANK DETAILS</span>
+      <i *ngIf="!hideButton2" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton2" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton2" padding>
+
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Name</ion-label>
+          <ion-input [(ngModel)]="ibname" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Swift Code</ion-label>
+          <ion-input [(ngModel)]="ibswiftcode" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Address</ion-label>
+          <ion-input [(ngModel)]="ibaddress" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank City</ion-label>
+          <ion-input [(ngModel)]="ibcity" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank State</ion-label>
+          <ion-input [(ngModel)]="ibstate" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Country</ion-label>
+          <ion-input [(ngModel)]="ibcountry" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Postal Code</ion-label>
+          <ion-input [(ngModel)]="ibpostalcode" type="number"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo3()">
+      <span>PAYMENT DETAILS</span>
+      <i *ngIf="!hideButton3" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton3" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton3" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Purpose of Payment*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="payment">
+            <ion-option class="option" [value]="p.purpose" *ngFor="let p of purposeData">{{p.purpose}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Amount*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="amount">
+            <ion-option class="option" [value]="a.amount" *ngFor="let a of amountData">{{a.amount}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Charge Amount*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge">
+            <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Amount applied in words*</ion-label>
+          <ion-input [(ngModel)]="applied" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines class="text-area">
+          <ion-label stacked>Remittance Info</ion-label>
+          <ion-textarea [(ngModel)]="info" rows="2" placeholder="Remittance Info"></ion-textarea>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Valid for Forex*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="valid">
+            <ion-option value="yes">Yes</ion-option>
+            <ion-option value="no">No</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Transfer Account*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="transfer">
+            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Estimated Debit Amount*</ion-label>
+          <ion-input [(ngModel)]="estimated" type="text"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+    </div>
+
+    <ion-item-divider (click)="mikilo4()">
+      <span>BENEFICIARY BANK DETAILS</span>
+      <i *ngIf="!hideButton4" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton4" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+    <div *ngIf="hideButton4" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Name*</ion-label>
+          <ion-input [(ngModel)]="bbname" type="text"></ion-input>
+        </ion-item>
+
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Address*</ion-label>
+          <ion-input [(ngModel)]="bbaddress" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank City*</ion-label>
+          <ion-input [(ngModel)]="bbcity" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Country*</ion-label>
+          <ion-input [(ngModel)]="bbcountry" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Swift Code*</ion-label>
+          <ion-input [(ngModel)]="bbswiftcode" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank State*</ion-label>
+          <ion-input [(ngModel)]="bbstate" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Postal Code*</ion-label>
+          <ion-input [(ngModel)]="bbpostalcode" type="number"></ion-input>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+    <ion-item-divider (click)="mikilo5()">
+      <span>OTHER DETAILS</span>
+      <i *ngIf="!hideButton5" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton5" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton5" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Airline</ion-label>
+          <ion-input [(ngModel)]="airline" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Air Ticket No*</ion-label>
+          <ion-input [(ngModel)]="ticket" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Route*</ion-label>
+          <ion-input [(ngModel)]="route" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Mode of Identification*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="identification">
+            <ion-option *ngFor="let m of iData">{{m.mode}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Identification Number*</ion-label>
+          <ion-input placeholder="*Identification Number" [(ngModel)]="idnumber" type="text"></ion-input>
+        </ion-item>
+      </ion-list>
+
+
+    </div>
+    <div padding>
+      <button class="button" ion-button block tappable color="fcmb" (click)="submit()">
+        <span style="font-weight:bold; color:white">SUBMIT</span>
+      </button>
+    </div>
+  </ion-item-group>
+
+
+
+</ion-content>

@@ -20,40 +20,41 @@ page-forma {
         // }
 
         ion-item-sliding {
-            border-bottom: 2px solid map-get($colors, light) !important;
+           
             height: 100px !important;
-            background-color: map-get($colors, lighter) !important;
-            margin-top: 5px !important;
-            border: 1px solid darkgray !important;
-            padding: 5px;
-            box-shadow: 3px 5px 3px darkgray !important;
+
+            ion-item{
+               margin-top: 5px !important;
+                border: 1px solid darkgray !important;
+                padding: 1px;
+                box-shadow: 1px 1px 1px darkgray !important;
+            }
+            
         }
 
-            // ion-item{
-               
-            // }
+
+        i {
+            // margin: 0 auto !important;
+            font-size: 20px !important;
+            color: map-get($colors, fcmb);
+        }
+           
     
             button {
                 font-weight: bold !important;
                 text-transform: capitalize !important;
             }
-        
+ 
+    // .Approved{
+    //     border-top: 1px solid green;
+    // }
 
-        
-    
+    // .Submitted{
+    //     border-top: 1px solid orange;
+    // }
 
-
-
-    .Approved{
-        border-top: 2px solid green;
-    }
-
-    .Submitted{
-        border-top: 2px solid orange;
-    }
-
-    .Saved{
-        border-top: 2px solid grey;
-    }
+    // .Saved{
+    //     border-top: 1px solid grey;
+    // }
 
 }
