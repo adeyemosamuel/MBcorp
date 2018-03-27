@@ -8,16 +8,6 @@ page-forma {
         color: #ffb822;
     }
  
-    
-
-        // ion-item{
-        //     margin-top: 5px !important;
-        //     background-color: map-get($colors, lighter) !important;
-        //     height: 100% !important;
-        //     border: 1px solid darkgray !important;
-        //     padding: 10px;
-        //     box-shadow: 3px 2px 3px darkgray;
-        // }
 
         ion-item-sliding {
            
@@ -32,9 +22,16 @@ page-forma {
             
         }
 
+    
+
+        ion-fab{
+            i{
+                font-size: 20px !important;
+                color: white !important;
+            }
+        }
 
         i {
-            // margin: 0 auto !important;
             font-size: 20px !important;
             color: map-get($colors, fcmb);
         }
