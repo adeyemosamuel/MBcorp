@@ -1,13 +1,14 @@
-<!--
-  Generated template for the MorePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>more</ion-title>
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">More Options</span>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <img class="img" src="assets/imgs/power.svg" />
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>

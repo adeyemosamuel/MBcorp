@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
+import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
 
 
 
@@ -20,6 +21,7 @@ export class FormaPage {
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
+    private verify:VerifyServiceProvider,
     public navParams: NavParams) {
   }
 
@@ -29,6 +31,10 @@ export class FormaPage {
 
   initializeItems() {
     this.FormArray = this.appdata.getInfo();
+  }
+
+  showSlide() {
+    this.verify.showToast('Slide left', 'middle');
   }
 
   getItems(ev: any) {
@@ -47,9 +53,9 @@ export class FormaPage {
   }
 
   itemTapped(a) {
-    this.navCtrl.push('FormadPage', {
+    this.navCtrl.push('EditformaPage', {
       a: a
-    });
+    }); 
   }
 
   fab() {

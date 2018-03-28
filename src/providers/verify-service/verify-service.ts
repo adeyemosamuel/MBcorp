@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastController, ToastOptions } from 'ionic-angular';
 
 @Injectable()
 export class VerifyServiceProvider {
-
+  toastOptions: ToastOptions;
   errorMessage: string;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,
+    private toastCtrl: ToastController,) {
     console.log('Hello VerifyServiceProvider Provider');
   }
 
@@ -318,6 +320,16 @@ export class VerifyServiceProvider {
 
    
     return true;
+  }
+
+
+  showToast(toastMsg, position) {
+    this.toastOptions = {
+      message: toastMsg,
+      duration: 3000,
+      position: position
+    };
+    this.toastCtrl.create(this.toastOptions).present();
   }
 
 }

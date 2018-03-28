@@ -10,51 +10,59 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 })
 export class AddformaPage {
   selectedItem: any;
-  baccount:any;
-  bname:any;
-  bbswiftcode:any;
-  name:any;
-  b:any;
-  hideButton:boolean=false;
-  hideButton2:boolean=false;
-  hideButton3:boolean=false;
-  hideButton4:boolean=false;
-  hideButton5:boolean=false;
+  baccount: any;
+  bname: any;
+  bbswiftcode: any;
+  name: any;
+  b: any;
+  viewButton: boolean = false;
+  hideButton: boolean = false;
+  hideButton2: boolean = false;
+  hideButton3: boolean = false;
+  // hideButton4:boolean=false;
+  hideButton5: boolean = false;
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
-     public navParams: NavParams) {
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.selectedItem= this.navParams.get('b');
+    this.selectedItem = this.navParams.get('b');
+    if (this.selectedItem) {
+      this.hideButton = !this.hideButton
+    }
   }
-  mikilo(){
+  mikilo() {
     this.hideButton = !this.hideButton;
   }
 
-  mikilo2(){
+  mikilo2() {
     this.hideButton2 = !this.hideButton2;
   }
 
-  mikilo3(){
+  mikilo3() {
     this.hideButton3 = !this.hideButton3;
   }
- 
-  mikilo4(){
-    this.hideButton4 = !this.hideButton4;
+
+  view() {
+    this.viewButton = !this.viewButton;
   }
 
-  mikilo5(){
+  // mikilo4(){
+  //   this.hideButton4 = !this.hideButton4;
+  // }
+
+  mikilo5() {
     this.hideButton5 = !this.hideButton5;
   }
 
-  searchModal(){
+  searchModal() {
     let modal = this.modalCtrl.create('AddformaModalPage');
     modal.present();
-   }
+  }
 
-   isReadonly() {
+  isReadonly() {
     return this.isReadonly;   //return true/false 
   }
 }
