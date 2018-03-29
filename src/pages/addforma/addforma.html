@@ -153,16 +153,35 @@
           </ion-select>
         </ion-item>
 
-        <ion-item no-lines>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-4 text-left>
+                  <ion-item no-lines>
+                      <ion-label stacked>Currency</ion-label>
+                      <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event">
+                        <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+              </ion-col>
+              <ion-col col-8 text-right>
+              <ion-item no-lines>
+                <ion-label stacked>Amount*</ion-label>
+                <ion-input [ngModel]="amount" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        <!-- <ion-item no-lines>
           <ion-label stacked>Amount*</ion-label>
           <ion-select interface="action-sheet" class="Select" [(ngModel)]="amount">
             <ion-option class="option" [value]="a.amount" *ngFor="let a of amountData">{{a.amount}}</ion-option>
           </ion-select>
-        </ion-item>
+        </ion-item> -->
 
         <ion-item no-lines>
           <ion-label stacked>Charge Amount*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge">
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge"> 
             <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
           </ion-select>
         </ion-item>
@@ -192,12 +211,12 @@
             <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
           </ion-select>
         </ion-item>
-
-
-        <ion-item no-lines>
-          <ion-label stacked>Estimated Debit Amount*</ion-label>
-          <ion-input [(ngModel)]="estimated" type="text"></ion-input>
-        </ion-item>
+        
+              <ion-item no-lines>
+                <ion-label stacked>Estimated Debit Amount*</ion-label>
+                <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" type="number"></ion-input>
+              </ion-item>
+            
 
       </ion-list>
 
@@ -275,7 +294,7 @@
       <ion-list>
         <ion-grid>
           <ion-row>
-            <span>Agree</span>
+            <span><b>Agree</b></span>
             <ion-col text-left>
               <ion-item class="radio" no-lines>
                 <ion-label>Yes</ion-label>

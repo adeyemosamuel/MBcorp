@@ -138,12 +138,31 @@
           </ion-select>
         </ion-item>
 
-        <ion-item no-lines>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-4 text-left>
+                  <ion-item no-lines>
+                      <ion-label stacked>Currency</ion-label>
+                      <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event">
+                        <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+              </ion-col>
+              <ion-col col-8 text-right>
+              <ion-item no-lines>
+                <ion-label stacked>Amount*</ion-label>
+                <ion-input  [ngModel]="selectedItem?.amount" (ngModelChange)="selectedItem.amount= $event" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        <!-- <ion-item no-lines>
           <ion-label stacked>Amount*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.amount" (ngModelChange)="selectedItem.amount= $event">
             <ion-option class="option" [value]="a.amount" *ngFor="let a of amountData">{{a.amount}}</ion-option>
           </ion-select>
-        </ion-item>
+        </ion-item> -->
 
         <ion-item no-lines>
           <ion-label stacked>Charge Amount*</ion-label>
@@ -167,7 +186,7 @@
           <ion-label stacked>Valid for Forex*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.valid" (ngModelChange)="selectedItem.valid= $event">
             <ion-option value="yes">Yes</ion-option>
-            <ion-option value="no">No</ion-option>
+            <ion-option value="no">No</ion-option> 
           </ion-select>
         </ion-item>
 
@@ -178,24 +197,11 @@
           </ion-select>
         </ion-item>
 
-        <ion-grid>
-          <ion-row>
-            <ion-col col-4 text-left>
-                <ion-item no-lines>
-                    <ion-label stacked>Currency</ion-label>
-                    <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event">
-                      <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
-                    </ion-select>
-                  </ion-item>
-            </ion-col>
-            <ion-col col-8 text-right>
             <ion-item no-lines>
               <ion-label stacked>Estimated Debit Amount*</ion-label>
-              <ion-input [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="text"></ion-input>
+              <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="number"></ion-input>
             </ion-item>
-          </ion-col>
-          </ion-row>
-        </ion-grid>
+         
       </ion-list>
 
     </div>
@@ -284,7 +290,7 @@
           <ion-list>
             <ion-grid>
               <ion-row>
-                <span>Agree</span>
+                <span><b>Agree</b></span>
                 <ion-col text-left>
                   <ion-item class="radio" no-lines>
                     <ion-label>Yes</ion-label>

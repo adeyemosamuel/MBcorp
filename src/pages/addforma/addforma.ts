@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { AppdataProvider } from '../../providers/appdata/appdata';
 
 
 
@@ -22,14 +23,31 @@ export class AddformaPage {
   hideButton4:boolean=false;
   hideButton5: boolean = false;
   hideButton6: boolean = false;
+  moneyData:any=[];
+  iData: any = [];
+  stateData: any = [];
+  countryData: any = [];
+  purposeData:any = [];
+  amountData: any =[];
+  chargeData: any= []; 
+  accountData: any=[];
 
   constructor(public navCtrl: NavController,
+    private appdata: AppdataProvider,
     public modalCtrl: ModalController,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.selectedItem = this.navParams.get('b');
+    this.moneyData=this.appdata.getMoney2();
+    this.purposeData= this.appdata.getPurpose();
+    this.amountData= this.appdata.getAmount();
+    this.chargeData= this.appdata.getCharge();
+    this.accountData= this.appdata.getAccount();
+    this.stateData = this.appdata.getState();
+    this.countryData = this.appdata.getCountry();
+    this.iData= this.appdata.getID();
     if (this.selectedItem) {
       this.hideButton = !this.hideButton
     }

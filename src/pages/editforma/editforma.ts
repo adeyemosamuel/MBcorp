@@ -41,7 +41,11 @@ export class EditformaPage {
     this.stateData = this.appdata.getState();
     this.countryData = this.appdata.getCountry();
     this.iData= this.appdata.getID();
+   
     this.selectedItem= this.navParams.get('a');
+    if (this.selectedItem) {
+      this.hideButton = !this.hideButton
+    }
   }
 
   mikilo() {
@@ -67,6 +71,10 @@ export class EditformaPage {
 
   mikilo6() {
     this.hideButton6 = !this.hideButton6;
+  }
+
+  isReadonly() {
+    return this.isReadonly;   //return true/false  
   }
 
 }
