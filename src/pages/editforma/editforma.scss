@@ -22,6 +22,7 @@ page-editforma {
 
     .text-area{
         border: 1px solid #5c2684 !important;
+        margin-top: 5px !important;
     }
 
     .general{
@@ -43,5 +44,13 @@ page-editforma {
             margin-left: auto !important;
             font-size: 20px !important;
             color: map-get($colors, black);
+        }
+
+        .file{
+            border-bottom: none !important;
+        }
+
+        .radio{
+            border-bottom: none !important;
         }
 }

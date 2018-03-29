@@ -21,7 +21,7 @@ export class FormaPage {
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
-    private verify:VerifyServiceProvider,
+    private verify: VerifyServiceProvider,
     public navParams: NavParams) {
   }
 
@@ -52,14 +52,26 @@ export class FormaPage {
     }
   }
 
-  itemTapped(a) {
-    this.navCtrl.push('EditformaPage', {
-      a: a
-    }); 
-  }
+  // itemTapped(a) {
+  //   this.navCtrl.push('EditformaPage', {
+  //     a: a
+  //   }); 
+  // }
 
   fab() {
     this.navCtrl.push('AddformaPage');
   }
 
+  popover(ev, a) {
+    let pop = this.verify.miscPopOver('PopoverPage', ev);
+    pop.present({ ev: ev });
+    pop.onDidDismiss((data) => {
+      if (data === 'edit') {
+        this.navCtrl.push('EditformaPage', {
+          a: a
+        });
+      }
+    });
+  }
+        
 }

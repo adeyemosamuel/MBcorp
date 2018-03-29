@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ToastController, ToastOptions } from 'ionic-angular';
+import { ToastController, ToastOptions, PopoverController } from 'ionic-angular';
 
 @Injectable()
 export class VerifyServiceProvider {
@@ -8,6 +8,7 @@ export class VerifyServiceProvider {
   errorMessage: string;
 
   constructor(public http: HttpClient,
+    private popCtrl: PopoverController,
     private toastCtrl: ToastController,) {
     console.log('Hello VerifyServiceProvider Provider');
   }
@@ -330,6 +331,11 @@ export class VerifyServiceProvider {
       position: position
     };
     this.toastCtrl.create(this.toastOptions).present();
+  }
+
+  miscPopOver(val, ev) {
+    let pop = this.popCtrl.create(val);
+    return pop;
   }
 
 }

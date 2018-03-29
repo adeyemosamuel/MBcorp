@@ -19,8 +19,9 @@ export class AddformaPage {
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
-  // hideButton4:boolean=false;
+  hideButton4:boolean=false;
   hideButton5: boolean = false;
+  hideButton6: boolean = false;
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -49,12 +50,16 @@ export class AddformaPage {
     this.viewButton = !this.viewButton;
   }
 
-  // mikilo4(){
-  //   this.hideButton4 = !this.hideButton4;
-  // }
+  mikilo4(){
+    this.hideButton4 = !this.hideButton4;
+  }
 
   mikilo5() {
     this.hideButton5 = !this.hideButton5;
+  }
+
+  mikilo6() {
+    this.hideButton6 = !this.hideButton6;
   }
 
   searchModal() {

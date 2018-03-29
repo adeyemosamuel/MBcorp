@@ -19,59 +19,59 @@
     </ion-item-divider>
 
     <div *ngIf="hideButton" padding>
-      
+
       <ion-list>
-      
-  <ion-item no-lines>
-            <ion-label stacked>Beneficiary Name*</ion-label>
-            <ion-input    [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
-          </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Name*</ion-label>
+          <ion-input [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
+        </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Account Number*</ion-label>
-          <ion-input    [ngModel]="selectedItem?.baccount" (ngModelChange)="selectedItem.baccount= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.baccount" (ngModelChange)="selectedItem.baccount= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Account Name*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text" ></ion-input>
+          <ion-input [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Swift Code*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbswiftcode" (ngModelChange)="selectedItem.bbswiftcode= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbswiftcode" (ngModelChange)="selectedItem.bbswiftcode= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Name*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbname" (ngModelChange)="selectedItem.bbname= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbname" (ngModelChange)="selectedItem.bbname= $event" type="text"></ion-input>
         </ion-item>
-        
+
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Address*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbaddress" (ngModelChange)="selectedItem.bbaddress= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbaddress" (ngModelChange)="selectedItem.bbaddress= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank City*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbcity" (ngModelChange)="selectedItem.bbcity= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbcity" (ngModelChange)="selectedItem.bbcity= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Country*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbcountry" (ngModelChange)="selectedItem.bbcountry= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbcountry" (ngModelChange)="selectedItem.bbcountry= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank State*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbstate" (ngModelChange)="selectedItem.bbstate= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbstate" (ngModelChange)="selectedItem.bbstate= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Postal Code*</ion-label>
-          <ion-input  [ngModel]="selectedItem?.bbpostalcode" (ngModelChange)="selectedItem.bbpostalcode= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.bbpostalcode" (ngModelChange)="selectedItem.bbpostalcode= $event" type="number"></ion-input>
         </ion-item>
-  
+
 
       </ion-list>
     </div>
@@ -178,12 +178,24 @@
           </ion-select>
         </ion-item>
 
-
-        <ion-item no-lines>
-          <ion-label stacked>Estimated Debit Amount*</ion-label>
-          <ion-input [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="text"></ion-input>
-        </ion-item>
-
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4 text-left>
+                <ion-item no-lines>
+                    <ion-label stacked>Currency</ion-label>
+                    <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event">
+                      <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+            </ion-col>
+            <ion-col col-8 text-right>
+            <ion-item no-lines>
+              <ion-label stacked>Estimated Debit Amount*</ion-label>
+              <ion-input [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-list>
 
     </div>
@@ -233,12 +245,63 @@
 
         <ion-item no-lines>
           <ion-label stacked>Identification Number*</ion-label>
-          <ion-input placeholder="*Identification Number" [ngModel]="selectedItem?.idnumber" (ngModelChange)="selectedItem.idnumber= $event" type="text"></ion-input>
+          <ion-input placeholder="*Identification Number" [ngModel]="selectedItem?.idnumber" (ngModelChange)="selectedItem.idnumber= $event"
+            type="text"></ion-input>
         </ion-item>
       </ion-list>
-
-
     </div>
+
+    <ion-item-divider (click)="mikilo4()">
+        <span>ATTACHMENT</span>
+        <i *ngIf="!hideButton4" class="fas fa-angle-down" item-end></i>
+        <i *ngIf="hideButton4" class="fas fa-angle-up" item-end></i>
+      </ion-item-divider>
+  
+      <div *ngIf="hideButton4" padding>
+        <ion-list>
+          <ion-item no-lines class="file"> 
+  
+            <input type="file" [(ngModel)]="fileupload" />
+            <p style="white-space:normal">Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
+          </ion-item>
+          <div>
+            <button ion-button small color="fcmb" (click)="upload()">Upload</button>
+          </div>
+  
+        </ion-list>
+      </div>
+      
+      <ion-item-divider (click)="mikilo6()">
+          <span>TERMS & CONDITIONS</span>
+          <i *ngIf="!hideButton6" class="fas fa-angle-down" item-end></i>
+          <i *ngIf="hideButton6" class="fas fa-angle-up" item-end></i>
+        </ion-item-divider>
+    
+        <div *ngIf="hideButton6" padding>
+          <p style="white-space:normal">I hereby declare that the above written particulars are true to the best of my knowledge and belief
+            <a color="fcmb">Read more...</a>
+          </p>
+          <ion-list>
+            <ion-grid>
+              <ion-row>
+                <span>Agree</span>
+                <ion-col text-left>
+                  <ion-item class="radio" no-lines>
+                    <ion-label>Yes</ion-label>
+                    <ion-checkbox [(ngModel)]="yes"></ion-checkbox>
+                  </ion-item>
+                </ion-col>
+                <ion-col text-left>
+                  <ion-item class="radio" no-lines>
+                    <ion-label>No</ion-label>
+                    <ion-checkbox [(ngModel)]="no"></ion-checkbox>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-list>
+        </div>
+
     <div padding>
       <button class="button" ion-button block tappable color="fcmb" (click)="update()">
         <span style="font-weight:bold; color:white">UPDATE</span>

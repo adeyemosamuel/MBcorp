@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http';
 import { DatePicker } from '@ionic-native/date-picker';
+import { FileChooser } from '@ionic-native/file-chooser';
 import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { ChartsModule } from 'ng2-charts';
@@ -41,6 +42,7 @@ import { VerifyServiceProvider } from '../providers/verify-service/verify-servic
     ServerServiceProvider,
     AppdataProvider,
     DatePicker,
+    FileChooser,
     VerifyServiceProvider
   ]
 })

@@ -22,14 +22,15 @@ page-forma {
         color: #5c2684;
     } 
  
-    ion-item-sliding {
-        border-bottom: 8px solid map-get($colors, light) !important;
-        height: 100px !important;
+    // ion-item-sliding {
+    //     border-bottom: 8px solid map-get($colors, light) !important;
+    //     height: 100px !important;
 
         ion-item{
+            border-bottom: 8px solid map-get($colors, light) !important;
             background-color: map-get($colors, lighter) !important;
             height: 100% !important;
-        }
+        // }
 
         button {
             font-weight: bold !important;
@@ -37,21 +38,21 @@ page-forma {
         }
     }
 
-    ion-item-sliding:first-child {
+    ion-item:first-child {
         border-top: 8px solid map-get($colors, light) !important;
     }
 
-    ion-item-options {
-        border-bottom: 8px solid map-get($colors, light) !important;
-        height: 100px !important;
-    }
+    // ion-item-options {
+    //     border-bottom: 8px solid map-get($colors, light) !important;
+    //     height: 100px !important;
+    // }
 
-    ion-item-sliding:last-child {
+    ion-item:last-child {
         border-bottom: none !important;
         
-        ion-item-options {
-            border-bottom: none !important;
-        }
+        // ion-item-options {
+        //     border-bottom: none !important;
+        // }
     }
 
 
