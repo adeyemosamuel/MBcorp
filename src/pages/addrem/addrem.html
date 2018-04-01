@@ -2,7 +2,7 @@
 
   <ion-navbar color="fcmb">
     <ion-title text-center>
-      <span text-color="my-custom-color">FORM A</span>
+      <span text-color="my-custom-color">REMITTANCE</span>
     </ion-title>
   </ion-navbar>
 
@@ -187,8 +187,8 @@
         </ion-item>
 
         <ion-item no-lines>
-          <ion-label stacked>Amount applied in words*</ion-label>
-          <ion-input [(ngModel)]="applied" type="text"></ion-input>
+          <ion-label stacked>Amount applied for in Foreign Currency(in words)*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="applied" type="text"></ion-input>
         </ion-item>
 
 
@@ -197,13 +197,13 @@
           <ion-textarea [(ngModel)]="info" rows="2" placeholder="Remittance Info"></ion-textarea>
         </ion-item>
 
-        <ion-item no-lines>
+        <!-- <ion-item no-lines>
           <ion-label stacked>Valid for Forex*</ion-label>
           <ion-select interface="action-sheet" class="Select" [(ngModel)]="valid">
             <ion-option value="yes">Yes</ion-option>
             <ion-option value="no">No</ion-option>
           </ion-select>
-        </ion-item>
+        </ion-item> -->
 
         <ion-item no-lines>
           <ion-label stacked>Transfer Account*</ion-label>
@@ -213,7 +213,7 @@
         </ion-item>
         
               <ion-item no-lines>
-                <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
+                <ion-label stacked>Estimated Debit Amount in Foreign Currency*</ion-label>
                 <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" type="number"></ion-input>
               </ion-item>
             

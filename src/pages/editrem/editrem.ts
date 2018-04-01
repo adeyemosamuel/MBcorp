@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
 
-
-
 @IonicPage()
 @Component({
-  selector: 'page-editforma',
-  templateUrl: 'editforma.html',
+  selector: 'page-editrem',
+  templateUrl: 'editrem.html',
 })
-export class EditformaPage {
+export class EditremPage {
   selectedItem: any;
   id: number;
   iData: any = [];
@@ -31,7 +29,7 @@ export class EditformaPage {
     private appdata: AppdataProvider,
      public navParams: NavParams) {
   }
- 
+
   ionViewDidLoad() {
     this.moneyData=this.appdata.getMoney2();
     this.purposeData= this.appdata.getPurpose();
@@ -76,5 +74,6 @@ export class EditformaPage {
   isReadonly() {
     return this.isReadonly;   //return true/false  
   }
+
 
 }
