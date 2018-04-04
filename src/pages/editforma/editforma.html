@@ -164,6 +164,19 @@
           </ion-select>
         </ion-item> -->
 
+
+        <ion-item no-lines>
+            <ion-label stacked>Transfer Account*</ion-label>
+            <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.transfer" (ngModelChange)="selectedItem.transfer= $event">
+              <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+            </ion-select>
+          </ion-item>
+  
+              <ion-item no-lines>
+                <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
+                <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="number"></ion-input>
+              </ion-item>
+
         <ion-item no-lines>
           <ion-label stacked>Charge Amount*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.charge" (ngModelChange)="selectedItem.charge= $event">
@@ -190,17 +203,6 @@
           </ion-select>
         </ion-item>
 
-        <ion-item no-lines>
-          <ion-label stacked>Transfer Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.transfer" (ngModelChange)="selectedItem.transfer= $event">
-            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
-          </ion-select>
-        </ion-item>
-
-            <ion-item no-lines>
-              <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
-              <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="number"></ion-input>
-            </ion-item>
          
       </ion-list>
 
@@ -218,7 +220,7 @@
 
     </div> -->
 
-    <ion-item-divider (click)="mikilo5()">
+    <!-- <ion-item-divider (click)="mikilo5()">
       <span>OTHER DETAILS</span>
       <i *ngIf="!hideButton5" class="fas fa-angle-down" item-end></i>
       <i *ngIf="hideButton5" class="fas fa-angle-up" item-end></i>
@@ -255,7 +257,7 @@
             type="text"></ion-input>
         </ion-item>
       </ion-list>
-    </div>
+    </div> -->
 
     <ion-item-divider (click)="mikilo4()">
         <span>ATTACHMENT</span>
