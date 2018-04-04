@@ -87,6 +87,9 @@ export class AddformnxpPage {
     this.shipmentData = this.appdata.getShipment();
     this.dischargeData = this.appdata.getDischarge();
     this.currencyData = this.appdata.getCurrency();
+    if (this.selectedItem) {
+      this.hideButton2 = !this.hideButton2
+    }
   }
 
   mikilo() {
