@@ -1,4 +1,4 @@
-page-addforma {
+page-addformnxp {
     ion-content {
         background-color: rgba(255,255,255,1) !important;
     }
@@ -54,13 +54,12 @@ page-addforma {
             border-bottom: none !important;
         }
 
-
-    .option {
-        text-transform: capitalize;
-    }
-
-    .Select{
-        max-width: 100% !important;
-        width:100% !important
+        .option {
+            text-transform: capitalize;
         }
+    
+        .Select{
+            max-width: 100% !important;
+            width:100% !important
+            }
 }

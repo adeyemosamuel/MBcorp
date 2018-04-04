@@ -1,18 +1,68 @@
-<!--
-  Generated template for the FormnxpPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>formnxp</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar color="fcmb">
+      <ion-title text-center>
+        <span text-color="my-custom-color">FORM A</span>
+      </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+  
+      <ion-item no-lines [ngClass]="a.status" *ngFor="let a of FormArray">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6 text-left>
+              <h2>{{a.name}}</h2>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <p>{{a.status}}</p>
+            </ion-col>
+  
+          </ion-row>
+  
+          <ion-row>
+            <ion-col col-6 text-left>
+              <p>{{a.formnumber}}</p>
+            </ion-col>
+  
+            <ion-col col-6 text-right>
+              <ion-buttons end>
+                <button ion-button icon-only clear (click)="popover($event,a)"> 
+                  <ion-icon color="fcmb" name="md-more" item-right></ion-icon>
+                </button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+  
+         
+          <!-- <ion-row>
+              <ion-col text-left>
+                <p>{{a.date}}</p>
+              </ion-col>
+            </ion-row> -->
+        </ion-grid>
+  
+      </ion-item>
+  
+      <!-- <ion-item-options side="right">
+          <button ion-button clear (click)="itemTapped(a)">
+            <i class="fas fa-pencil-alt"></i>
+           <p text-color="my-custom-color2">Edit</p>
+          </button>
+          
+        </ion-item-options> -->
+  
+    </ion-list>
+    <ion-fab right bottom (click)="fab()">
+      <button ion-fab color="fcmb">
+        <i class="fas fa-plus"></i>
+      </button>
+  
+    </ion-fab>
+  
+  </ion-content>
