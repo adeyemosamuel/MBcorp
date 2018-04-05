@@ -1,21 +1,43 @@
-
-
-
 <ion-content>
-    <ion-header>
+  <ion-header>
 
-        <ion-navbar color="fcmb"  >
-          <ion-title text-center>
-            <span text-color="my-custom-color">Details</span>
-          </ion-title>
-          <ion-buttons end (click)="selectCancel()">
-              <button ion-button icon-only clear> 
-                <!-- <ion-icon color="fcmb" name="ios-close" item-right (click)="selectCancel()"></ion-icon> -->
-                <i class="fas fa-times" item-end></i>
-              </button>
-            </ion-buttons>
-        </ion-navbar>
-      
-      </ion-header>
+    <ion-navbar color="fcmb">
+      <ion-title text-center>
+        <span text-color="my-custom-color">Details</span>
+      </ion-title>
+      <ion-buttons end (click)="selectCancel()">
+        <button ion-button icon-only clear>
+          <!-- <ion-icon color="fcmb" name="ios-close" item-right (click)="selectCancel()"></ion-icon> -->
+          <i class="fas fa-times" item-end></i>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+
+  </ion-header>
+
+  <div class="miracle">
+    <ion-list>
+      <ion-item no-lines>
+        <ion-label stacked>Item</ion-label>
+        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.item" (ngModelChange)="selectedItem.item= $event" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines> 
+        <ion-label stacked>HS Code</ion-label>
+        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.hs" (ngModelChange)="selectedItem.hs= $event" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label stacked>Quantity</ion-label>
+        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.qty" (ngModelChange)="selectedItem.qty= $event" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label stacked>Weight</ion-label>
+        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.weight" (ngModelChange)="selectedItem.weight= $event" type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+
+  </div>
 
 </ion-content>

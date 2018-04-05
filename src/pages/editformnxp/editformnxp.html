@@ -284,7 +284,7 @@
           <ion-item no-lines>
             <ion-label stacked>Total Quantity*</ion-label>
             <ion-input [ngModel]="selectedItem?.quantity" (ngModelChange)="selectedItem.quantity= $event" type="number"></ion-input>
-            <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+            <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
           </ion-item>
   
           <ion-item no-lines>
@@ -295,13 +295,13 @@
           <ion-item no-lines>
             <ion-label stacked>Total Net Weight/Mass(kg)*</ion-label>
             <ion-input [ngModel]="selectedItem?.weight" (ngModelChange)="selectedItem.weight= $event" type="number"></ion-input>
-            <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+            <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
           </ion-item>
   
           <ion-item no-lines>
             <ion-label stacked>Total Gross Weight/Mass(kg)*</ion-label>
             <ion-input [ngModel]="selectedItem?.gross" (ngModelChange)="selectedItem.gross= $event" type="number"></ion-input>
-            <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+            <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
           </ion-item>
   
           <ion-item no-lines>
@@ -314,25 +314,25 @@
           <ion-item no-lines>
               <ion-label stacked>Total Value of Goods in Foreign Currency*</ion-label>
               <ion-input [ngModel]="selectedItem?.goods" (ngModelChange)="selectedItem.goods= $event" type="number"></ion-input>
-              <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+              <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
             </ion-item>
   
             <ion-item no-lines>
                 <ion-label stacked>Total Value FOB*</ion-label>
                 <ion-input [ngModel]="selectedItem?.fob" (ngModelChange)="selectedItem.fob= $event" type="number"></ion-input>
-                <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+                <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
               </ion-item>
   
               <ion-item no-lines>
                   <ion-label stacked>Total Freight Charges*</ion-label>
                   <ion-input [ngModel]="selectedItem?.freight" (ngModelChange)="selectedItem.freight= $event" type="number"></ion-input>
-                  <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+                  <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
                 </ion-item>
   
                 <ion-item no-lines>
                     <ion-label stacked>Total C & F Value*</ion-label>
                     <ion-input [ngModel]="selectedItem?.cf" (ngModelChange)="selectedItem.cf= $event" type="number"></ion-input>
-                    <i class="fas fa-eye" item-end (click)="itemTapped()"></i>
+                    <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
                   </ion-item>
   
         </ion-list>

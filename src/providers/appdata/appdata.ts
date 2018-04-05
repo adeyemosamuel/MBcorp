@@ -687,9 +687,9 @@ export class AppdataProvider {
                 "supply2": "UAE",
                 "prefix": "A",
                 "agent": "NBC Skye",
-                "date": "26/02/18"
-
-
+                "date": "26/02/18",
+                "item":"Radio",
+                "qty":"50"
             },
 
             {
@@ -768,7 +768,9 @@ export class AppdataProvider {
                 "supply2": "UAE",
                 "prefix": "A",
                 "agent": "NBC Skye",
-                "date": "25/02/18"
+                "date": "25/02/18",
+                "item":"Router",
+                "qty":"150"
 
             },
 
@@ -848,7 +850,9 @@ export class AppdataProvider {
                 "supply2": "UAE",
                 "prefix": "A",
                 "agent": "NBC Skye",
-                "date": "24/02/18"
+                "date": "24/02/18",
+                "item":"UPS",
+                "qty":"100"
 
             },
 
@@ -928,7 +932,9 @@ export class AppdataProvider {
                 "supply2": "UAE",
                 "prefix": "A",
                 "agent": "NBC Skye",
-                "date": "23/02/18"
+                "date": "23/02/18",
+                "item":"Microwave",
+                "qty":"250"
 
             },
             {
@@ -1007,7 +1013,9 @@ export class AppdataProvider {
                 "supply2": "UAE",
                 "prefix": "A",
                 "agent": "NBC Skye",
-                "date": "22/02/18"
+                "date": "22/02/18",
+                "item":"HP",
+                "qty":"50"
 
             },
 
@@ -1087,7 +1095,9 @@ export class AppdataProvider {
                 "supply2": "UAE",
                 "prefix": "A",
                 "agent": "NBC Skye",
-                "date": "21/02/18"
+                "date": "21/02/18",
+                "item":"Dell",
+                "qty":"350"
 
             }
 

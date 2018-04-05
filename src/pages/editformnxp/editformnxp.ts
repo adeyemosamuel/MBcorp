@@ -94,8 +94,10 @@ export class EditformnxpPage {
     return this.isReadonly;   //return true/false 
   }
 
-  itemTapped(){
-    let modal = this.modalCtrl.create('ModalPage');
+  itemTapped(selectedItem){
+    let modal = this.modalCtrl.create('ModalPage', {
+      selectedItem:this.selectedItem
+    });
     modal.present();
   }
 
