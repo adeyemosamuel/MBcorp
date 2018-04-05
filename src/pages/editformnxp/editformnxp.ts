@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
 
 @IonicPage()
@@ -34,6 +34,7 @@ export class EditformnxpPage {
 
 
   constructor(public navCtrl: NavController, 
+    public modalCtrl: ModalController,
     private appdata: AppdataProvider,
     public navParams: NavParams) {
   }
@@ -91,6 +92,11 @@ export class EditformnxpPage {
 
   isReadonly() {
     return this.isReadonly;   //return true/false 
+  }
+
+  itemTapped(){
+    let modal = this.modalCtrl.create('ModalPage');
+    modal.present();
   }
 
 }
