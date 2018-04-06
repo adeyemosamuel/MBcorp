@@ -1,0 +1,230 @@
+<ion-header>
+
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">FORM M</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider (click)="mikilo()">
+      <span>APPLICANT DETAILS</span>
+      <i *ngIf="!hideButton" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Form Number</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.formnumber" (ngModelChange)="selectedItem.formnumber= $event"
+            type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Name</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Address1</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.address" (ngModelChange)="selectedItem.address= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Address2</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.address2" (ngModelChange)="selectedItem.address2= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>City</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.city" (ngModelChange)="selectedItem.city= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>TIN</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.tin" (ngModelChange)="selectedItem.tin= $event" type="number"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+    </div>
+
+    <ion-item-divider (click)="mikilo2()">
+      <span>BENEFICIARY DETAILS</span>
+      <i *ngIf="!hideButton2" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton2" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton2" padding>
+
+      <ion-list>
+
+        <ion-item no-lines>
+          <ion-label stacked>Name</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Address1</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.address3" (ngModelChange)="selectedItem.address3= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Address2</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.address4" (ngModelChange)="selectedItem.address4= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Phone</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.phone" (ngModelChange)="selectedItem.phone= $event" type="tel"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Country</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.country" (ngModelChange)="selectedItem.country= $event" type="text"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+    </div>
+
+    <ion-item-divider (click)="mikilo3()">
+      <span>SHIPMENT DETAILS</span>
+      <i *ngIf="!hideButton3" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton3" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton3" padding>
+
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Country of Origin</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.origin" (ngModelChange)="selectedItem.origin= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Country of Supply</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.supply" (ngModelChange)="selectedItem.supply= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Port of Discharge</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.discharge" (ngModelChange)="selectedItem.discharge= $event"
+            type="text"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+    </div>
+
+    <ion-item-divider (click)="mikilo4()">
+      <span>PAYMENT DETAILS</span>
+      <i *ngIf="!hideButton4" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton4" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton4" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Valid for Forex</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.forex" (ngModelChange)="selectedItem.forex= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Prefix</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.prefix" (ngModelChange)="selectedItem.prefix= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Designated Bank</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bank" (ngModelChange)="selectedItem.bank= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Inspection Agent</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.agent" (ngModelChange)="selectedItem.agent= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Country of Supply</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.supply2" (ngModelChange)="selectedItem.supply2= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Transfer Mode</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.transfer" (ngModelChange)="selectedItem.transfer= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Proforma Inv. No</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.proforma" (ngModelChange)="selectedItem.proforma= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Proforma Inv. Date</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.date" (ngModelChange)="selectedItem.date= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Payment Mode</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.payment" (ngModelChange)="selectedItem.payment= $event" type="text"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo5()">
+      <span>GOODS DETAILS</span>
+      <i *ngIf="!hideButton5" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton5" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton5" padding>
+
+      <ion-list>
+        <ion-item no-lines class="text-area">
+          <ion-label stacked>General Description of Goods</ion-label>
+          <ion-textarea [ngModel]="selectedItem?.description" (ngModelChange)="selectedItem.description= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Gross Weight/Mass(kg)</ion-label>
+          <ion-input [ngModel]="selectedItem?.gross" (ngModelChange)="selectedItem.gross= $event" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Net Weight/Mass(kg)</ion-label>
+          <ion-input [ngModel]="selectedItem?.weight" (ngModelChange)="selectedItem.weight= $event" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Total Number of Items</ion-label>
+          <ion-input [ngModel]="selectedItem?.hs" (ngModelChange)="selectedItem.hs= $event" type="number"></ion-input>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Total FOB Value</ion-label>
+          <ion-input [ngModel]="selectedItem?.fob" (ngModelChange)="selectedItem.fob= $event" type="number"></ion-input>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Total Freight Charges</ion-label>
+          <ion-input [ngModel]="selectedItem?.freight" (ngModelChange)="selectedItem.freight= $event" type="number"></ion-input>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem)"></i>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+
+  </ion-item-group>
+
+</ion-content>

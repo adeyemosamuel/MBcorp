@@ -1,0 +1,58 @@
+page-modall {
+    [text-color="my-custom-color"] {
+        color: #ffb822;
+    }
+
+    [text-color="my-custom-color2"] {
+        color: #ffffff;
+    }
+
+    i {
+        margin-left: auto !important;
+        font-size: 20px !important;
+        color: map-get($colors, black);
+    }
+
+    .miracle{
+        margin-top: 50px !important;
+    }
+
+    ion-item{
+        border-bottom: 1px solid #5c2684 !important;
+    }
+
+
+   
+        ion-content {
+            &.content {
+                div.scroll-content {
+                    top: 10%;
+                    left: 10%;
+                    width: 80%;
+                    height: 80%;
+                    overflow:hidden;
+                }
+            }
+    
+            &.content-ios {
+                background-color: rgba(0, 0, 0, 0.3);
+    
+                div.scroll-content {
+                    background-color: #ffffff;
+                    border-radius: 13px;
+                    padding: 16px;
+                }
+            }
+    
+            &.content-md {
+                background-color: rgba(0, 0, 0, 0.5);
+                
+                div.scroll-content {
+                    background-color: #ffffff;
+                    border-radius: 2px;
+                    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+                    padding: 24px;
+                }
+            }
+        }
+}
