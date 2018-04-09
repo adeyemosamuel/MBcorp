@@ -63,10 +63,10 @@
             <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbaddress" type="text"></ion-input>
           </ion-item>
 
-          <ion-item no-lines>
+          <!-- <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank Address*</ion-label>
             <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbaddress" type="text"></ion-input>
-          </ion-item>
+          </ion-item> -->
 
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank City*</ion-label>
@@ -316,7 +316,7 @@
 
 
     <div padding>
-      <button class="button" ion-button block tappable color="fcmb" (click)="submit()">
+      <button class="button" ion-button block tappable color="fcmb" (click)="submitforma()">
         <span style="font-weight:bold; color:white">SUBMIT</span>
       </button>
     </div>

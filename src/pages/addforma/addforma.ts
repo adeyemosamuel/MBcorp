@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
+import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
 
 
 
@@ -10,6 +11,29 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
   templateUrl: 'addforma.html',
 })
 export class AddformaPage {
+  fileupload: any;
+  valid: any;
+  info: any;
+  applied: any;
+  charge: any;
+  estimated: any;
+  transfer: any;
+  amount: any;
+  money: any;
+  payment: any;
+  ibpostalcode: any;
+  ibcountry: any;
+  ibstate: any;
+  ibcity: any;
+  ibaddress: any;
+  ibswiftcode: any;
+  ibname: any;
+  bbpostalcode: any;
+  bbstate: any;
+  bbcountry: any;
+  bbcity: any;
+  bbaddress: any;
+  bbname: any;
   selectedItem: any;
   baccount: any;
   bname: any;
@@ -33,6 +57,8 @@ export class AddformaPage {
   accountData: any=[];
 
   constructor(public navCtrl: NavController,
+    private alertCtrl: AlertController,
+    private verify: VerifyServiceProvider,
     private appdata: AppdataProvider,
     public modalCtrl: ModalController,
     public navParams: NavParams) {
@@ -87,5 +113,44 @@ export class AddformaPage {
 
   isReadonly() {
     return this.isReadonly;   //return true/false 
+  }
+
+  submitforma() {
+
+    if (!this.verify.submitforma(this.bname,
+this.baccount,
+this.name,
+this.bbswiftcode,
+this.bbname,
+this.bbaddress,
+this.bbcity,
+this.bbcountry,
+this.bbstate,
+this.bbpostalcode,
+this.ibname,
+this.ibswiftcode,
+this.ibaddress,
+this.ibcity,
+this.ibstate,
+this.ibcountry,
+this.ibpostalcode,
+this.payment,
+this.money,
+this.amount,
+this.transfer,
+this.estimated,
+this.charge,
+this.applied,
+this.info,
+this.valid,
+this.fileupload)) {
+      alert(this.verify.errorMessage);
+      this.alertCtrl.create({
+        subTitle: 'Message',
+        message: this.verify.errorMessage
+      }).present();
+     return false;
+     }
+    this.navCtrl.push('SuccessPage');
   }
 }
