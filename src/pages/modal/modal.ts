@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { AppdataProvider } from '../../providers/appdata/appdata';
 
 
 
@@ -12,18 +13,21 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 export class ModalPage {
   selectedItem2: any;
   selectedItem: any;
-  
+  mamayo:any=[];
+   
 
 
   constructor(public navCtrl: NavController,
     public viewCtrl: ViewController,
+    private appdata: AppdataProvider,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.selectedItem2 = this.navParams.get('selectedItem');
+    this.mamayo= this.appdata.getInfo();
 
-  }
+  } 
 
   selectCancel() {
     this.viewCtrl.dismiss('');

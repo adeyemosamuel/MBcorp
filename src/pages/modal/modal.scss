@@ -15,14 +15,24 @@ page-modal {
     }
 
     .miracle{
-        margin-top: 50px !important;
+        margin-top: 20px !important;
     }
 
     ion-item{
-        border-bottom: 1px solid #5c2684 !important;
-    }
+        border-bottom: 8px solid map-get($colors, light) !important;
+        background-color: map-get($colors, lighter) !important;
+        height: 100% !important;
+}
+
+ion-item:first-child {
+    // border-top: 8px solid map-get($colors, light) !important;
+    border-top: none !important;
+}
 
 
+ion-item:last-child {
+    border-bottom: none !important;
+}
    
         ion-content {
             &.content {

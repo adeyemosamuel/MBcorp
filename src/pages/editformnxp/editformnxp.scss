@@ -44,6 +44,7 @@ page-editformnxp {
             margin-left: auto !important;
             font-size: 20px !important;
             color: map-get($colors, black);
+            z-index: 100;
         }
 
         .file{

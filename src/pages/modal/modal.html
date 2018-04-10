@@ -1,3 +1,6 @@
+
+
+
 <ion-content>
   <ion-header>
 
@@ -12,30 +15,15 @@
         </button>
       </ion-buttons>
     </ion-navbar>
-
+  
   </ion-header>
-
   <div class="miracle">
     <ion-list>
-      <ion-item no-lines>
-        <ion-label stacked>Item</ion-label>
-        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.item" (ngModelChange)="selectedItem.item= $event" type="text"></ion-input>
-      </ion-item>
-
-      <ion-item no-lines> 
-        <ion-label stacked>HS Code</ion-label>
-        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.hs" (ngModelChange)="selectedItem.hs= $event" type="number"></ion-input>
-      </ion-item>
-
-      <ion-item no-lines>
-        <ion-label stacked>Quantity</ion-label>
-        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.qty" (ngModelChange)="selectedItem.qty= $event" type="number"></ion-input>
-      </ion-item>
-
-      <ion-item no-lines>
-        <ion-label stacked>Weight</ion-label>
-        <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem2?.weight" (ngModelChange)="selectedItem.weight= $event" type="number"></ion-input>
-      </ion-item>
+      <ion-item *ngFor="let m of mamayo" no-lines>
+        <p>Item:{{m.item}}</p>
+        <p>HS Code:{{m.hs}}</p>
+        <p>Quantity:{{m.qty}}</p> 
+      </ion-item> 
     </ion-list>
 
   </div>

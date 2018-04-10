@@ -48,8 +48,8 @@
             type="number"></ion-input>
         </ion-item>
         <div>
-            <button *ngIf="!viewButton" class="add" color="fcmb" ion-button small (click)="view()">View More</button>
-            <button *ngIf="viewButton" class="add" color="fcmb" ion-button small (click)="view()">View Less</button>
+          <button *ngIf="!viewButton" class="add" color="fcmb" ion-button small (click)="view()">View More</button>
+          <button *ngIf="viewButton" class="add" color="fcmb" ion-button small (click)="view()">View Less</button>
         </div>
 
         <div *ngIf="viewButton">
@@ -155,23 +155,23 @@
         </ion-item>
 
         <ion-grid>
-            <ion-row>
-              <ion-col col-4 text-left>
-                  <ion-item no-lines>
-                      <ion-label stacked>Currency</ion-label>
-                      <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event">
-                        <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
-                      </ion-select>
-                    </ion-item>
-              </ion-col>
-              <ion-col col-8 text-right>
+          <ion-row>
+            <ion-col col-4 text-left>
               <ion-item no-lines>
-                <ion-label stacked>Amount*</ion-label>
-                <ion-input [ngModel]="amount" type="number"></ion-input>
+                <ion-label stacked>Currency</ion-label>
+                <ion-select interface="action-sheet" class="Select" [ngModel]="money">
+                  <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+                </ion-select>
               </ion-item>
             </ion-col>
-            </ion-row>
-          </ion-grid>
+            <ion-col col-8 text-right>
+              <ion-item no-lines>
+                <ion-label stacked>Amount*</ion-label>
+                <ion-input [ngModel]="amount"  type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
         <!-- <ion-item no-lines>
           <ion-label stacked>Amount*</ion-label>
@@ -182,20 +182,20 @@
 
 
         <ion-item no-lines>
-            <ion-label stacked>Transfer Account*</ion-label>
-            <ion-select interface="action-sheet" class="Select" [(ngModel)]="transfer">
-              <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
-            </ion-select>
-          </ion-item>
-          
-                <ion-item no-lines>
-                  <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
-                  <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" type="number"></ion-input>
-                </ion-item>
+          <ion-label stacked>Transfer Account*</ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="transfer">
+            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" type="number"></ion-input>
+        </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Charge Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge"> 
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge">
             <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
           </ion-select>
         </ion-item>
@@ -218,7 +218,7 @@
             <ion-option value="no">No</ion-option>
           </ion-select>
         </ion-item>
-            
+
 
       </ion-list>
 
@@ -296,7 +296,9 @@
       <ion-list>
         <ion-grid>
           <ion-row>
-            <span><b>Agree</b></span>
+            <span>
+              <b>Agree</b>
+            </span>
             <ion-col text-left>
               <ion-item class="radio" no-lines>
                 <ion-label>Yes</ion-label>
