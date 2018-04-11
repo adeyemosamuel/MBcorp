@@ -104,4 +104,10 @@ export class EditformnxpPage {
     modal.present();
   }
 
+  details(selectedItem){
+    this.navCtrl.push('NxpdetailsPage', {
+      selectedItem:selectedItem
+    });
+  }
+
 }

@@ -1,0 +1,26 @@
+page-nxpdetails {
+    [text-color="my-custom-color"] {
+        color: #ffb822;
+    }
+
+    [text-color="my-custom-color2"] {
+        color: #ffffff;
+    }
+
+
+    ion-item{
+        border-bottom: 8px solid map-get($colors, light) !important;
+        background-color: map-get($colors, lighter) !important;
+        height: 100% !important;
+}
+
+ion-item:first-child {
+    // border-top: 8px solid map-get($colors, light) !important;
+    border-top: none !important;
+}
+
+
+ion-item:last-child {
+    border-bottom: none !important;
+}
+}
