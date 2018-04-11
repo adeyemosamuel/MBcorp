@@ -44,10 +44,11 @@ export class EditformnxpPage {
     this.countryData = this.appdata.getCountry();
     this.cityData = this.appdata.getCity();
     this.methodData = this.appdata.getMethod();
-    this.shipmentData = this.appdata.getShipment();
+    this.shipmentData = this.appdata.getShipment(); 
     this.dischargeData = this.appdata.getDischarge();
     this.currencyData = this.appdata.getCurrency();
     this.selectedItem= this.navParams.get('a');
+  
     if (this.selectedItem) {
       this.hideButton = !this.hideButton
     }
@@ -82,11 +83,11 @@ export class EditformnxpPage {
   }
 
   mikilo7() {
-    this.hideButton6 = !this.hideButton6;
+    this.hideButton7 = !this.hideButton7;
   }
 
   mikilo8() {
-    this.hideButton6 = !this.hideButton6;
+    this.hideButton8 = !this.hideButton8;
   }
 
 
@@ -94,9 +95,11 @@ export class EditformnxpPage {
     return this.isReadonly;   //return true/false 
   }
 
-  itemTapped(selectedItem){
+  itemTapped(selectedItem,doctype){
+    console.log(doctype)
     let modal = this.modalCtrl.create('ModalPage', {
-      selectedItem:this.selectedItem
+      selectedItem: selectedItem.good.items,
+      docType: doctype
     });
     modal.present();
   }

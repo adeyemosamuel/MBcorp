@@ -689,7 +689,53 @@ export class AppdataProvider {
                 "agent": "NBC Skye",
                 "date": "26/02/18",
                 "item":"Radio",
-                "qty":"50"
+                "qty":"50",
+                "good": {
+                    "totalQuantity": 100,
+                    "expectedItems":3,
+                    "totalNetweight": 60,
+                    "totalGrossweight":25,
+                    "totalValue":500,
+                    "totalFOB":40,
+                    "totalFreight":30,
+                    "totalcf":15,
+                    "items": [
+                        {
+                            "name": "Radio",
+                            "quantity": 50,
+                            "hscode": 123426,
+                            "weight":20,
+                            "gross":8,
+                            "value":300,
+                            "fob":12,
+                            "freight":8,
+                            "cf":5
+                        },
+                        {
+                            "name": "Television",
+                            "quantity": 30,
+                            "hscode": 344726,
+                            "weight":30,
+                            "gross":7,
+                            "value":200,
+                            "fob":18,
+                            "freight":13,
+                            "cf":5
+                        },
+                        {
+                            "name": "Microwave",
+                            "quantity": 20,
+                            "hscode": 748456,
+                            "weight":10,
+                            "gross":10,
+                            "value":100,
+                            "fob":10,
+                            "freight":9,
+                            "cf":5
+                        }
+                    ]
+                }
+            
             },
 
             {
@@ -770,7 +816,52 @@ export class AppdataProvider {
                 "agent": "NBC Skye",
                 "date": "25/02/18",
                 "item":"Router",
-                "qty":"150"
+                "qty":"150",
+                "good": {
+                    "totalQuantity": 100,
+                    "expectedItems":3,
+                    "totalNetweight": 60,
+                    "totalGrossweight":25,
+                    "totalValue":500,
+                    "totalFOB":40,
+                    "totalFreight":30,
+                    "totalcf":15,
+                    "items": [
+                        {
+                            "name": "Radio",
+                            "quantity": 50,
+                            "hscode": 123426,
+                            "weight":20,
+                            "gross":8,
+                            "value":300,
+                            "fob":12,
+                            "freight":8,
+                            "cf":5
+                        },
+                        {
+                            "name": "Television",
+                            "quantity": 30,
+                            "hscode": 344726,
+                            "weight":30,
+                            "gross":7,
+                            "value":200,
+                            "fob":18,
+                            "freight":13,
+                            "cf":5
+                        },
+                        {
+                            "name": "Microwave",
+                            "quantity": 20,
+                            "hscode": 748456,
+                            "weight":10,
+                            "gross":10,
+                            "value":100,
+                            "fob":10,
+                            "freight":9,
+                            "cf":5
+                        }
+                    ]
+                }
 
             },
 
@@ -852,7 +943,52 @@ export class AppdataProvider {
                 "agent": "NBC Skye",
                 "date": "24/02/18",
                 "item":"UPS",
-                "qty":"100"
+                "qty":"100",
+                "good": {
+                    "totalQuantity": 100,
+                    "expectedItems":3,
+                    "totalNetweight": 60,
+                    "totalGrossweight":25,
+                    "totalValue":500,
+                    "totalFOB":40,
+                    "totalFreight":30,
+                    "totalcf":15,
+                    "items": [
+                        {
+                            "name": "Radio",
+                            "quantity": 50,
+                            "hscode": 123426,
+                            "weight":20,
+                            "gross":8,
+                            "value":300,
+                            "fob":12,
+                            "freight":8,
+                            "cf":5
+                        },
+                        {
+                            "name": "Television",
+                            "quantity": 30,
+                            "hscode": 344726,
+                            "weight":30,
+                            "gross":7,
+                            "value":200,
+                            "fob":18,
+                            "freight":13,
+                            "cf":5
+                        },
+                        {
+                            "name": "Microwave",
+                            "quantity": 20,
+                            "hscode": 748456,
+                            "weight":10,
+                            "gross":10,
+                            "value":100,
+                            "fob":10,
+                            "freight":9,
+                            "cf":5
+                        }
+                    ]
+                }
 
             },
 
@@ -934,7 +1070,52 @@ export class AppdataProvider {
                 "agent": "NBC Skye",
                 "date": "23/02/18",
                 "item":"Microwave",
-                "qty":"250"
+                "qty":"250",
+                "good": {
+                    "totalQuantity": 100,
+                    "expectedItems":3,
+                    "totalNetweight": 60,
+                    "totalGrossweight":25,
+                    "totalValue":500,
+                    "totalFOB":40,
+                    "totalFreight":30,
+                    "totalcf":15,
+                    "items": [
+                        {
+                            "name": "Radio",
+                            "quantity": 50,
+                            "hscode": 123426,
+                            "weight":20,
+                            "gross":8,
+                            "value":300,
+                            "fob":12,
+                            "freight":8,
+                            "cf":5
+                        },
+                        {
+                            "name": "Television",
+                            "quantity": 30,
+                            "hscode": 344726,
+                            "weight":30,
+                            "gross":7,
+                            "value":200,
+                            "fob":18,
+                            "freight":13,
+                            "cf":5
+                        },
+                        {
+                            "name": "Microwave",
+                            "quantity": 20,
+                            "hscode": 748456,
+                            "weight":10,
+                            "gross":10,
+                            "value":100,
+                            "fob":10,
+                            "freight":9,
+                            "cf":5
+                        }
+                    ]
+                }
 
             },
             {
@@ -1015,7 +1196,52 @@ export class AppdataProvider {
                 "agent": "NBC Skye",
                 "date": "22/02/18",
                 "item":"HP",
-                "qty":"50"
+                "qty":"50",
+                "good": {
+                    "totalQuantity": 100,
+                    "expectedItems":3,
+                    "totalNetweight": 60,
+                    "totalGrossweight":25,
+                    "totalValue":500,
+                    "totalFOB":40,
+                    "totalFreight":30,
+                    "totalcf":15,
+                    "items": [
+                        {
+                            "name": "Radio",
+                            "quantity": 50,
+                            "hscode": 123426,
+                            "weight":20,
+                            "gross":8,
+                            "value":300,
+                            "fob":12,
+                            "freight":8,
+                            "cf":5
+                        },
+                        {
+                            "name": "Television",
+                            "quantity": 30,
+                            "hscode": 344726,
+                            "weight":30,
+                            "gross":7,
+                            "value":200,
+                            "fob":18,
+                            "freight":13,
+                            "cf":5
+                        },
+                        {
+                            "name": "Microwave",
+                            "quantity": 20,
+                            "hscode": 748456,
+                            "weight":10,
+                            "gross":10,
+                            "value":100,
+                            "fob":10,
+                            "freight":9,
+                            "cf":5
+                        }
+                    ]
+                }
 
             },
 
@@ -1097,7 +1323,52 @@ export class AppdataProvider {
                 "agent": "NBC Skye",
                 "date": "21/02/18",
                 "item":"Dell",
-                "qty":"350"
+                "qty":"350",
+                "good": {
+                    "totalQuantity": 100,
+                    "expectedItems":3,
+                    "totalNetweight": 60,
+                    "totalGrossweight":25,
+                    "totalValue":500,
+                    "totalFOB":40,
+                    "totalFreight":30,
+                    "totalcf":15, 
+                    "items": [
+                        {
+                            "name": "Radio",
+                            "quantity": 50,
+                            "hscode": 123426,
+                            "weight":20,
+                            "gross":8,
+                            "value":300,
+                            "fob":12,
+                            "freight":8,
+                            "cf":5
+                        },
+                        {
+                            "name": "Television",
+                            "quantity": 30,
+                            "hscode": 344726,
+                            "weight":30,
+                            "gross":7,
+                            "value":200,
+                            "fob":18,
+                            "freight":13,
+                            "cf":5
+                        },
+                        {
+                            "name": "Microwave",
+                            "quantity": 20,
+                            "hscode": 748456,
+                            "weight":10,
+                            "gross":10,
+                            "value":100,
+                            "fob":10,
+                            "freight":9,
+                            "cf":5
+                        }
+                    ]
+                }
 
             }
 

@@ -23,7 +23,7 @@ export class FormnxpPage {
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad() { 
     this.FormArray = this.appdata.getInfo();
   }
 
@@ -61,6 +61,7 @@ export class FormnxpPage {
   }
 
   popover(ev, a) {
+    console.log(a);
     let pop = this.verify.miscPopOver('PopoverPage', ev);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {

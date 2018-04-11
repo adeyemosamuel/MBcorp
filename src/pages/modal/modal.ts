@@ -11,11 +11,9 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-  selectedItem2: any;
+  Mikilo: any=[];
+  docType: any='';
   selectedItem: any;
-  mamayo:any=[];
-   
-
 
   constructor(public navCtrl: NavController,
     public viewCtrl: ViewController,
@@ -24,9 +22,10 @@ export class ModalPage {
   }
 
   ionViewDidLoad() {
-    this.selectedItem2 = this.navParams.get('selectedItem');
-    this.mamayo= this.appdata.getInfo();
-
+    this.Mikilo = this.navParams.get('selectedItem');
+    this.docType=this.navParams.get('docType');
+    console.log(this.Mikilo);
+    console.log(this.docType);
   } 
 
   selectCancel() {
@@ -36,5 +35,7 @@ export class ModalPage {
   isReadonly() {
     return this.isReadonly;   //return true/false 
   } 
+
+
 
 }

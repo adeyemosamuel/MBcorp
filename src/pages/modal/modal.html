@@ -1,6 +1,3 @@
-
-
-
 <ion-content>
   <ion-header>
 
@@ -15,15 +12,21 @@
         </button>
       </ion-buttons>
     </ion-navbar>
-  
+
   </ion-header>
   <div class="miracle">
     <ion-list>
-      <ion-item *ngFor="let m of mamayo" no-lines>
-        <p>Item:{{m.item}}</p>
-        <p>HS Code:{{m.hs}}</p>
-        <p>Quantity:{{m.qty}}</p> 
-      </ion-item> 
+      <ion-item *ngFor="let m of Mikilo" no-lines>
+        <p>Item:{{m.name}}</p>
+        <p>HS Code:{{m.hscode}}</p>
+        <p *ngIf="docType==='quantity'">Quantity:{{m.quantity}}</p>
+        <p *ngIf="docType==='weight'">Net Weight/Mass(Kg):{{m.weight}}</p>
+        <p *ngIf="docType==='gross'">Gross Weight/Mass(Kg):{{m.gross}}</p>
+        <p *ngIf="docType==='value'">Value of Goods:{{m.value}}</p>
+        <p *ngIf="docType==='value'">Value FOB:{{m.value}}</p>
+        <p *ngIf="docType==='freight'">Freight Charge:{{m.freight}}</p>
+        <p *ngIf="docType==='cf'">C & F Value:{{m.cf}}</p>
+      </ion-item>
     </ion-list>
 
   </div>

@@ -1,0 +1,43 @@
+{
+    "goods": {
+        "totalQuantity": 100,
+        "expectedItems":3
+        "totalNetweight": 60,
+        "totalGrossweight":25,
+        "totalValue":500,
+        "totalFOB":40,
+        "totalFreight":30,
+        "items": [
+            {
+                "name": "Radio",
+                "quantity": 50,
+                "hscode": 123426,
+                "weight":20,
+                "gross":8,
+                "value":300,
+                "fob":12,
+                "freight":8
+            },
+            {
+                "name": "Television",
+                "quantity": 30,
+                "hscode": 344726,
+                "weight":30,
+                "gross":7,
+                "value":200,
+                "fob":18,
+                "freight":13
+            },
+            {
+                "name": "Microwave",
+                "quantity": 20,
+                "hscode": 748456,
+                "weight":10,
+                "gross":10,
+                "value":100,
+                "fob":10,
+                "freight":9
+            }
+        ]
+    }
+}
