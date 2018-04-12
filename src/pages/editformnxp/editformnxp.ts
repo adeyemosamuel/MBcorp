@@ -101,12 +101,12 @@ export class EditformnxpPage {
       selectedItem: selectedItem.good.items,
       docType: doctype
     });
-    modal.present();
+    modal.present(); 
   }
 
   details(selectedItem){
     this.navCtrl.push('NxpdetailsPage', {
-      selectedItem:selectedItem
+      selectedItem:selectedItem.good.items,
     });
   }
 

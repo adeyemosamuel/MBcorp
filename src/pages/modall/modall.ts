@@ -8,7 +8,7 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
   templateUrl: 'modall.html',
 })
 export class ModallPage {
-  selectedItem2: any;
+  docType: any='';
   selectedItem: any;
   mamayo:any=[];
 
@@ -19,8 +19,8 @@ export class ModallPage {
   }
 
   ionViewDidLoad() {
-    this.selectedItem2 = this.navParams.get('selectedItem');
-    this.mamayo= this.appdata.getInfo();
+    this.mamayo = this.navParams.get('selectedItem');
+    this.docType=this.navParams.get('docType');
 
   }
 

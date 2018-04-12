@@ -18,9 +18,9 @@
     <div class="miracle">
       <ion-list>
         <ion-item *ngFor="let m of mamayo" no-lines>
-          <p>Item:{{m.item}}</p>
-          <p>HS Code:{{m.hs}}</p>
-          <p>Quantity:{{m.qty}}</p> 
+          <p *ngIf="docType==='expectedItems'">Number of Items:{{m.expectedItems}}</p>
+          <p *ngIf="docType==='fob'">Value FOB:{{m.fob}}</p>
+          <p *ngIf="docType==='freight'">Freight Charge:{{m.freight}}</p> 
         </ion-item>
       </ion-list>
   

@@ -53,9 +53,10 @@ export class ViewformmPage {
     return this.isReadonly;   //return true/false 
   }
 
-  itemTapped(selectedItem){
+  itemTapped(selectedItem, doctype){
     let modal = this.modalCtrl.create('ModallPage', {
-      selectedItem:this.selectedItem
+      selectedItem:selectedItem.good.items,
+      docType: doctype
     });
     modal.present();
   }

@@ -25,7 +25,7 @@ export class ModalPage {
     this.Mikilo = this.navParams.get('selectedItem');
     this.docType=this.navParams.get('docType');
     console.log(this.Mikilo);
-    console.log(this.docType);
+    console.log(this.docType); 
   } 
 
   selectCancel() {

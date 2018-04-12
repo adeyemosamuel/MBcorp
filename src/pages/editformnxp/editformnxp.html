@@ -253,7 +253,7 @@
             <ion-select class="Select" [ngModel]="selectedItem?.shipment" (ngModelChange)="selectedItem.shipment= $event">
               <ion-option class="option" [value]="s.shipment" *ngFor="let s of shipmentData">{{s.shipment}}</ion-option>
             </ion-select> 
-          </ion-item>
+          </ion-item> 
   
           <ion-item no-lines>
             <ion-label stacked>Proforma Inv. No.</ion-label>
