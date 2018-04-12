@@ -189,35 +189,35 @@
       <ion-list>
         <ion-item no-lines class="text-area">
           <ion-label stacked>General Description of Goods</ion-label>
-          <ion-textarea [ngModel]="selectedItem?.description" (ngModelChange)="selectedItem.description= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
+          <ion-textarea [readonly]="isReadonly()" [ngModel]="selectedItem?.description" (ngModelChange)="selectedItem.description= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Gross Weight/Mass(kg)</ion-label>
-          <ion-input [ngModel]="selectedItem?.gross" (ngModelChange)="selectedItem.gross= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.gross" (ngModelChange)="selectedItem.gross= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Net Weight/Mass(kg)</ion-label>
-          <ion-input [ngModel]="selectedItem?.weight" (ngModelChange)="selectedItem.weight= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.weight" (ngModelChange)="selectedItem.weight= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Number of Items</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.expectedItems" (ngModelChange)="selectedItem.good.expectedItems= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.good.expectedItems" (ngModelChange)="selectedItem.good.expectedItems= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'expectedItems')"></i>
         </ion-item>
 
 
         <ion-item no-lines>
           <ion-label stacked>Total FOB Value</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalFOB" (ngModelChange)="selectedItem.good.totalFOB= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.good.totalFOB" (ngModelChange)="selectedItem.good.totalFOB= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'fob')"></i>
         </ion-item>
  
         <ion-item no-lines>
           <ion-label stacked>Total Freight Charges</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalFreight" (ngModelChange)="selectedItem.good.totalFreight= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.good.totalFreight" (ngModelChange)="selectedItem.good.totalFreight= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'freight')"></i>
         </ion-item>
       </ion-list>

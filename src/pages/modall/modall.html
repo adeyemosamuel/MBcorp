@@ -18,6 +18,8 @@
     <div class="miracle">
       <ion-list>
         <ion-item *ngFor="let m of mamayo" no-lines>
+            <p>Item:{{m.name}}</p>
+            <p>HS Code:{{m.hscode}}</p>
           <p *ngIf="docType==='expectedItems'">Number of Items:{{m.expectedItems}}</p>
           <p *ngIf="docType==='fob'">Value FOB:{{m.fob}}</p>
           <p *ngIf="docType==='freight'">Freight Charge:{{m.freight}}</p> 
