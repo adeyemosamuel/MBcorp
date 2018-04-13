@@ -709,7 +709,14 @@ export class AppdataProvider {
                             "value":300,
                             "fob":12,
                             "freight":8,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Television",
@@ -720,7 +727,14 @@ export class AppdataProvider {
                             "value":200,
                             "fob":18,
                             "freight":13,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Microwave",
@@ -731,7 +745,14 @@ export class AppdataProvider {
                             "value":100,
                             "fob":10,
                             "freight":9,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         }
                     ]
                 }
@@ -836,7 +857,14 @@ export class AppdataProvider {
                             "value":300,
                             "fob":12,
                             "freight":8,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Television",
@@ -847,7 +875,14 @@ export class AppdataProvider {
                             "value":200,
                             "fob":18,
                             "freight":13,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Microwave",
@@ -858,7 +893,14 @@ export class AppdataProvider {
                             "value":100,
                             "fob":10,
                             "freight":9,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         }
                     ]
                 }
@@ -963,7 +1005,14 @@ export class AppdataProvider {
                             "value":300,
                             "fob":12,
                             "freight":8,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Television",
@@ -974,7 +1023,14 @@ export class AppdataProvider {
                             "value":200,
                             "fob":18,
                             "freight":13,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Microwave",
@@ -985,7 +1041,14 @@ export class AppdataProvider {
                             "value":100,
                             "fob":10,
                             "freight":9,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         }
                     ]
                 }
@@ -1090,7 +1153,14 @@ export class AppdataProvider {
                             "value":300,
                             "fob":12,
                             "freight":8,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Television",
@@ -1101,7 +1171,14 @@ export class AppdataProvider {
                             "value":200,
                             "fob":18,
                             "freight":13,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Microwave",
@@ -1112,7 +1189,14 @@ export class AppdataProvider {
                             "value":100,
                             "fob":10,
                             "freight":9,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         }
                     ]
                 }
@@ -1216,7 +1300,14 @@ export class AppdataProvider {
                             "value":300,
                             "fob":12,
                             "freight":8,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Television",
@@ -1227,7 +1318,14 @@ export class AppdataProvider {
                             "value":200,
                             "fob":18,
                             "freight":13,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Microwave",
@@ -1238,7 +1336,14 @@ export class AppdataProvider {
                             "value":100,
                             "fob":10,
                             "freight":9,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         }
                     ]
                 }
@@ -1343,7 +1448,14 @@ export class AppdataProvider {
                             "value":300,
                             "fob":12,
                             "freight":8,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Television",
@@ -1354,7 +1466,14 @@ export class AppdataProvider {
                             "value":200,
                             "fob":18,
                             "freight":13,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         },
                         {
                             "name": "Microwave",
@@ -1365,7 +1484,14 @@ export class AppdataProvider {
                             "value":100,
                             "fob":10,
                             "freight":9,
-                            "cf":5
+                            "cf":5,
+                            "formnumber":7653247326532,
+                            "created":13/4/2018,
+                            "description":"50 Containers of 42 inches Hi-sense TV",
+                            "beneficiary":"Agbalaya Razaq",
+                            "allocation":"No idea",
+                            "utilization":"Null",
+                            "status":"Approved" 
                         }
                     ]
                 }

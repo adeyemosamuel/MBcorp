@@ -61,5 +61,11 @@ export class ViewformmPage {
     modal.present();
   }
 
+  details(selectedItem){
+    this.navCtrl.push('MdetailsPage', {
+      selectedItem:selectedItem.good.items,
+    });
+  }
+
 
 }
