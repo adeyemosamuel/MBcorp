@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">IMPORT LC</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="lc" padding>
+    <ion-item-group>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>
+            Select Form M
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="formnumber">
+            <ion-option class="option" [value]="m.formnumber" *ngFor="let m of mformsData">{{m.formnumber}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Currency
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="money">
+            <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Enter LC Amount
+          </ion-label>
+          <ion-input [ngModel]="amount" type="number"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </ion-item-group>
+  </div>
+
+  <div class="button" padding>
+    <button ion-button full color="fcmb">VALIDATE</button>
+  </div>
+</ion-content>
