@@ -49,6 +49,17 @@ export class AddformnxpPage {
   gross: any;
   goods: any;
   freight: any;
+  hsc: any;
+  describe: any;
+  sectorial: any;
+  unit: any;
+  FOB: any;
+  charges: any;
+  price: any;
+  quantity2: any;
+  mode: any;
+  net: any;
+  gweight: any;
   stateData: any = [];
   countryData: any = [];
   cityData: any = [];
@@ -138,8 +149,8 @@ export class AddformnxpPage {
     return this.isReadonly;   //return true/false 
   }
 
-  details(){
-   this.itemDetails= !this.itemDetails;
+  details() {
+    this.itemDetails = !this.itemDetails;
   }
 
 }

@@ -348,10 +348,11 @@
 
       <div>
         <button *ngIf="!itemDetails" color="fcmb" ion-button item-end (click)="details()">Add Item Details</button>
+        <button *ngIf="itemDetails" color="fcmb" ion-button item-end (click)="details()">Add Item Details</button>
       </div>
 
       <div *ngIf="itemDetails" padding>
-        <ion-list>
+      
           <ion-item no-lines>
             <ion-label stacked>HS Code</ion-label>
             <ion-input [(ngModel)]="hsc" type="number"></ion-input>
@@ -366,7 +367,6 @@
             <ion-label stacked>Sectorial Purpose</ion-label>
             <ion-input [(ngModel)]="sectorial" type="text"></ion-input>
           </ion-item>
-        </ion-list>
 
         <ion-item no-lines>
           <ion-label stacked>Unit of Measure</ion-label>
@@ -405,7 +405,7 @@
 
         <ion-item no-lines>
           <ion-label stacked>Gross Weight</ion-label>
-          <ion-input [(ngModel)]="gweight" type="number"></ion-input>
+          <ion-input [(ngModel)]="gweight" type="number"></ion-input> 
         </ion-item>
 
       </div>
@@ -418,7 +418,7 @@
       <i *ngIf="hideButton7" class="fas fa-angle-up" item-end></i>
     </ion-item-divider>
 
-    <div *ngIf="hideButton4" padding>
+    <div *ngIf="hideButton7" padding>
       <ion-list>
         <ion-item no-lines class="file">
 
@@ -438,7 +438,7 @@
       <i *ngIf="hideButton8" class="fas fa-angle-up" item-end></i>
     </ion-item-divider>
 
-    <div *ngIf="hideButton6" padding>
+    <div *ngIf="hideButton8" padding>
       <p style="white-space:normal">I hereby declare that the above written particulars are true to the best of my knowledge and belief
         <a color="fcmb">Read more...</a>
       </p>
