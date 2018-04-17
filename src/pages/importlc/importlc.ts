@@ -22,7 +22,11 @@ export class ImportlcPage {
 
   ionViewDidLoad() {
     this.mformsData = this.appdata.getInfo();
-    this.moneyData=this.appdata.getInfo();
+    this.moneyData=this.appdata.getMoney2(); 
+  }
+
+  validate(){
+    this.navCtrl.push('LcPage');
   }
 
 }
