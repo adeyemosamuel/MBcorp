@@ -33,8 +33,8 @@ export class AddformsPage {
     this.navCtrl.push('FormmPage');
   }
 
-  lc(){
-    this.navCtrl.push('LcPage');
+  importlc(){
+    this.navCtrl.push('ImportlcPage');
   }
 
 }

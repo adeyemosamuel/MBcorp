@@ -62,6 +62,7 @@ export class AddformnxpPage {
   dischargeData: any = [];
   shipmentData: any = [];
   viewButton: boolean = false;
+  itemDetails: boolean = false;
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
@@ -135,6 +136,10 @@ export class AddformnxpPage {
 
   isReadonly() {
     return this.isReadonly;   //return true/false 
+  }
+
+  details(){
+   this.itemDetails= !this.itemDetails;
   }
 
 }

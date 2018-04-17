@@ -344,11 +344,71 @@
           <ion-input [(ngModel)]="cf" type="number"></ion-input>
         </ion-item>
 
-        <div>
-          <button color="fcmb" ion-button item-end (click)="details()">Add Item Details</button>
-        </div>
       </ion-list>
 
+      <div>
+        <button *ngIf="!itemDetails" color="fcmb" ion-button item-end (click)="details()">Add Item Details</button>
+      </div>
+
+      <div *ngIf="itemDetails" padding>
+        <ion-list>
+          <ion-item no-lines>
+            <ion-label stacked>HS Code</ion-label>
+            <ion-input [(ngModel)]="hsc" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label stacked>Description of Goods</ion-label>
+            <ion-input [(ngModel)]="describe" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label stacked>Sectorial Purpose</ion-label>
+            <ion-input [(ngModel)]="sectorial" type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-item no-lines>
+          <ion-label stacked>Unit of Measure</ion-label>
+          <ion-input [(ngModel)]="unit" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>FOB</ion-label>
+          <ion-input [(ngModel)]="FOB" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Freight Charges</ion-label>
+          <ion-input [(ngModel)]="charges" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Unit Price</ion-label>
+          <ion-input [(ngModel)]="price" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Quantity</ion-label>
+          <ion-input [(ngModel)]="quantity2" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Mode of Packaging</ion-label>
+          <ion-input [(ngModel)]="mode" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Net Weight</ion-label>
+          <ion-input [(ngModel)]="net" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Gross Weight</ion-label>
+          <ion-input [(ngModel)]="gweight" type="number"></ion-input>
+        </ion-item>
+
+      </div>
     </div>
 
 
