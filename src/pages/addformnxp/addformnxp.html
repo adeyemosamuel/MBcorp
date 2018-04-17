@@ -325,25 +325,28 @@
         </ion-item>
 
         <ion-item no-lines>
-            <ion-label stacked>Total Value of Goods in Foreign Currency*</ion-label>
-            <ion-input [(ngModel)]="goods" type="number"></ion-input>
-          </ion-item>
+          <ion-label stacked>Total Value of Goods in Foreign Currency*</ion-label>
+          <ion-input [(ngModel)]="goods" type="number"></ion-input>
+        </ion-item>
 
-          <ion-item no-lines>
-              <ion-label stacked>Total Value FOB*</ion-label>
-              <ion-input [(ngModel)]="fob" type="number"></ion-input>
-            </ion-item>
+        <ion-item no-lines>
+          <ion-label stacked>Total Value FOB*</ion-label>
+          <ion-input [(ngModel)]="fob" type="number"></ion-input>
+        </ion-item>
 
-            <ion-item no-lines>
-                <ion-label stacked>Total Freight Charges*</ion-label>
-                <ion-input [(ngModel)]="freight" type="number"></ion-input>
-              </ion-item>
+        <ion-item no-lines>
+          <ion-label stacked>Total Freight Charges*</ion-label>
+          <ion-input [(ngModel)]="freight" type="number"></ion-input>
+        </ion-item>
 
-              <ion-item no-lines>
-                  <ion-label stacked>Total C & F Value*</ion-label>
-                  <ion-input [(ngModel)]="cf" type="number"></ion-input>
-                </ion-item>
+        <ion-item no-lines>
+          <ion-label stacked>Total C & F Value*</ion-label>
+          <ion-input [(ngModel)]="cf" type="number"></ion-input>
+        </ion-item>
 
+        <div>
+          <button color="fcmb" ion-button item-end (click)="details()">Add Item Details</button>
+        </div>
       </ion-list>
 
     </div>
@@ -377,7 +380,7 @@
 
     <div *ngIf="hideButton6" padding>
       <p style="white-space:normal">I hereby declare that the above written particulars are true to the best of my knowledge and belief
-        <a color="fcmb">Read more...</a> 
+        <a color="fcmb">Read more...</a>
       </p>
       <ion-list>
         <ion-grid>
