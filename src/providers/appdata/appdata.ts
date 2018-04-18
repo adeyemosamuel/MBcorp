@@ -33,11 +33,19 @@ export class AppdataProvider {
 
     getMoney2(): any {
         let data = [
-            { "money": "$" },
-            { "money": "£" },
-            { "money": "€" },
-            { "money": "¥" },
-            { "money": "₦" }
+            { "money": "USD" },
+            { "money": "GBP" },
+            { "money": "EUR" },
+            { "money": "CNY" },
+            { "money": "NGN" }
+        ];
+        return data;
+    }
+
+    getLC():any{
+        let data=[
+            {"lctype":"Import"},
+            {"lctype":"Export"}
         ];
         return data;
     }
@@ -118,13 +126,23 @@ export class AppdataProvider {
         return data;
     }
 
+
+    getTenor():any{
+        let data= [
+            {"tenor":"Deferred"},
+            {"tenor":"Sight"},
+            {"tenor":"Usance"},
+        ];
+        return data;
+    }
+
     getCurrency(): any {
         let data = [
             { "currency": "USD" },
-            { "currency": "Naira" },
-            { "currency": "Euro" },
-            { "currency": "Pounds" },
-            { "currency": "Yuan" }
+            { "currency": "NGN" },
+            { "currency": "EUR" },
+            { "currency": "GBP" },
+            { "currency": "CNY" }
         ];
         return data;
     }

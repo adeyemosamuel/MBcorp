@@ -17,16 +17,16 @@
           <ion-label stacked>
             Select Form M
           </ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="formnumber">
-            <ion-option class="option" [value]="m.formnumber" *ngFor="let m of mformsData">{{m.formnumber}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="formnumber">
+            <ion-option class="option" [value]="a.formnumber" *ngFor="let a of mformsData">{{a.formnumber}}</ion-option>
           </ion-select>
         </ion-item>
-
+ 
         <ion-item no-lines>
           <ion-label stacked>
             Currency
           </ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="money">
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="money">
             <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
           </ion-select>
         </ion-item>
@@ -35,7 +35,7 @@
           <ion-label stacked>
             Enter LC Amount
           </ion-label>
-          <ion-input [ngModel]="amount" type="number"></ion-input>
+          <ion-input [(ngModel)]="lc" type="number"></ion-input>
         </ion-item>
 
       </ion-list>

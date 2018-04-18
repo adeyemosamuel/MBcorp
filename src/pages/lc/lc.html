@@ -1,18 +1,201 @@
-<!--
-  Generated template for the LcPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>lc</ion-title>
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">IMPORT LC</span>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-item-group>
+    <ion-item-divider (click)="mikilo()">
+      <span>GENERAL DETAILS</span>
+      <i *ngIf="!hideButton" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Form Number*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="selectedItem" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Type of LC*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="lctype">
+            <ion-option class="option" [value]="l.lctype" *ngFor="let l of lctypeData">{{l.lctype}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Utilized Amount*</ion-label>
+          <ion-input [(ngModel)]="utilized" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Form M Available Amount*</ion-label>
+          <ion-input [(ngModel)]="available" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>LC Amount*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="lcAmount" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            LC Currency*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="money">
+            <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Account For Transaction*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="account">
+            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Account To Charge*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge">
+            <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo2()">
+      <span>BENEFICIARY DETAILS</span>
+      <i *ngIf="!hideButton2" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton2" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton2" padding>
+      <ion-list>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Name*</ion-label>
+          <ion-input [(ngModel)]="bname" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Address*</ion-label>
+          <ion-input [(ngModel)]="baddress" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Town*</ion-label>
+          <ion-input [(ngModel)]="btown" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Country*</ion-label>
+          <ion-input [(ngModel)]="bcountry" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary State*</ion-label>
+          <ion-input [(ngModel)]="bstate" type="text"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo3()">
+      <span>BENEFICIARY DETAILS</span>
+      <i *ngIf="!hideButton3" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton3" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton3" padding>
+
+      <ion-list radio-group>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Transferable?*</ion-label>
+          <ion-radio checked="true" value="transferable"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Resolving?*</ion-label>
+          <ion-radio value="resolving"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Revokable?*</ion-label>
+          <ion-radio value="revokable"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Irrevokable?*</ion-label>
+          <ion-radio value="irrevokable"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Stand By?*</ion-label>
+          <ion-radio value="stand"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Back to Back?*</ion-label>
+          <ion-radio value="back"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Red Letter*</ion-label>
+          <ion-radio value="red"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Deferred*</ion-label>
+          <ion-radio value="deferred"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <div>
+        <ion-list>
+          <ion-item no-lines>
+            <ion-label stacked>
+              LC Payment Tenor*
+            </ion-label>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="tenor">
+              <ion-option class="option" [value]="t.tenor" *ngFor="let t of tenorData">{{t.tenor}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="tenor=='Usance'" no-lines>
+            <ion-label stacked>Usance Period</ion-label>
+            <ion-input [(ngModel)]="usance" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label stacked>
+              LC Valid Country
+            </ion-label>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="country">
+              <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    </div>
+
+
+
+  </ion-item-group>
 
 </ion-content>

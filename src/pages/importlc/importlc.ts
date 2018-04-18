@@ -9,6 +9,8 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
   templateUrl: 'importlc.html',
 })
 export class ImportlcPage {
+  a:any;
+  lc:any;
   formnumber: any;
   money:any;
   amount:any;
@@ -19,14 +21,19 @@ export class ImportlcPage {
     private appdata: AppdataProvider,
     public navParams: NavParams) {
   }
-
+ 
   ionViewDidLoad() {
     this.mformsData = this.appdata.getInfo();
     this.moneyData=this.appdata.getMoney2(); 
   }
 
   validate(){
-    this.navCtrl.push('LcPage');
+    console.log(this.formnumber),
+    console.log(this.lc),
+    this.navCtrl.push('LcPage',{
+      a:this.formnumber,
+      lc:this.lc
+    });
   }
 
 }
