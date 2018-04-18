@@ -48,6 +48,9 @@ export class LcPage {
     console.log(this.selectedItem);
     console.log(this.lcAmount);
     this.lctypeData=this.appdata.getLC();
+    if (this.selectedItem) {
+      this.hideButton = !this.hideButton
+    }
   }
 
   mikilo() {

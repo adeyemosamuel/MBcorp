@@ -116,7 +116,7 @@
     </div>
 
     <ion-item-divider (click)="mikilo3()">
-      <span>BENEFICIARY DETAILS</span>
+      <span>LC DETAILS</span>
       <i *ngIf="!hideButton3" class="fas fa-angle-down" item-end></i>
       <i *ngIf="hideButton3" class="fas fa-angle-up" item-end></i>
     </ion-item-divider>
@@ -182,19 +182,103 @@
           </ion-item>
 
           <ion-item no-lines>
-            <ion-label stacked>
-              LC Valid Country
-            </ion-label>
-            <ion-select interface="action-sheet" class="Select" [(ngModel)]="country">
-              <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
-            </ion-select>
-          </ion-item>
+              <ion-label stacked>
+                LC Valid Country
+              </ion-label>
+              <ion-select interface="action-sheet" class="Select" [(ngModel)]="country">
+                <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+              </ion-select>
+            </ion-item>
+
         </ion-list>
       </div>
 
     </div>
 
+    <ion-item-divider (click)="mikilo4()">
+      <span>GOODS & SHIPMENT</span>
+      <i *ngIf="!hideButton4" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton4" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
 
+    <div *ngIf="hideButton4" padding>
+      <ion-list radio-group>
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Part Shipment?*</ion-label>
+          <ion-radio checked="true" value="part"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Transhipment?*</ion-label>
+          <ion-radio value="transhipment"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Util By Bill?*</ion-label>
+          <ion-radio value="bill"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio" no-lines>
+          <ion-label stacked>Util Without Bill?*</ion-label>
+          <ion-radio value="without"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <div>
+        <ion-list>
+          <ion-item no-lines>
+            <ion-label stacked>Last Shipment Date*</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="date"></ion-datetime>
+          </ion-item>
+
+
+          <ion-item no-lines>
+              <ion-label stacked>Port of Loading*</ion-label>
+              <ion-input [(ngModel)]="loading" type="text"></ion-input>
+            </ion-item>
+
+          <ion-item no-lines>
+              <ion-label stacked>
+                Origin of Goods*
+              </ion-label>
+              <ion-select interface="action-sheet" class="Select" [(ngModel)]="gorigin">
+                <ion-option class="option" [value]="g.gorigin" *ngFor="let g of originData">{{g.gorigin}}</ion-option>
+              </ion-select>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label stacked>Shipment Period*</ion-label>
+              <ion-input [(ngModel)]="period" type="text"></ion-input>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label stacked>
+                Shipment Terms*
+              </ion-label>
+              <ion-select interface="action-sheet" class="Select" [(ngModel)]="terms">
+                <ion-option class="option" [value]="t.terms" *ngFor="let t of termsData">{{t.terms}}</ion-option>
+              </ion-select>
+            </ion-item>
+  
+  
+            <ion-item no-lines>
+              <ion-label stacked>
+                Shipment Mode*
+              </ion-label>
+              <ion-select interface="action-sheet" class="Select" [(ngModel)]="mode">
+                <ion-option class="option" [value]="m.mode" *ngFor="let m of modeData">{{m.mode}}</ion-option>
+              </ion-select>
+            </ion-item>
+  
+            <ion-item no-lines>
+                <ion-label stacked>Port of Discharge*</ion-label>
+                <ion-input [(ngModel)]="discharge" type="text"></ion-input>
+              </ion-item>
+
+          
+        </ion-list>
+      </div>
+    </div>
 
   </ion-item-group>
 
