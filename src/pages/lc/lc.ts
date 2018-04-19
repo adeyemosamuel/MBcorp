@@ -31,6 +31,7 @@ export class LcPage {
   hideButton5: boolean = false;
   hideButton6: boolean = false;
   hideButton7: boolean = false;
+  hideButton8: boolean = false;
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
@@ -79,6 +80,10 @@ export class LcPage {
 
   mikilo7() {
     this.hideButton7 = !this.hideButton7;
+  }
+
+  mikilo8(){
+    this.hideButton8 = !this.hideButton8;
   }
 
 
