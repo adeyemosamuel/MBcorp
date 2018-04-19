@@ -182,13 +182,13 @@
           </ion-item>
 
           <ion-item no-lines>
-              <ion-label stacked>
-                LC Valid Country
-              </ion-label>
-              <ion-select interface="action-sheet" class="Select" [(ngModel)]="country">
-                <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
-              </ion-select>
-            </ion-item>
+            <ion-label stacked>
+              LC Valid Country
+            </ion-label>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="country">
+              <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+            </ion-select>
+          </ion-item>
 
         </ion-list>
       </div>
@@ -233,51 +233,244 @@
 
 
           <ion-item no-lines>
-              <ion-label stacked>Port of Loading*</ion-label>
-              <ion-input [(ngModel)]="loading" type="text"></ion-input>
-            </ion-item>
+            <ion-label stacked>Port of Loading*</ion-label>
+            <ion-input [(ngModel)]="loading" type="text"></ion-input>
+          </ion-item>
 
           <ion-item no-lines>
-              <ion-label stacked>
-                Origin of Goods*
-              </ion-label>
-              <ion-select interface="action-sheet" class="Select" [(ngModel)]="gorigin">
-                <ion-option class="option" [value]="g.gorigin" *ngFor="let g of originData">{{g.gorigin}}</ion-option>
-              </ion-select>
-            </ion-item>
-  
-            <ion-item no-lines>
-              <ion-label stacked>Shipment Period*</ion-label>
-              <ion-input [(ngModel)]="period" type="text"></ion-input>
-            </ion-item>
-  
-            <ion-item no-lines>
-              <ion-label stacked>
-                Shipment Terms*
-              </ion-label>
-              <ion-select interface="action-sheet" class="Select" [(ngModel)]="terms">
-                <ion-option class="option" [value]="t.terms" *ngFor="let t of termsData">{{t.terms}}</ion-option>
-              </ion-select>
-            </ion-item>
-  
-  
-            <ion-item no-lines>
-              <ion-label stacked>
-                Shipment Mode*
-              </ion-label>
-              <ion-select interface="action-sheet" class="Select" [(ngModel)]="mode">
-                <ion-option class="option" [value]="m.mode" *ngFor="let m of modeData">{{m.mode}}</ion-option>
-              </ion-select>
-            </ion-item>
-  
-            <ion-item no-lines>
-                <ion-label stacked>Port of Discharge*</ion-label>
-                <ion-input [(ngModel)]="discharge" type="text"></ion-input>
-              </ion-item>
+            <ion-label stacked>
+              Origin of Goods*
+            </ion-label>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="gorigin">
+              <ion-option class="option" [value]="g.gorigin" *ngFor="let g of originData">{{g.gorigin}}</ion-option>
+            </ion-select>
+          </ion-item>
 
-          
+          <ion-item no-lines>
+            <ion-label stacked>Shipment Period*</ion-label>
+            <ion-input [(ngModel)]="period" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label stacked>
+              Shipment Terms*
+            </ion-label>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="terms">
+              <ion-option class="option" [value]="t.terms" *ngFor="let t of termsData">{{t.terms}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+
+          <ion-item no-lines>
+            <ion-label stacked>
+              Shipment Mode*
+            </ion-label>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="mode">
+              <ion-option class="option" [value]="m.mode" *ngFor="let m of modeData">{{m.mode}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label stacked>Port of Discharge*</ion-label>
+            <ion-input [(ngModel)]="discharge" type="text"></ion-input>
+          </ion-item>
+
+
         </ion-list>
       </div>
+    </div>
+
+    <ion-item-divider (click)="mikilo5()">
+      <span>BANK DETAILS</span>
+      <i *ngIf="!hideButton5" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton5" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton5" padding>
+      <ion-list>
+        <span style="font-size:18px;">
+          <b>Beneficiary Bank Details</b>
+        </span>
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="bbank" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Address*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="bbaddress" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Swift Code*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="bbswift" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Branch*</ion-label>
+          <ion-input [(ngModel)]="bbbranch" type="text"></ion-input>
+        </ion-item>
+
+        <br>
+        <span style="font-size:18px;">
+          <b>Advising Through Bank Details</b>
+        </span>
+
+        <ion-item no-lines>
+          <ion-label stacked>Advising Through Bank Name</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="tbn" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Advising Through Bank Address</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="tba" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Advising Through Bank Branch</ion-label>
+          <ion-input [(ngModel)]="tbb" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Advising Through Swift Code</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="tsc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Advising Through Bank Code</ion-label>
+          <ion-input [(ngModel)]="tbc" type="text"></ion-input>
+        </ion-item>
+        <br>
+
+        <span style="font-size:18px;">
+          <b>Available with Bank Details</b>
+        </span>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Available By*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="available">
+            <ion-option class="option" [value]="a.available" *ngFor="let a of aData">{{a.available}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Available With Bank Name*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="wbn" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Available With Bank Addresss*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="wba" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Available With Bank Branch*</ion-label>
+          <ion-input [(ngModel)]="wbb" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Available With Bank Code*</ion-label>
+          <ion-input [(ngModel)]="wbc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Available With Swift Code*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="wsc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Available With Bank Identification*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="bid">
+            <ion-option class="option" [value]="b.bid" *ngFor="let b of bidData">{{b.bid}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+        <span style="font-size:18px;">
+          <b>Drawee Bank Details</b>
+        </span>
+
+        <ion-item no-lines>
+          <ion-label stacked>Drawee Bank Name*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="dbn" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Drawee Bank Address*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="dba" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Drawee Bank Swift Code*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="dbsc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Drawee Bank Branch*</ion-label>
+          <ion-input [(ngModel)]="dbb" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Drawee Bank Country*</ion-label>
+          <ion-input [(ngModel)]="dbc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Drawee Bank Postal Code*</ion-label>
+          <ion-input [(ngModel)]="dbpc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>
+            Drawee Bank Identification*
+          </ion-label>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="dbid">
+            <ion-option class="option" [value]="d.dbid" *ngFor="let d of dbidData">{{d.dbid}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+        <span style="font-size:18px;">
+          <b>Issuing Bank Details</b>
+        </span>
+
+        <ion-item no-lines>
+          <ion-label stacked>Issuing Bank</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="issb" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Issuing Bank Address</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="issba" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Issuing Bank Branch*</ion-label>
+          <ion-input [(ngModel)]="issbb" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Issuing Bank Code*</ion-label>
+          <ion-input [(ngModel)]="issbc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Issuing Bank Swift Code*</ion-label>
+          <ion-input [readonly]="isReadonly()" [(ngModel)]="issbsc" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Issuing Bank Country*</ion-label>
+          <ion-input [(ngModel)]="issbbc" type="text"></ion-input>
+        </ion-item>
+
+
+      </ion-list>
     </div>
 
   </ion-item-group>
