@@ -1,0 +1,89 @@
+page-lcexport {
+    background-color: #ffffff;
+
+
+    .p {
+        white-space: normal !important;
+    }
+
+    h2 {
+        font-weight: bold !important;
+    }
+
+    .main-content {
+        height: 100%;
+      } 
+
+      [text-color="my-custom-color"] {
+        color: #ffb822;
+    } 
+
+    [text-color="my-custom-color2"] {
+        color: #5c2684;
+    } 
+ 
+    // ion-item-sliding {
+    //     border-bottom: 8px solid map-get($colors, light) !important;
+    //     height: 100px !important;
+
+        ion-item{
+            border-bottom: 8px solid map-get($colors, light) !important;
+            background-color: map-get($colors, lighter) !important;
+            height: 100% !important;
+        // }
+
+        button {
+            font-weight: bold !important;
+            text-transform: capitalize !important;
+        }
+    }
+
+    ion-item:first-child {
+        border-top: 8px solid map-get($colors, light) !important;
+    }
+
+    // ion-item-options {
+    //     border-bottom: 8px solid map-get($colors, light) !important;
+    //     height: 100px !important;
+    // }
+
+    ion-item:last-child {
+        border-bottom: none !important;
+        
+        // ion-item-options {
+        //     border-bottom: none !important;
+        // }
+    }
+
+
+        ion-fab{
+            i{
+                font-size: 20px !important;
+                color: white !important;
+            }
+        }
+
+        i {
+            font-size: 20px !important;
+            color: map-get($colors, fcmb);
+        }
+           
+    
+            button {
+                font-weight: bold !important;
+                text-transform: capitalize !important;
+            }
+ 
+    // .Approved{
+    //     border-top: 1px solid green;
+    // }
+
+    // .Submitted{
+    //     border-top: 1px solid orange;
+    // }
+
+    // .Saved{
+    //     border-top: 1px solid grey;
+    // }
+
+}

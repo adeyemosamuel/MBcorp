@@ -30,11 +30,15 @@ export class AddformsPage {
   }
 
   formm(){
-    this.navCtrl.push('FormmPage');
+    this.navCtrl.push('FormmPage'); 
+  }
+ 
+  importlc(){
+    this.navCtrl.push('LcimportPage');
   }
 
-  importlc(){
-    this.navCtrl.push('ImportlcPage');
+  exportlc(){
+    this.navCtrl.push('LcexportPage');
   }
 
 }

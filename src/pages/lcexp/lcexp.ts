@@ -6,24 +6,11 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
 
 @IonicPage()
 @Component({
-  selector: 'page-lc',
-  templateUrl: 'lc.html',
+  selector: 'page-lcexp',
+  templateUrl: 'lcexp.html',
 })
-export class LcPage {
-  lcAmount: any;
-  selectedItem: any;
-  lctype:any;
-  money:any;
-  account:any;
-  charge:any;
-  tenor:any;
-  country:any;
-  accountData:any=[];
-  chargeData:any=[];
-  lctypeData:any=[];
-  moneyData:any=[];
-  tenorData:any=[];
-  countryData:any=[];
+export class LcexpPage {
+
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
@@ -36,23 +23,12 @@ export class LcPage {
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
      public navParams: NavParams) {
-  }
+  } 
 
   ionViewDidLoad() {
-    this.selectedItem = this.navParams.get('a');
-    this.lcAmount=this.navParams.get('lc');
-    this.moneyData=this.appdata.getMoney2(); 
-    this.chargeData=this.appdata.getCharge();
-    this.accountData=this.appdata.getAccount();
-    this.tenorData=this.appdata.getTenor();
-    this.countryData=this.appdata.getCountry();
-    console.log(this.selectedItem);
-    console.log(this.lcAmount);
-    this.lctypeData=this.appdata.getLC();
-    if (this.selectedItem) {
-      this.hideButton = !this.hideButton
-    }
+    console.log('ionViewDidLoad LcexpPage');
   }
+
 
   mikilo() {
     this.hideButton = !this.hideButton;
@@ -90,5 +66,6 @@ export class LcPage {
   isReadonly() {
     return this.isReadonly;   //return true/false 
   }
+
 
 }

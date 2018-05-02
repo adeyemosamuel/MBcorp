@@ -1,0 +1,26 @@
+page-addexportlc {
+    background-color: white;
+
+    [text-color="my-custom-color"] {
+        color: #ffb822;
+    } 
+
+    ion-item{
+        border-bottom: 1px solid #5c2684 !important;
+    }
+
+    .lc{
+        margin-top: 30px !important;
+    }
+
+    .button{
+        margin-top:10px !important;
+        width: 100% !important;
+    }
+
+    .Select{
+        max-width: 100% !important;
+        width:100% !important
+        }
+
+}

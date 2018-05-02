@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">IMPORT LC</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+
+    <ion-item no-lines [ngClass]="a.status" *ngFor="let a of FormArray">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-left>
+            <h2>{{a.name}}</h2>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <p>{{a.status}}</p>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 text-left>
+            <p>{{a.formnumber}}</p>
+          </ion-col>
+
+          <ion-col col-6 text-right>
+            <ion-buttons end>
+              <button ion-button icon-only clear (click)="popover($event,a)">
+                <ion-icon color="fcmb" name="md-more" item-right></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-fab right bottom (click)="fab()">
+    <button ion-fab color="fcmb">
+      <i class="fas fa-plus"></i>
+    </button>
+
+  </ion-fab>
+</ion-content>
