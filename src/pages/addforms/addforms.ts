@@ -39,6 +39,10 @@ export class AddformsPage {
 
   exportlc(){
     this.navCtrl.push('LcexportPage');
+  } 
+
+  guarantee(){
+    this.navCtrl.push('GuaranteePage');
   }
 
 }
