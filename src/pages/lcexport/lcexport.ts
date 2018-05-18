@@ -69,7 +69,7 @@ export class LcexportPage {
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
       if (data === 'edit') {
-        this.navCtrl.push('EditlcexportPage', {
+        this.navCtrl.push('EditexportlcPage', {
           a: a
         });
       }

@@ -14,7 +14,7 @@ export class EditformnxpPage {
   countryData: any = [];
   cityData: any = [];
   methodData: any = [];
-  domiciliaryData: any = [];
+  domiciliaryData: any = []; 
   formpurposeData: any = [];
   chargeData: any = [];
   prefixData: any = [];

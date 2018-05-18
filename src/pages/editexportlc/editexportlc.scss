@@ -1,3 +1,66 @@
 page-editexportlc {
+    ion-content {
+        background-color: #ffffff !important;
+    }
 
+
+    [text-color="my-custom-color"] {
+        color: #ffb822;
+    }
+
+    [text-color="my-custom-color2"] {
+        color: #ffffff;
+    }
+
+    ion-item-divider{
+        margin-top:10px;
+    }
+
+    ion-item{
+        border-bottom: 1px solid #5c2684 !important;
+    }
+
+    .text-area{
+        border: 1px solid #5c2684 !important;
+        margin-top: 5px !important;
+    }
+
+    .general{
+        border: 1px solid darkgray !important;
+        padding: 10px;
+        margin-top: 7px !important;
+         box-shadow: 1px 1px 1px darkgray;
+     }
+
+    .button{
+        margin-top: 20px;
+    }
+
+    .add{
+        margin-bottom: 30px !important; 
+    }
+
+        i {
+            margin-left: auto !important;
+            font-size: 20px !important;
+            color: map-get($colors, black);
+            z-index: 100;
+        }
+
+        .file{
+            border-bottom: none !important;
+        }
+
+        .radio{
+            border-bottom: none !important;
+        }
+
+        .option {
+            text-transform: capitalize;
+        }
+    
+        .Select{
+            max-width: 100% !important;
+            width:100% !important
+            }
 }

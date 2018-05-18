@@ -317,7 +317,7 @@
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'value')"></i>
         </ion-item>
 
-        <ion-item no-lines>
+        <ion-item no-lines> 
           <ion-label stacked>Total Value FOB*</ion-label>
           <ion-input [ngModel]="selectedItem?.good.totalFOB" (ngModelChange)="selectedItem.good.totalFOB= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'fob')"></i>
