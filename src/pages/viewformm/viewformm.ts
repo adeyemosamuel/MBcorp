@@ -57,7 +57,7 @@ export class ViewformmPage {
     let modal = this.modalCtrl.create('ModallPage', {
       selectedItem:selectedItem.good.items,
       docType: doctype
-    });
+    }); 
     modal.present();
   }
 
