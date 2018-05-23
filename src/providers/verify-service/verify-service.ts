@@ -119,8 +119,10 @@ export class VerifyServiceProvider {
     this.toastCtrl.create(this.toastOptions).present();
   }
 
-  miscPopOver(val, ev) {
-    let pop = this.popCtrl.create(val);
+  miscPopOver(val, ev, data) {
+    let pop = this.popCtrl.create(val, {
+      data: data
+    });
     return pop;
   }
 

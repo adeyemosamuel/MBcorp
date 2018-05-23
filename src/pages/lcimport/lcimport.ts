@@ -58,14 +58,14 @@ export class LcimportPage {
 
 
   popover(ev, a) {
-    let pop = this.verify.miscPopOver('PopviewPage', ev);
+    let pop = this.verify.miscPopOver('PopviewPage', ev, ['View', 'Edit']);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
       if (data === 'view') {
         this.navCtrl.push('ViewlcimportPage', {
           a: a
         });
-      }
+      } 
     });
   }
 

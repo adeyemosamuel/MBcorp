@@ -16,6 +16,7 @@ export class PopviewPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PopviewPage');
+    console.log(this.navParams.get('data'));
   }
 
   itemTapped(a) {

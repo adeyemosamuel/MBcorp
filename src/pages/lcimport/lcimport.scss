@@ -74,16 +74,16 @@ page-lcimport {
                 text-transform: capitalize !important;
             }
  
-    // .Approved{
-    //     border-top: 1px solid green;
-    // }
+    .Approved{
+        border-left:3px solid green !important;
+    }
 
-    // .Submitted{
-    //     border-top: 1px solid orange;
-    // }
+    .Submitted{
+        border-left: 3px solid orange !important;
+    }
 
-    // .Saved{
-    //     border-top: 1px solid grey;
-    // }
+    .Saved{
+        border-left: 3px solid grey !important;
+    }
 
 }
