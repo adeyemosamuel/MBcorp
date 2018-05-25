@@ -9,6 +9,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'popview.html',
 })
 export class PopviewPage {
+  viewList: Array<any> = [];
 
   constructor(public navCtrl: NavController,
     private viewCtrl: ViewController, public navParams: NavParams) {
@@ -16,7 +17,7 @@ export class PopviewPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PopviewPage');
-    console.log(this.navParams.get('data'));
+    this.viewList = this.navParams.get('data');
   }
 
   itemTapped(a) {

@@ -8,7 +8,7 @@ import { VerifyServiceProvider } from '../../providers/verify-service/verify-ser
   selector: 'page-formnxp',
   templateUrl: 'formnxp.html',
 })
-export class FormnxpPage { 
+export class FormnxpPage {
   name: any;
   formnumber: any;
   status: any;
@@ -16,6 +16,7 @@ export class FormnxpPage {
   a: any;
   searchTerm: any;
   FormArray: Array<any> = [];
+  arrayViews: Array<any> = [];
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
@@ -23,7 +24,7 @@ export class FormnxpPage {
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() { 
+  ionViewDidLoad() {
     this.FormArray = this.appdata.getInfo();
   }
 
@@ -60,13 +61,31 @@ export class FormnxpPage {
     this.navCtrl.push('AddformnxpPage');
   }
 
+  loadArrayViews(a) {
+    if (a.status === 'Approved') {
+      this.arrayViews = ['ViewDetails'];
+    };
+
+    if (a.status === 'Submitted') {
+      this.arrayViews = ['ViewDetails', 'EditDetails'];
+    };
+
+    if (a.status === 'Saved') {
+      this.arrayViews = ['ViewDetails', 'EditDetails']
+    };
+  }
+
   popover(ev, a) {
-    console.log(a);
-    let pop = this.verify.miscPopOver('PopoverPage', ev);
+    this.loadArrayViews(a);
+    let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data === 'edit') {
+      if (data.toLowerCase() === 'editdetails') {
         this.navCtrl.push('EditformnxpPage', {
+          a: a
+        });
+      } else if (data.toLowerCase() === 'viewdetails') {
+        this.navCtrl.push('ViewformnxpPage', {
           a: a
         });
       }

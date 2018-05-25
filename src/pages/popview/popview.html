@@ -1,5 +1,5 @@
 <ion-content no-padding fullscreen class="page-popview">
   <ion-list no-lines>
-    <button ion-item (click)="itemTapped('view')">View</button>
+    <button ion-item *ngFor="let v of viewList" (click)="itemTapped(v)">{{v}}</button>
   </ion-list>
 </ion-content>

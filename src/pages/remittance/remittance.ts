@@ -18,12 +18,13 @@ export class RemittancePage {
   a: any;
   searchTerm: any;
   FormArray: Array<any> = [];
+  arrayViews: Array<any> = [];
 
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
     private verify: VerifyServiceProvider,
-     public navParams: NavParams) {
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -63,12 +64,31 @@ export class RemittancePage {
     this.navCtrl.push('AddremPage');
   }
 
+  loadArrayViews(a){
+    if (a.status === 'Approved'){
+      this.arrayViews=['ViewDetails'];
+    };
+ 
+    if (a.status ==='Submitted'){
+      this.arrayViews=['ViewDetails', 'EditDetails'];
+    };
+ 
+    if (a.status ==='Saved'){
+      this.arrayViews=['ViewDetails', 'EditDetails']
+    };
+  }
+
   popover(ev, a) {
-    let pop = this.verify.miscPopOver('PopoverPage', ev);
+    this.loadArrayViews(a);
+    let pop = this.verify.miscPopOver('PopviewPage', ev,  this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data === 'edit') {
-        this.navCtrl.push('EditremPage', {
+      if (data.toLowerCase() === 'editdetails') {
+        this.navCtrl.push('EditremPage', { 
+          a: a
+        });
+      } else if (data.toLowerCase() === 'viewdetails') {
+        this.navCtrl.push('ViewremPage', {
           a: a
         });
       }

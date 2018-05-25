@@ -18,6 +18,8 @@ export class FormaPage {
   a: any;
   searchTerm: any;
   FormArray: Array<any> = [];
+  arrayViews: Array<any> = [];
+
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
@@ -58,20 +60,40 @@ export class FormaPage {
   //   }); 
   // }
 
+  loadArrayViews(a) {
+    if (a.status === 'Approved') {
+      this.arrayViews = ['ViewDetails'];
+    };
+
+    if (a.status === 'Submitted') {
+      this.arrayViews = ['ViewDetails', 'EditDetails'];
+    };
+
+    if (a.status === 'Saved') {
+      this.arrayViews = ['ViewDetails', 'EditDetails']
+    };
+  }
+
+
   fab() {
     this.navCtrl.push('AddformaPage');
   }
 
   popover(ev, a) {
-    let pop = this.verify.miscPopOver('PopoverPage', ev);
+    this.loadArrayViews(a);
+    let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data === 'edit') {
+      if (data.toLowerCase() === 'editdetails') {
         this.navCtrl.push('EditformaPage', {
+          a: a
+        });
+      } else if (data.toLowerCase() === 'viewdetails') {
+        this.navCtrl.push('ViewformaPage', {
           a: a
         });
       }
     });
   }
-        
+
 }

@@ -74,16 +74,17 @@ page-forma {
                 text-transform: capitalize !important;
             }
  
-    // .Approved{
-    //     border-top: 1px solid green;
-    // }
-
-    // .Submitted{
-    //     border-top: 1px solid orange;
-    // }
-
-    // .Saved{
-    //     border-top: 1px solid grey;
-    // }
+            .Approved{
+                border-left:3px solid green !important;
+            }
+         
+            .Submitted{
+                border-left: 3px solid orange !important;
+            }
+        
+            .Saved{
+                border-left: 3px solid grey !important;
+            }
+        
 
 }

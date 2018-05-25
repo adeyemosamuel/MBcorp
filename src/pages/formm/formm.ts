@@ -16,6 +16,7 @@ export class FormmPage {
   a: any;
   searchTerm: any;
   FormArray: Array<any> = [];
+  arrayViews: Array<any> = [];
 
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
@@ -54,12 +55,27 @@ export class FormmPage {
   //   }); 
   // }
 
+  loadArrayViews(a){
+    if (a.status === 'Approved'){
+      this.arrayViews=['ViewDetails'];
+    };
+ 
+    if (a.status ==='Submitted'){
+      this.arrayViews=['ViewDetails'];
+    };
+ 
+    if (a.status ==='Saved'){
+      this.arrayViews=['ViewDetails']
+    };
+  }
+
 
   popover(ev, a) {
-    let pop = this.verify.miscPopOver('PopviewPage', ev);
+    this.loadArrayViews(a);
+    let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data === 'view') {
+      if (data.toLowerCase()=== 'viewdetails') {
         this.navCtrl.push('ViewformmPage', {
           a: a
         });

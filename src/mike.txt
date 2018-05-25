@@ -41,3 +41,22 @@
         ]
     }
 }
+
+
+//3 arguments from miscPopOver verifyservice
+
+ popover(ev, a) {
+    let pop = this.verify.miscPopOver('PopviewPage', ev, ['View', 'Edit']);
+    pop.present({ ev: ev });
+    pop.onDidDismiss((data) => {
+      if (data.toLowerCase()=== 'view') {
+        this.navCtrl.push('ViewlcimportPage', {
+          a: a
+        });
+      } else if(data.toLowerCase()=== 'edit'){
+        this.navCtrl.push('EditlcimportPage',{
+          a: a
+        });
+      } 
+    });
+  }
