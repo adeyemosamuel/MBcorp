@@ -57,15 +57,15 @@ export class FormmPage {
 
   loadArrayViews(a){
     if (a.status === 'Approved'){
-      this.arrayViews=['ViewDetails'];
+      this.arrayViews=['View'];
     };
  
     if (a.status ==='Submitted'){
-      this.arrayViews=['ViewDetails'];
+      this.arrayViews=['View'];
     };
  
     if (a.status ==='Saved'){
-      this.arrayViews=['ViewDetails']
+      this.arrayViews=['View']
     };
   }
 
@@ -75,7 +75,7 @@ export class FormmPage {
     let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data.toLowerCase()=== 'viewdetails') {
+      if (data=== 'View') {
         this.navCtrl.push('ViewformmPage', {
           a: a
         });

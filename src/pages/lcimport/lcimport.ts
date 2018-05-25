@@ -59,15 +59,15 @@ export class LcimportPage {
 
  loadArrayViews(a){
    if (a.status === 'Approved'){
-     this.arrayViews=['ViewDetails', 'ViewSwiftMsg', 'ImportDoc'];
+     this.arrayViews=['View Details', 'Swift Message', 'Import Document'];
    };
 
    if (a.status ==='Submitted'){
-     this.arrayViews=['ViewDetails'];
+     this.arrayViews=['View Details'];
    };
 
    if (a.status ==='Saved'){
-     this.arrayViews=['ViewDetails', 'EditDetails']
+     this.arrayViews=['View Details', 'Edit Details']
    };
  }
   
@@ -76,19 +76,19 @@ export class LcimportPage {
     let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data.toLowerCase()=== 'viewdetails') {
+      if (data=== 'View Details') {
         this.navCtrl.push('ViewlcimportPage', {
           a: a
         });
-      } else if(data.toLowerCase()=== 'editdetails'){
+      } else if(data=== 'Edit Details'){
         this.navCtrl.push('EditlcimportPage',{
           a: a
         });
-      } else if(data.toLowerCase()==='viewswiftmsg'){
+      } else if(data==='Swift Message'){
         this.navCtrl.push('ViewsiftmsgPage',{
           a:a
         });
-      } else if(data.toLowerCase()==='importdoc'){
+      } else if(data==='Import Document'){
         this.navCtrl.push('ImportlcdocPage',{
           a:a
         });

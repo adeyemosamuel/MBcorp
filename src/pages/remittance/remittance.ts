@@ -66,15 +66,15 @@ export class RemittancePage {
 
   loadArrayViews(a){
     if (a.status === 'Approved'){
-      this.arrayViews=['ViewDetails'];
+      this.arrayViews=['View'];
     };
  
     if (a.status ==='Submitted'){
-      this.arrayViews=['ViewDetails', 'EditDetails'];
+      this.arrayViews=['View', 'Edit'];
     };
  
     if (a.status ==='Saved'){
-      this.arrayViews=['ViewDetails', 'EditDetails']
+      this.arrayViews=['View', 'Edit']
     };
   }
 
@@ -83,11 +83,11 @@ export class RemittancePage {
     let pop = this.verify.miscPopOver('PopviewPage', ev,  this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data.toLowerCase() === 'editdetails') {
+      if (data=== 'Edit') {
         this.navCtrl.push('EditremPage', { 
           a: a
         });
-      } else if (data.toLowerCase() === 'viewdetails') {
+      } else if (data === 'View') {
         this.navCtrl.push('ViewremPage', {
           a: a
         });

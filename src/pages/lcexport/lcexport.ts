@@ -24,10 +24,10 @@ export class LcexportPage {
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
     private verify: VerifyServiceProvider,
-     public navParams: NavParams) {
+    public navParams: NavParams) {
   }
 
-  ionViewDidLoad() { 
+  ionViewDidLoad() {
     this.FormArray = this.appdata.getInfo();
   }
 
@@ -64,33 +64,33 @@ export class LcexportPage {
     this.navCtrl.push('AddexportlcPage');
   }
 
-  loadArrayViews(a){
-    if (a.status === 'Approved'){
-      this.arrayViews=['ViewDetails'];
+  loadArrayViews(a) {
+    if (a.status === 'Approved') {
+      this.arrayViews = ['View'];
     };
- 
-    if (a.status ==='Submitted'){
-      this.arrayViews=['ViewDetails', 'EditDetails'];
+
+    if (a.status === 'Submitted') {
+      this.arrayViews = ['View', 'Edit'];
     };
- 
-    if (a.status ==='Saved'){
-      this.arrayViews=['ViewDetails', 'EditDetails']
+
+    if (a.status === 'Saved') {
+      this.arrayViews = ['View', 'Edit']
     };
   }
 
   popover(ev, a) {
     console.log(a);
     this.loadArrayViews(a);
-    let pop = this.verify.miscPopOver('PopviewPage', ev,this.arrayViews);
+    let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data.toLowerCase === 'editdetails') {
+      if (data === 'Edit') {
         this.navCtrl.push('EditexportlcPage', {
           a: a
         });
-      } else if (data.toLowerCase ==='viewdetails'){
-        this.navCtrl.push('ViewexportlcPage',{
-      a:a    
+      } else if (data === 'View') {
+        this.navCtrl.push('ViewexportlcPage', {
+          a: a
         });
       }
     });
