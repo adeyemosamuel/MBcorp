@@ -14,7 +14,7 @@ export class ViewlcimportPage {
   hideButton2: boolean = false;
   hideButton3: boolean = false;
   hideButton4: boolean = false;
-  hideButton5: boolean = false;
+  hideButton5: boolean = false; 
   hideButton6: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

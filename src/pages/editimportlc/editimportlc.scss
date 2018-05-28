@@ -1,3 +1,37 @@
 page-editimportlc {
+    ion-content {
+        background-color: rgba(255,255,255,1) !important;
+    }
+
+    [text-color="my-custom-color"] {
+        color: #ffb822;
+    }
+
+    ion-item-divider{
+        margin-top:10px;
+    }
+
+    ion-item{
+        border-bottom: 1px solid #5c2684 !important;
+    }
+
+    i {
+        margin-left: auto !important;
+        font-size: 20px !important;
+        color: map-get($colors, black);
+    }
+
+    .option {
+        text-transform: capitalize;
+    }
+
+    .Select{ 
+        max-width: 100% !important;
+        width:100% !important
+        }
+
+        .radio{
+            border-bottom: none !important;
+        }
 
 }

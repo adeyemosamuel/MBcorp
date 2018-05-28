@@ -89,7 +89,7 @@ export class LcexportPage {
           a: a
         });
       } else if (data === 'View') {
-        this.navCtrl.push('ViewexportlcPage', {
+        this.navCtrl.push('ViewlcexportPage', {
           a: a
         });
       }
