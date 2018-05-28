@@ -19,7 +19,7 @@ export class EditremPage {
   accountData: any=[];
   moneyData:any=[];
   hideButton: boolean = false;
-  hideButton2: boolean = false;
+  hideButton2: boolean = false; 
   hideButton3: boolean = false;
   hideButton4:boolean=false;
   hideButton5: boolean = false;
@@ -30,7 +30,7 @@ export class EditremPage {
      public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad() { 
     this.moneyData=this.appdata.getMoney2();
     this.purposeData= this.appdata.getPurpose();
     this.amountData= this.appdata.getAmount();

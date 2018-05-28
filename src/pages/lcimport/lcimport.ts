@@ -81,11 +81,11 @@ export class LcimportPage {
           a: a
         });
       } else if(data=== 'Edit Details'){
-        this.navCtrl.push('EditlcimportPage',{
+        this.navCtrl.push('EditimportlcPage',{
           a: a
         });
       } else if(data==='Swift Message'){
-        this.navCtrl.push('ViewsiftmsgPage',{
+        this.navCtrl.push('ViewswiftmsgPage',{
           a:a
         });
       } else if(data==='Import Document'){

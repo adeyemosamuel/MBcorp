@@ -1,18 +1,199 @@
-<!--
-  Generated template for the ViewremPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>viewrem</ion-title>
+  <ion-navbar color="fcmb">
+    <ion-title text-center>
+      <span text-color="my-custom-color">REMITTANCE</span>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-item-group>
+
+    <ion-item-divider (click)="mikilo()">
+      <span>BENEFICIARY DETAILS</span>
+      <i *ngIf="!hideButton" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton" padding>
+
+      <ion-list>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Name*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Account Number*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.baccount" (ngModelChange)="selectedItem.baccount= $event" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Account Name*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Swift Code*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbswiftcode" (ngModelChange)="selectedItem.bbswiftcode= $event" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Name*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbname" (ngModelChange)="selectedItem.bbname= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Address*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbaddress" (ngModelChange)="selectedItem.bbaddress= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank City*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbcity" (ngModelChange)="selectedItem.bbcity= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Country*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbcountry" (ngModelChange)="selectedItem.bbcountry= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank State*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbstate" (ngModelChange)="selectedItem.bbstate= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Beneficiary Bank Postal Code*</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbpostalcode" (ngModelChange)="selectedItem.bbpostalcode= $event" type="number"></ion-input>
+        </ion-item>
+
+
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo2()">
+      <span>INTERMEDIARY BANK DETAILS</span>
+      <i *ngIf="!hideButton2" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton2" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton2" padding>
+
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Name</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.ibname" (ngModelChange)="selectedItem.ibname= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Swift Code</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibswiftcode" (ngModelChange)="selectedItem.ibswiftcode= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Address</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibaddress" (ngModelChange)="selectedItem.ibaddress= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank City</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibcity" (ngModelChange)="selectedItem.ibcity= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank State</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibstate" (ngModelChange)="selectedItem.ibstate= $event" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Country</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibcountry" (ngModelChange)="selectedItem.ibcountry= $event" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines>
+          <ion-label stacked>Intermediary Bank Postal Code</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibpostalcode" (ngModelChange)="selectedItem.ibpostalcode= $event" type="number"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-item-divider (click)="mikilo3()">
+      <span>PAYMENT DETAILS</span>
+      <i *ngIf="!hideButton3" class="fas fa-angle-down" item-end></i>
+      <i *ngIf="hideButton3" class="fas fa-angle-up" item-end></i>
+    </ion-item-divider>
+
+    <div *ngIf="hideButton3" padding>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label stacked>Purpose of Payment*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.payment" (ngModelChange)="selectedItem.ibpostalcode= $event" type="number"></ion-input>
+        </ion-item>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col col-4 text-left>
+                  <ion-item no-lines>
+                      <ion-label stacked>Currency</ion-label>
+                      <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event" type="text"></ion-input>
+                    </ion-item>
+              </ion-col>
+              <ion-col col-8 text-right>
+              <ion-item no-lines>
+                <ion-label stacked>Amount*</ion-label>
+                <ion-input [readonly]="isReadonly()"   [ngModel]="selectedItem?.amount" (ngModelChange)="selectedItem.amount= $event" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-item no-lines>
+              <ion-label stacked>Transfer Account*</ion-label>
+              <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.transfer" (ngModelChange)="selectedItem.transfer= $event" type=“text”></ion-input>
+            </ion-item>
+    
+                <ion-item no-lines>
+                  <ion-label stacked>Estimated Debit Amount in Foreign Currency*</ion-label>
+                  <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="number"></ion-input>
+                </ion-item>
+
+        
+
+        <ion-item no-lines>
+          <ion-label stacked>Charge Amount*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.charge" (ngModelChange)="selectedItem.charge= $event" type=“text”></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Amount applied in words*</ion-label>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.applied" (ngModelChange)="selectedItem.applied= $event" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item no-lines class="text-area">
+          <ion-label stacked>Remittance Info</ion-label>
+          <ion-textarea [readonly]="isReadonly()"  [ngModel]="selectedItem?.info" (ngModelChange)="selectedItem.info= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
+        </ion-item>
+
+        
+
+         
+      </ion-list>
+
+    </div>
+
+    
+
+    
+    
+  </ion-item-group>
+
+
 
 </ion-content>
