@@ -16,7 +16,7 @@ export class EditexportlcPage {
   shipdate: any;
   fileupload: any;
   yes: any;
-  no: any;
+  no: any; 
   transferable: any;
   resolving: any;
   standby: any;
