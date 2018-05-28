@@ -1,25 +1,43 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ViewformaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
   selector: 'page-viewforma',
   templateUrl: 'viewforma.html',
 })
-export class ViewformaPage {
+export class ViewformaPage { 
 
+  selectedItem: any;
+  hideButton: boolean = false;
+  hideButton2: boolean = false;
+  hideButton3: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  } 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewformaPage');
+    this.selectedItem= this.navParams.get('a');
+    if (this.selectedItem) {
+      this.hideButton = !this.hideButton
+    }
+  }
+
+  mikilo() {
+    this.hideButton = !this.hideButton;
+  }
+
+  mikilo2() {
+    this.hideButton2 = !this.hideButton2;
+  }
+
+  mikilo3() {
+    this.hideButton3 = !this.hideButton3;
+  }
+
+  isReadonly() {
+    return this.isReadonly;   //return true/false  
   }
 
 }

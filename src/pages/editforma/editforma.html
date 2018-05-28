@@ -57,7 +57,7 @@
           <ion-input [ngModel]="selectedItem?.bbcity" (ngModelChange)="selectedItem.bbcity= $event" type="text"></ion-input>
         </ion-item>
 
-        <ion-item no-lines>
+        <ion-item no-lines> 
           <ion-label stacked>Beneficiary Bank Country*</ion-label>
           <ion-input [ngModel]="selectedItem?.bbcountry" (ngModelChange)="selectedItem.bbcountry= $event" type="text"></ion-input>
         </ion-item>
@@ -133,7 +133,7 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Purpose of Payment*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.payment" (ngModelChange)="selectedItem.payment= $event">
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.purpose" (ngModelChange)="selectedItem.purpose= $event">
             <ion-option class="option" [value]="p.purpose" *ngFor="let p of purposeData">{{p.purpose}}</ion-option>
           </ion-select>
         </ion-item>

@@ -12,7 +12,7 @@ export class EditformnxpPage {
   a: any;
   stateData: any = [];
   countryData: any = [];
-  cityData: any = [];
+  cityData: any = []; 
   methodData: any = [];
   domiciliaryData: any = []; 
   formpurposeData: any = [];

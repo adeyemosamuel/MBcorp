@@ -1,3 +1,27 @@
 page-viewformnxp {
+    ion-content {
+        background-color: rgba(255,255,255,1) !important;
+    }
 
+
+    [text-color="my-custom-color"] {
+        color: #ffb822;
+    }
+
+    [text-color="my-custom-color2"] {
+        color: #ffffff;
+    }
+
+    ion-item-divider{
+        margin-top:10px;
+    }
+
+    ion-item{
+        border-bottom: 1px solid #5c2684 !important;
+    }
+
+    .text-area{
+        border: 1px solid #5c2684 !important;
+        margin-top: 5px !important;
+    }
 }

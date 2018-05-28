@@ -12,7 +12,7 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
 export class EditformaPage {
   selectedItem: any;
   id: number;
-  iData: any = [];
+  iData: any = []; 
   stateData: any = [];
   countryData: any = [];
   purposeData:any = [];
