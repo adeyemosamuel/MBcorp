@@ -67,6 +67,12 @@
           </ion-label>
           <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.charge" (ngModelChange)="selectedItem.charge= $event" type="text"></ion-input>
         </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Expiry Date*</ion-label>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.edate" (ngModelChange)="selectedItem.edate= $event" type="text"></ion-input>
+        </ion-item>
+
       </ion-list>
     </div>
 

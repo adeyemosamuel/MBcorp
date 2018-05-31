@@ -44,8 +44,9 @@ export class AppdataProvider {
 
     getLC():any{
         let data=[
-            {"lctype":"Import"},
-            {"lctype":"Export"}
+            {"lctype":"Confirmed"},
+            {"lctype":"Unconfirmed"},
+            {"lctype":"Cleanline"}
         ];
         return data;
     }
