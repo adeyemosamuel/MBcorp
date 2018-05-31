@@ -75,6 +75,12 @@
             <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
           </ion-select>
         </ion-item>
+
+        <ion-item no-lines>
+          <ion-label stacked>Expiry Date*</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="edate"></ion-datetime>
+        </ion-item>
+        
       </ion-list>
     </div>
 
@@ -214,12 +220,12 @@
         </ion-item>
 
         <ion-item class="radio" no-lines>
-          <ion-label stacked>Util By Bill?*</ion-label>
+          <ion-label stacked>Utilization By Bill?*</ion-label>
           <ion-checkbox [(ngModel)]="bill"></ion-checkbox>
         </ion-item>
 
         <ion-item class="radio" no-lines>
-          <ion-label stacked>Util Without Bill?*</ion-label>
+          <ion-label stacked>Utilization Without Bill?*</ion-label>
           <ion-checkbox [(ngModel)]="without"></ion-checkbox>
         </ion-item>
       </ion-list>

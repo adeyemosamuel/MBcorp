@@ -75,6 +75,12 @@
             <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
           </ion-select>
         </ion-item>
+
+          <ion-item no-lines>
+            <ion-label stacked>Expiry Date*</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="edate"></ion-datetime>
+          </ion-item>
+
       </ion-list>
     </div>
 
