@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+// import { AppdataProvider } from '../../providers/appdata/appdata';
+import { ControllerProvider } from '../../providers/controller/controller';
+import { ServerServiceProvider } from '../../providers/server-service/server-service';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
 
 
@@ -11,32 +13,47 @@ import { VerifyServiceProvider } from '../../providers/verify-service/verify-ser
   templateUrl: 'forma.html',
 })
 export class FormaPage {
-  name: any;
-  formnumber: any;
-  status: any;
-  date: any;
+  corporateName: any;
+  formNumber: any;
+  formStatus: any;
   a: any;
   searchTerm: any;
-  FormArray: Array<any> = [];
+  FormArray: Array<any> = []; 
   arrayViews: Array<any> = [];
 
 
   constructor(public navCtrl: NavController,
-    private appdata: AppdataProvider,
+    private control: ControllerProvider,
+    private serverService: ServerServiceProvider,
+    // private appdata: AppdataProvider,
     private verify: VerifyServiceProvider,
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    this.FormArray = this.appdata.getInfo();
+  async ionViewDidLoad() {
+   this.getFormA();
   }
 
-  initializeItems() {
-    this.FormArray = this.appdata.getInfo();
+  async initializeItems() {
+   this.getFormA();
   }
 
-  showSlide() {
-    this.verify.showToast('Slide left', 'middle');
+  // showSlide() {
+  //   this.verify.showToast('Slide left', 'middle');
+  // }
+
+
+  async getFormA() {
+    console.log('got here')
+    let loader = this.control.loadCtrl('Please wait...');
+    loader.present();
+    const response = await this.serverService.getData('/v1/formacorp/all');
+    this.FormArray = response;
+    console.log(response);
+
+    loader.dismiss();
+
+    //referenced here
   }
 
   getItems(ev: any) {
@@ -49,7 +66,7 @@ export class FormaPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.FormArray = this.FormArray.filter((item) => {
-        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.corporateName.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
@@ -61,15 +78,15 @@ export class FormaPage {
   // }
 
   loadArrayViews(a) {
-    if (a.status === 'Approved') {
+    if (a.formStatus === 'Approved') {
       this.arrayViews = ['View'];
     };
 
-    if (a.status === 'Submitted') {
+    if (a.formStatus === 'Submitted') {
       this.arrayViews = ['View', 'Edit'];
     };
 
-    if (a.status === 'Saved') {
+    if (a.formStatus === 'Saved') {
       this.arrayViews = ['View', 'Edit']
     };
   }
@@ -84,11 +101,11 @@ export class FormaPage {
     let pop = this.verify.miscPopOver('PopviewPage', ev, this.arrayViews);
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
-      if (data=== 'Edit') {
+      if (data === 'Edit') {
         this.navCtrl.push('EditformaPage', {
           a: a
         });
-      } else if (data=== 'View') {
+      } else if (data === 'View') {
         this.navCtrl.push('ViewformaPage', {
           a: a
         });

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 
 
@@ -17,7 +17,9 @@ export class ViewformnxpPage {
   hideButton4: boolean = false;
   hideButton5: boolean = false;
   hideButton6: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public modalCtrl: ModalController,
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -56,6 +58,14 @@ export class ViewformnxpPage {
 
   isReadonly() {
     return this.isReadonly;   //return true/false 
+  }
+
+  itemTapped(selectedItem, doctype){
+    let modal = this.modalCtrl.create('ModalPage', {
+      selectedItem:selectedItem.items,
+      docType: doctype
+    }); 
+    modal.present();
   }
 
 

@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServerServiceProvider } from '../providers/server-service/server-service';
 import { AppdataProvider } from '../providers/appdata/appdata';
 import { VerifyServiceProvider } from '../providers/verify-service/verify-service';
+import { ControllerProvider } from '../providers/controller/controller';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { VerifyServiceProvider } from '../providers/verify-service/verify-servic
     AppdataProvider,
     DatePicker,
     FileChooser,
-    VerifyServiceProvider
+    VerifyServiceProvider,
+    ControllerProvider
   ]
 })
 export class AppModule {}

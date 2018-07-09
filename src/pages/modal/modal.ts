@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+// import { AppdataProvider } from '../../providers/appdata/appdata';
 
 
 
@@ -17,8 +17,8 @@ export class ModalPage {
 
   constructor(public navCtrl: NavController,
     public viewCtrl: ViewController,
-    private appdata: AppdataProvider,
-    public navParams: NavParams) {
+    // private appdata: AppdataProvider,
+    public navParams: NavParams) { 
   }
 
   ionViewDidLoad() {

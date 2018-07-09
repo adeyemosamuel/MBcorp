@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+// import { AppdataProvider } from '../../providers/appdata/appdata';
 
 @IonicPage()
 @Component({
@@ -10,18 +10,18 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
 export class EditformnxpPage {
   selectedItem: any;
   a: any;
-  stateData: any = [];
-  countryData: any = [];
-  cityData: any = []; 
-  methodData: any = [];
-  domiciliaryData: any = []; 
-  formpurposeData: any = [];
-  chargeData: any = [];
-  prefixData: any = [];
-  accountData: any = [];
-  currencyData: any = [];
-  dischargeData: any = [];
-  shipmentData: any = [];
+  // stateData: any = [];
+  // countryData: any = [];
+  // cityData: any = []; 
+  // methodData: any = [];
+  // domiciliaryData: any = []; 
+  // formpurposeData: any = [];
+  // chargeData: any = [];
+  // prefixData: any = [];
+  // accountData: any = [];
+  // currencyData: any = [];
+  // dischargeData: any = [];
+  // shipmentData: any = [];
   viewButton: boolean = false;
   hideButton: boolean = false;
   hideButton2: boolean = false;
@@ -35,18 +35,18 @@ export class EditformnxpPage {
 
   constructor(public navCtrl: NavController, 
     public modalCtrl: ModalController,
-    private appdata: AppdataProvider,
+    // private appdata: AppdataProvider,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.stateData = this.appdata.getState();
-    this.countryData = this.appdata.getCountry();
-    this.cityData = this.appdata.getCity();
-    this.methodData = this.appdata.getMethod();
-    this.shipmentData = this.appdata.getShipment(); 
-    this.dischargeData = this.appdata.getDischarge();
-    this.currencyData = this.appdata.getCurrency();
+    // this.stateData = this.appdata.getState();
+    // this.countryData = this.appdata.getCountry();
+    // this.cityData = this.appdata.getCity();
+    // this.methodData = this.appdata.getMethod();
+    // this.shipmentData = this.appdata.getShipment(); 
+    // this.dischargeData = this.appdata.getDischarge();
+    // this.currencyData = this.appdata.getCurrency();
     this.selectedItem= this.navParams.get('a');
   
     if (this.selectedItem) {
@@ -98,7 +98,7 @@ export class EditformnxpPage {
   itemTapped(selectedItem,doctype){
     console.log(doctype)
     let modal = this.modalCtrl.create('ModalPage', {
-      selectedItem: selectedItem.good.items,
+      selectedItem: selectedItem.items,
       docType: doctype
     });
     modal.present(); 

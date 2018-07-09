@@ -22,47 +22,47 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Name*</ion-label>
-          <ion-input [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.exporterName" (ngModelChange)="selectedItem.exporterName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Address*</ion-label>
-          <ion-input [ngModel]="selectedItem?.address" (ngModelChange)="selectedItem.address= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.exporterAddress" (ngModelChange)="selectedItem.exporterAddress= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>City*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.city" (ngModelChange)="selectedItem.city= $event">
-            <ion-option class="option" [value]="c.city" *ngFor="let c of cityData">{{c.city}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.exporterCity" (ngModelChange)="selectedItem.exporterCity= $event">
+            <ion-option class="option" [value]="exporterCity">{{selectedItem.exporterCity}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>State*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.states" (ngModelChange)="selectedItem.states= $event">
-            <ion-option *ngFor="let s of stateData">{{s.label}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.exporterState" (ngModelChange)="selectedItem.exporterState= $event">
+            <ion-option >{{selectedItem.exporterState}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Phone*</ion-label>
-          <ion-input [ngModel]="selectedItem?.phone" (ngModelChange)="selectedItem.phone= $event" type="tel"></ion-input>
+          <ion-input [ngModel]="selectedItem?.exporterPhone" (ngModelChange)="selectedItem.exporterPhone= $event" type="tel"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>NEPC Reg No*</ion-label>
-          <ion-input [ngModel]="selectedItem?.nepc" (ngModelChange)="selectedItem.nepc= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.exporterNepcReg" (ngModelChange)="selectedItem.exporterNepcReg= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>RC Number*</ion-label>
-          <ion-input [ngModel]="selectedItem?.rcnumber" (ngModelChange)="selectedItem.rcnumber= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.exporterRcNo" (ngModelChange)="selectedItem.exporterRcNo= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Method of Payment*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.method" (ngModelChange)="selectedItem.method= $event">
-            <ion-option *ngFor="let m of methodData">{{m.method}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.methodOfPayment" (ngModelChange)="selectedItem.methodOfPayment= $event">
+            <ion-option >{{selectedItem.methodOfPayment}}</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -81,38 +81,38 @@
 
         <ion-item no-lines>
           <ion-label stacked>Consignee First Name*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.cfname" (ngModelChange)="selectedItem.cfname= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.congFirstname" (ngModelChange)="selectedItem.congFirstname= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Consignee Last Name*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.clname" (ngModelChange)="selectedItem.clname= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.congLastName" (ngModelChange)="selectedItem.congLastName= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Consignee Address*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.caddress" (ngModelChange)="selectedItem.caddress= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.congAddress" (ngModelChange)="selectedItem.congAddress= $event" type="text"></ion-input>
         </ion-item>
 
 
         <ion-item no-lines>
           <ion-label stacked>Consignee City*</ion-label>
-          <ion-select class="Select" [ngModel]="selectedItem?.city" (ngModelChange)="selectedItem.city= $event">
-            <ion-option class="option" [value]="c.city" *ngFor="let c of cityData">{{c.city}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.congCity" (ngModelChange)="selectedItem.congCity= $event">
+            <ion-option class="option" [value]="congCity" >{{selectedItem.congCity}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Consignee State*</ion-label>
-          <ion-select class="Select" [ngModel]="selectedItem?.states" (ngModelChange)="selectedItem.states= $event">
-            <ion-option *ngFor="let s of stateData">{{s.label}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.congState" (ngModelChange)="selectedItem.congState= $event">
+            <ion-option >{{selectedItem.congState}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Consignee Country*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.countries" (ngModelChange)="selectedItem.countries= $event">
-            <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.congCountry" (ngModelChange)="selectedItem.congCountry= $event">
+            <ion-option class="option" [value]="congCountry" >{{selectedItem.congCountry}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -130,36 +130,36 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>First Name</ion-label>
-          <ion-input [ngModel]="selectedItem?.fname" (ngModelChange)="selectedItem.fname= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.otherFirstName" (ngModelChange)="selectedItem.otherFirstName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Last Name</ion-label>
-          <ion-input [ngModel]="selectedItem?.lname" (ngModelChange)="selectedItem.lname= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.otherLastName" (ngModelChange)="selectedItem.otherLastName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Address</ion-label>
-          <ion-input [ngModel]="selectedItem?.address" (ngModelChange)="selectedItem.address= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.otherAddress" (ngModelChange)="selectedItem.otherAddress= $event" type="text"></ion-input>
         </ion-item>
         <ion-item no-lines>
           <ion-label stacked>City</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.city" (ngModelChange)="selectedItem.city= $event">
-            <ion-option class="option" [value]="c.city" *ngFor="let c of cityData">{{c.city}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.otherCity" (ngModelChange)="selectedItem.otherCity= $event">
+            <ion-option class="option" [value]="otherCity" >{{selectedItem.otherCity}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>State</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.states" (ngModelChange)="selectedItem.states= $event">
-            <ion-option *ngFor="let s of stateData">{{s.label}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.otherState" (ngModelChange)="selectedItem.otherState= $event">
+            <ion-option >{{selectedItem.otherState}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Country</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.countries" (ngModelChange)="selectedItem.countries= $event">
-            <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.otherCountry" (ngModelChange)="selectedItem.otherCountry= $event">
+            <ion-option class="option" [value]="otherCountry" >{{selectedItem.otherCountry}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -176,41 +176,41 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Transfer Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.account" (ngModelChange)="selectedItem.account= $event">
-            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.transferAccount" (ngModelChange)="selectedItem.transferAccount= $event">
+            <ion-option class="option" [value]="transferAccount" >{{selectedItem.transferAccount}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Charge Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.charge" (ngModelChange)="selectedItem.charge= $event">
-            <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.chargeAccount" (ngModelChange)="selectedItem.chargeAccount= $event">
+            <ion-option class="option" [value]="chargeAccount" >{{selectedItem.chargeAccount}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Domiciliary Account</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.domiciliary" (ngModelChange)="selectedItem.domiciliary= $event">
-            <ion-option class="option" [value]="d.domiciliary" *ngFor="let d of domiciliaryData">{{d.domiciliary}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.domAcct" (ngModelChange)="selectedItem.domAcct= $event">
+            <ion-option class="option" [value]="domAcct">{{selectedItem.domAcct}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Domiciliary Amount*</ion-label>
-          <ion-input [ngModel]="selectedItem?.domammount" (ngModelChange)="selectedItem.domammount= $event" type="text"></ion-input>
+          <ion-input [ngModel]="selectedItem?.domAmt" (ngModelChange)="selectedItem.domAmt= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Form Purpose Code*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.formpurpose" (ngModelChange)="selectedItem.formpurpose= $event">
-            <ion-option class="option" [value]="f.formpurpose" *ngFor="let f of formpurposeData">{{f.formpurpose}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.formPurposeCode" (ngModelChange)="selectedItem.formPurposeCode= $event">
+            <ion-option class="option" [value]="formPurposeCode" >{{selectedItem.formPurposeCode}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Prefix*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.prefix" (ngModelChange)="selectedItem.prefix= $event">
-            <ion-option class="option" [value]="p.prefix" *ngFor="let p of prefixData">{{p.prefix}}</ion-option>
+            <ion-option class="option" [value]="prefix" >{{selectedItem.prefix}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -221,7 +221,7 @@
 
         <ion-item no-lines>
           <ion-label stacked>Due Date Payment</ion-label>
-          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [ngModel]="selectedItem?.date" (ngModelChange)="selectedItem.date= $event"></ion-datetime>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [ngModel]="selectedItem?.dueDatePay" (ngModelChange)="selectedItem.dueDatePay= $event"></ion-datetime>
         </ion-item>
 
       </ion-list>
@@ -238,31 +238,31 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Shipment Date</ion-label>
-          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [ngModel]="selectedItem?.sdate" (ngModelChange)="selectedItem.sdate= $event"></ion-datetime>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [ngModel]="selectedItem?.shippedOn" (ngModelChange)="selectedItem.shippedOn= $event"></ion-datetime>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Port of Destination/Discharge*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.discharge" (ngModelChange)="selectedItem.discharge= $event">
-            <ion-option class="option" [value]="d.discharge" *ngFor="let d of dischargeData">{{d.discharge}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.portOfDestination" (ngModelChange)="selectedItem.portOfDestination= $event">
+            <ion-option class="option" [value]="portOfDestination" >{{selectedItem.portOfDestination}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Expected Port of Shipment*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.shipment" (ngModelChange)="selectedItem.shipment= $event">
-            <ion-option class="option" [value]="s.shipment" *ngFor="let s of shipmentData">{{s.shipment}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.expectedPortShipment" (ngModelChange)="selectedItem.expectedPortShipment= $event">
+            <ion-option class="option" [value]="expectedPortShipment" >{{selectedItem.expectedPortShipment}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Proforma Inv. No.</ion-label>
-          <ion-input [ngModel]="selectedItem?.proforma" (ngModelChange)="selectedItem.proforma= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.proformaNo" (ngModelChange)="selectedItem.proformaNo= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Proforma Inv. Date</ion-label>
-          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [ngModel]="selectedItem?.pdate" (ngModelChange)="selectedItem.pdate= $event"></ion-datetime>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [ngModel]="selectedItem?.proformaDate" (ngModelChange)="selectedItem.proformaDate= $event"></ion-datetime>
         </ion-item>
       </ion-list>
 
@@ -278,60 +278,60 @@
       <ion-list>
         <ion-item no-lines class="text-area">
           <ion-label stacked>Description of Goods</ion-label>
-          <ion-textarea [ngModel]="selectedItem?.description" (ngModelChange)="selectedItem.description= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
+          <ion-textarea [ngModel]="selectedItem?.goodsDescription" (ngModelChange)="selectedItem.goodsDescription= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Quantity*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalQuantity" (ngModelChange)="selectedItem.good.totalQuantity= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.totalQuantity" (ngModelChange)="selectedItem.totalQuantity= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'quantity')"></i>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>No of Items Expected (as per H.S codes)*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.expectedItems" (ngModelChange)="selectedItem.good.expectedItems= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.noOfItems" (ngModelChange)="selectedItem.noOfItems= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Net Weight/Mass(kg)*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalNetweight" (ngModelChange)="selectedItem.good.totalNetweight= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'weight')"></i>
+          <ion-input [ngModel]="selectedItem?.totalNetweight" (ngModelChange)="selectedItem.totalNetweight= $event" type="number"></ion-input>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'netWeight')"></i>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Gross Weight/Mass(kg)*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalGrossweight" (ngModelChange)="selectedItem.good.totalGrossweight= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'gross')"></i>
+          <ion-input [ngModel]="selectedItem?.totalGrossWeight" (ngModelChange)="selectedItem.totalGrossWeight= $event" type="number"></ion-input>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'grossMass')"></i>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Currency*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.currency" (ngModelChange)="selectedItem.currency= $event">
-            <ion-option class="option" [value]="c.currency" *ngFor="let c of currencyData">{{c.currency}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.currencyCode" (ngModelChange)="selectedItem.currencyCode= $event">
+            <ion-option class="option" [value]="currencyCode" >{{selectedItem.currencyCode}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Value of Goods in Foreign Currency*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalValue" (ngModelChange)="selectedItem.good.totalValue= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.totalValueOfGoods" (ngModelChange)="selectedItem.totalValueOfGoods= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'value')"></i>
         </ion-item>
 
         <ion-item no-lines> 
           <ion-label stacked>Total Value FOB*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalFOB" (ngModelChange)="selectedItem.good.totalFOB= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.totalFOB" (ngModelChange)="selectedItem.totalFOB= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'fob')"></i>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Freight Charges*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalFreight" (ngModelChange)="selectedItem.good.totalFreight= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.totalFreightFOB" (ngModelChange)="selectedItem.totalFreightFOB= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'freight')"></i>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total C & F Value*</ion-label>
-          <ion-input [ngModel]="selectedItem?.good.totalcf" (ngModelChange)="selectedItem.good.totalcf= $event" type="number"></ion-input>
+          <ion-input [ngModel]="selectedItem?.totalFC" (ngModelChange)="selectedItem.totalFC= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'cf')"></i>
         </ion-item>
 

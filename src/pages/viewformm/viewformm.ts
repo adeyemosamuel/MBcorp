@@ -13,7 +13,7 @@ export class ViewformmPage {
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
-  hideButton4: boolean = false;
+  hideButton4: boolean = false; 
   hideButton5: boolean = false;
 
   constructor(public navCtrl: NavController, 
@@ -55,7 +55,7 @@ export class ViewformmPage {
 
   itemTapped(selectedItem, doctype){
     let modal = this.modalCtrl.create('ModallPage', {
-      selectedItem:selectedItem.good.items,
+      selectedItem:selectedItem.items,
       docType: doctype
     }); 
     modal.present();
@@ -63,8 +63,9 @@ export class ViewformmPage {
 
   details(selectedItem){
     this.navCtrl.push('MdetailsPage', {
-      selectedItem:selectedItem.good.items,
+      selectedItem:selectedItem.items,
     });
+    console.log(this.selectedItem);
   }
 
 

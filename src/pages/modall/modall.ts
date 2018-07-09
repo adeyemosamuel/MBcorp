@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+// import { AppdataProvider } from '../../providers/appdata/appdata';
 
 @IonicPage()
 @Component({
@@ -14,7 +14,7 @@ export class ModallPage {
 
   constructor(public navCtrl: NavController,
     public viewCtrl: ViewController,
-    private appdata: AppdataProvider,
+    // private appdata: AppdataProvider,
      public navParams: NavParams) {
   }
 
@@ -24,7 +24,7 @@ export class ModallPage {
 
   }
 
-  selectCancel() {
+  selectCancel() { 
     this.viewCtrl.dismiss('');
   }
 

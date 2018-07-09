@@ -1,54 +1,54 @@
-import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/timeout';
-import 'rxjs/add/operator/toPromise';
-import { Storage } from '@ionic/storage/dist/storage';
 
 @Injectable()
 export class ServerServiceProvider {
-  
-//  url: string ='http://192.168.141.1:8082/api';
- 
+  // url: string = 'http://10.0.33.73:9000/api';
+  // url: string = 'http://a8926e6a.ngrok.io';
+  // url: string = 'http://hbbom.hbng.com:9000/api';
   url: string = '/api';
+  
+  header: Headers = new Headers({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNTkyMDE5IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTI4OTk3NjkxNTE4LCJleHAiOjE1MzE5OTc2OTF9.kAzyHYsDjYCr4n9_nYVbd2lsMbnEvP6yPt1JA9myPE_wJgkoQDAHQ-i3vDAqRgL8VuDZ4Gsx6oYAtqCj2jSjVg'
+  });
 
-  constructor(public http: Http, private store: Storage) {
-    console.log('Hello ServerService Provider');
+  constructor(
+    private http: Http 
+  ) {
+    console.log('Hello ServerProvider Provider');
   }
-//post api
-  async processData(body, funcName): Promise<any> {
-    console.log(body);
-    console.log(funcName);
-    // let varToken= await this.store.get('token')
-    let headers = new Headers();
-  headers.append('Content-Type', 'application/json'); 
 
+  async processData(body, funcName) {
     try {
-      let response = await this.http.post(this.url + funcName, JSON.stringify(body), {headers: headers}).toPromise();
-      console.log(response.json());
+      let response = await this.http.post(this.url + funcName, JSON.stringify(body), {headers: this.header})
+      .timeout(60000)
+      .toPromise();
       return response.json();
     }
     catch(err) {
-      console.log(err.json());
-      return {responseCode: "96", message: err.json().Message};
+      console.log(err);
+
+      return {responseCode: "96", message: 'Something went wrong. Try again.'};
     }
   }
 
-// get api
+  // get api
 async getData(funcName): Promise<any> {
   console.log(funcName);
 
-  let headers = new Headers();
-  headers.append('Content-Type', 'application/json');
+  // let headers = new Headers();
+  // headers.append('Content-Type', 'application/json');
 
   try {
-    let response = await this.http.get(this.url + funcName, {headers: headers}).toPromise();
+    let response = await this.http.get(this.url + funcName, {headers: this.header}).toPromise();
     console.log(response.json());
     return response.json();
   }
   catch(err) {
     console.log(err.json()); 
-    return {responseCode: "96", message: err.json().Message};
+    return {responseCode: "96", message: 'Something went wrong. Try again'};
   }
 }
 

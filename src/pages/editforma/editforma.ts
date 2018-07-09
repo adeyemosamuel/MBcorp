@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+// import { AppdataProvider } from '../../providers/appdata/appdata';
 
 
 
@@ -19,6 +19,7 @@ export class EditformaPage {
   amountData: any =[];
   chargeData: any= []; 
   accountData: any=[];
+  forexData: any=[];
   moneyData:any=[];
   hideButton: boolean = false;
   hideButton2: boolean = false;
@@ -28,21 +29,22 @@ export class EditformaPage {
   hideButton6:boolean = false;
 
   constructor(public navCtrl: NavController,
-    private appdata: AppdataProvider,
+    // private appdata: AppdataProvider,
      public navParams: NavParams) {
   }
  
   ionViewDidLoad() {
-    this.moneyData=this.appdata.getMoney2();
-    this.purposeData= this.appdata.getPurpose();
-    this.amountData= this.appdata.getAmount();
-    this.chargeData= this.appdata.getCharge();
-    this.accountData= this.appdata.getAccount();
-    this.stateData = this.appdata.getState();
-    this.countryData = this.appdata.getCountry();
-    this.iData= this.appdata.getID();
+    // this.moneyData=this.appdata.getMoney2();
+    // this.purposeData= this.appdata.getPurpose();
+    // this.amountData= this.appdata.getAmount();
+    // this.chargeData= this.appdata.getCharge();
+    // this.accountData= this.appdata.getAccount();
+    // this.stateData = this.appdata.getState();
+    // this.countryData = this.appdata.getCountry();
+    // this.iData= this.appdata.getID();
    
     this.selectedItem= this.navParams.get('a');
+    console.log(this.selectedItem)
     if (this.selectedItem) {
       this.hideButton = !this.hideButton
     }

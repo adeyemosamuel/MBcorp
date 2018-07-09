@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+// import { AppdataProvider } from '../../providers/appdata/appdata';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
+import { ControllerProvider } from '../../providers/controller/controller';
+import { ServerServiceProvider } from '../../providers/server-service/server-service';
 
 @IonicPage()
 @Component({
@@ -15,26 +17,41 @@ export class FormnxpPage {
   date: any;
   a: any;
   searchTerm: any;
-  FormArray: Array<any> = [];
-  arrayViews: Array<any> = [];
+  FormNXP: Array<any> = [];
+  arrayViews: Array<any> = []; 
 
   constructor(public navCtrl: NavController,
-    private appdata: AppdataProvider,
+    private control: ControllerProvider,
+    private serverService: ServerServiceProvider,
+    // private appdata: AppdataProvider,
     private verify: VerifyServiceProvider,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.FormArray = this.appdata.getInfo();
+    this.getFormNXP();
   }
 
   initializeItems() {
-    this.FormArray = this.appdata.getInfo();
+    this.getFormNXP();
   }
 
   // showSlide() {
   //   this.verify.showToast('Slide left', 'middle');
   // }
+
+  async getFormNXP() {
+    console.log('got here')
+    let loader = this.control.loadCtrl('Please wait...');
+    loader.present();
+    const response = await this.serverService.getData('/v1/formnxp/all');
+    this.FormNXP = response;
+    console.log(response);
+
+    loader.dismiss();
+
+    //referenced here
+  }
 
   getItems(ev: any) {
     // Reset items back to all of the items
@@ -45,8 +62,8 @@ export class FormnxpPage {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.FormArray = this.FormArray.filter((item) => {
-        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.FormNXP = this.FormNXP.filter((item) => {
+        return (item.exporterName.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
@@ -62,15 +79,15 @@ export class FormnxpPage {
   }
 
   loadArrayViews(a) {
-    if (a.status === 'Approved') {
+    if (a.formStatus === 'Approved') {
       this.arrayViews = ['View'];
     };
 
-    if (a.status === 'Submitted') {
+    if (a.formStatus === 'Submitted') {
       this.arrayViews = ['View', 'Edit'];
     };
 
-    if (a.status === 'Saved') {
+    if (a.formStatus === 'Saved') {
       this.arrayViews = ['View', 'Edit']
     };
   }

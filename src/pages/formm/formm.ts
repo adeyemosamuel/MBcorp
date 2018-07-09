@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
+import { ControllerProvider } from '../../providers/controller/controller';
+import { ServerServiceProvider } from '../../providers/server-service/server-service';
 
 @IonicPage()
 @Component({
@@ -15,22 +17,38 @@ export class FormmPage {
   date: any;
   a: any;
   searchTerm: any;
-  FormArray: Array<any> = [];
+  FormM: Array<any> = [];
   arrayViews: Array<any> = [];
 
   constructor(public navCtrl: NavController,
-    private appdata: AppdataProvider,
+    private control: ControllerProvider,
+    private serverService: ServerServiceProvider,
+    // private appdata: AppdataProvider,
     private verify: VerifyServiceProvider,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.FormArray = this.appdata.getInfo();
+    this.getFormM();
   }
 
   initializeItems() {
-    this.FormArray = this.appdata.getInfo();
+    this.getFormM();
   }
+
+  async getFormM() {
+    console.log('got here')
+    let loader = this.control.loadCtrl('Please wait...');
+    loader.present();
+    const response = await this.serverService.getData('/v1/formm/all');
+    this.FormM = response;
+    console.log(response);
+
+    loader.dismiss();
+
+    //referenced here
+  }
+
 
  
 
@@ -43,7 +61,7 @@ export class FormmPage {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.FormArray = this.FormArray.filter((item) => {
+      this.FormM = this.FormM.filter((item) => {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
@@ -56,15 +74,15 @@ export class FormmPage {
   // }
 
   loadArrayViews(a){
-    if (a.status === 'Approved'){
+    if (a.formStatus === 'Approved'){
       this.arrayViews=['View'];
     };
  
-    if (a.status ==='Submitted'){
+    if (a.formStatus ==='Submitted'){
       this.arrayViews=['View'];
     };
  
-    if (a.status ==='Saved'){
+    if (a.formStatus ==='Saved'){
       this.arrayViews=['View']
     };
   }
