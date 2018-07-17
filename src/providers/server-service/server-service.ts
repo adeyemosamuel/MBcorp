@@ -11,7 +11,7 @@ export class ServerServiceProvider {
   
   header: Headers = new Headers({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNTkyMDE5IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTI4OTk3NjkxNTE4LCJleHAiOjE1MzE5OTc2OTF9.kAzyHYsDjYCr4n9_nYVbd2lsMbnEvP6yPt1JA9myPE_wJgkoQDAHQ-i3vDAqRgL8VuDZ4Gsx6oYAtqCj2jSjVg'
+    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwMDk4IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTMxODE4MjAzNzcyLCJleHAiOjE1MzQ4MTgyMDN9.7Iq5GZG-jR9RA9NJtygtKiC2qR0TGeejzydomHwZSNK-6qMS4vRcrAVbBDPxGyLh6bBWGyZXHHS4i7sUdOiTUw'
   });
 
   constructor(

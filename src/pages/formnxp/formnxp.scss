@@ -74,16 +74,20 @@ page-formnxp {
                 text-transform: capitalize !important;
             }
  
-            .Approved{
+            .A{
                 border-left:3px solid green !important;
             }
          
-            .Submitted{
+            .S{
                 border-left: 3px solid orange !important;
             }
         
-            .Saved{
+            .P{
                 border-left: 3px solid grey !important;
+            }
+
+            .D{
+                border-left: 3px solid blue !important;
             }
         
 }

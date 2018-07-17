@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import { Storage } from '@ionic/storage';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
@@ -14,7 +15,7 @@ import { ToastController } from 'ionic-angular/components/toast/toast-controller
 export class LoginPage {
     userName: string = '';
     passWord: string = '';
-    // disableButton: boolean = true; 
+    // disableButton: boolean = false; 
 
 
 
@@ -22,7 +23,7 @@ export class LoginPage {
         public navParams: NavParams,
         private alertCtrl: AlertController,
         private toastCtrl: ToastController,
-        public loadingCtrl: LoadingController,
+        public control: ControllerProvider,
         private store: Storage,
         private server: ServerServiceProvider) {
 
@@ -42,29 +43,29 @@ export class LoginPage {
     // }
 
     async Login() {
-        // let loader = this.loadingCtrl.create({ spinner: "circles", content: 'Please wait....', duration: 100 });
-        // loader.present();
+        let loader = this.control.loadCtrl('Please wait...');
+        loader.present();
 
-        // let body = {
-        //     userName: 'Chrissy:C000854',
-        //     passWord: 'password123'  
-        // };
+        let body = {
+            userName: '0000098',
+            passWord: '172.27.15.43'  
+        };
 
-        // try {
-        //     let response = await this.server.processData(body, '/user/Signin');
-        //     console.log(response);
-        //     if (response.status === '00') {
-        //         this.store.set('token', response.data.token);
+        try {
+            let response = await this.server.processData(body, '/user/Signin');
+            console.log(response);
+            if (response.status === '00') {
+                this.store.set('token', response.data.token);
                 this.navCtrl.push('TabsPage');
-        //     } else {
-        //         this.createToaster(response.message);
-        //     }
-        // } catch (err) {
-        //     console.log(err);
-        //this.createToaster('Unable to login. Try again later.');
-        // }
+            } else {
+                this.createToaster(response.message);
+            }
+        } catch (err) {
+            console.log(err);
+        this.createToaster('Unable to login. Try again later.');
+        }
 
-        // loader.dismiss(); 
+        loader.dismiss();
     }
 
     forgot(){
@@ -73,17 +74,17 @@ export class LoginPage {
 
 
      // Toast Creation Method
-//   createToaster(msg){
+  createToaster(msg){
     
-//     let toaster = this.toastCtrl.create({
-//       message: msg,
-//       showCloseButton: true,
-//       closeButtonText: 'OK',
-//       cssClass: 'toastStyle',
-//       position: 'middle'
-//     });
-//     toaster.present();
-//   }
+    let toaster = this.toastCtrl.create({
+      message: msg,
+      showCloseButton: true,
+      closeButtonText: 'OK',
+      cssClass: 'toastStyle',
+      position: 'middle'
+    });
+    toaster.present();
+  }
 
 
 

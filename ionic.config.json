@@ -5,15 +5,10 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://localhost:8086/api"
+      "proxyUrl": "http://172.27.15.65:8080/api"
     }
   ],
-  "proxiesbk": [
-    {
-      "path": "/api",
-      "proxyUrl": "http://192.168.8.106:8086/api"
-    }
-  ],
+  
   "integrations": {
     "cordova": {}
   }

@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
 import { ControllerProvider } from '../../providers/controller/controller';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
+import { Storage } from "@ionic/storage";
 
 @IonicPage()
 @Component({
@@ -23,6 +24,7 @@ export class FormnxpPage {
   constructor(public navCtrl: NavController,
     private control: ControllerProvider,
     private serverService: ServerServiceProvider,
+    private store: Storage,
     // private appdata: AppdataProvider,
     private verify: VerifyServiceProvider,
     public navParams: NavParams) {
@@ -46,6 +48,8 @@ export class FormnxpPage {
     loader.present();
     const response = await this.serverService.getData('/v1/formnxp/all');
     this.FormNXP = response;
+
+    this.store.set("formnxp", this.FormNXP);
     console.log(response);
 
     loader.dismiss();
@@ -79,15 +83,19 @@ export class FormnxpPage {
   }
 
   loadArrayViews(a) {
-    if (a.formStatus === 'Approved') {
+    if (a.status === 'A') {
       this.arrayViews = ['View'];
     };
 
-    if (a.formStatus === 'Submitted') {
+    if (a.status === 'S') {
       this.arrayViews = ['View', 'Edit'];
     };
 
-    if (a.formStatus === 'Saved') {
+    if (a.status === 'P') {
+      this.arrayViews = ['View', 'Edit']
+    };
+
+    if (a.status === 'D') {
       this.arrayViews = ['View', 'Edit']
     };
   }

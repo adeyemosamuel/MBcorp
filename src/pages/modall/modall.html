@@ -13,7 +13,7 @@
         </ion-buttons>
       </ion-navbar>
   
-    </ion-header>
+    </ion-header> 
   
     <div class="miracle">
       <ion-list>
@@ -21,10 +21,10 @@
             <p>Item:{{m.goodsDescription}}</p>
             <p>HS Code:{{m.hsCode}}</p>
           <p *ngIf="docType==='expectedItems'">Number of Items:{{m.expectedItems}}</p>
-          <p *ngIf="docType==='fob'">Value FOB:{{m.fob}}</p>
-          <p *ngIf="docType==='freight'">Freight Charge:{{m.freight}}</p> 
+          <p *ngIf="docType==='fobvalue'">Value FOB:{{m.fobvalue}}</p>
+          <p *ngIf="docType==='frieghtCharge'">Freight Charge:{{m.frieghtCharge}}</p> 
         </ion-item>
-      </ion-list>
+      </ion-list> 
   
     </div>
   

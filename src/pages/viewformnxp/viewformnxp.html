@@ -269,7 +269,7 @@
         <ion-item no-lines>
           <ion-label stacked>Total Gross Weight/Mass(kg)*</ion-label>
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.totalGrossWeight" (ngModelChange)="selectedItem.totalGrossWeight= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'grossMass')"></i>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'grossWeight')"></i>
         </ion-item>
 
         <ion-item no-lines>
@@ -288,13 +288,13 @@
         <ion-item no-lines> 
           <ion-label stacked>Total Value FOB*</ion-label>
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.totalFOB" (ngModelChange)="selectedItem.totalFOB= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'fob')"></i>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'fobvalue')"></i>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Freight Charges*</ion-label>
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.totalFreightFOB" (ngModelChange)="selectedItem.totalFreightFOB= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'freight')"></i>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'frieghtCharge')"></i>
         </ion-item>
 
         <ion-item no-lines>

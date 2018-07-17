@@ -15,16 +15,16 @@
 
   </ion-header>
   <div class="miracle"> 
-    <ion-list> 
+    <ion-list>   
       <ion-item *ngFor="let m of Mikilo" no-lines>
-        <p>Item:{{m.name}}</p>
-        <p>HS Code:{{m.hscode}}</p>
+        <p>Item:{{m.goodsDescription}}</p>
+        <p>HS Code:{{m.hsCode}}</p>
         <p *ngIf="docType==='quantity'">Quantity:{{m.quantity}}</p>
-        <p *ngIf="docType==='weight'">Net Weight/Mass(Kg):{{m.weight}}</p>
-        <p *ngIf="docType==='gross'">Gross Weight/Mass(Kg):{{m.gross}}</p>
+        <p *ngIf="docType==='netWeight'">Net Weight/Mass(Kg):{{m.netWeight}}</p>
+        <p *ngIf="docType==='grossWeight'">Gross Weight/Mass(Kg):{{m.grossWeight}}</p>
         <p *ngIf="docType==='value'">Value of Goods:{{m.value}}</p>
-        <p *ngIf="docType==='fob'">Value FOB:{{m.fob}}</p>
-        <p *ngIf="docType==='freight'">Freight Charge:{{m.freight}}</p>
+        <p *ngIf="docType==='fobvalue'">Value FOB:{{m.fobvalue}}</p>
+        <p *ngIf="docType==='frieghtCharge'">Freight Charge:{{m.frieghtCharge}}</p>
         <p *ngIf="docType==='cf'">C & F Value:{{m.cf}}</p>
       </ion-item>
     </ion-list>

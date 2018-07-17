@@ -212,13 +212,13 @@
         <ion-item no-lines>
           <ion-label stacked>Total FOB Value</ion-label>
           <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.totalFB" (ngModelChange)="selectedItem.totalFB= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'fob')"></i>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'fobvalue')"></i>
         </ion-item>
  
         <ion-item no-lines>
           <ion-label stacked>Total Freight Charges</ion-label>
           <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.totalFreight" (ngModelChange)="selectedItem.totalFreight= $event" type="number"></ion-input>
-          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'freight')"></i>
+          <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'frieghtCharge')"></i>
         </ion-item>
       </ion-list>
       <div>

@@ -23,7 +23,7 @@ export class ModallPage {
     this.docType=this.navParams.get('docType');
 
   }
-
+ 
   selectCancel() { 
     this.viewCtrl.dismiss('');
   }

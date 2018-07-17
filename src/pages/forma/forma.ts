@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ControllerProvider } from '../../providers/controller/controller';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
+import { Storage } from "@ionic/storage";
 
 
 
@@ -26,6 +27,7 @@ export class FormaPage {
     private control: ControllerProvider,
     private serverService: ServerServiceProvider,
     // private appdata: AppdataProvider,
+    private store: Storage,
     private verify: VerifyServiceProvider,
     public navParams: NavParams) {
   }
@@ -49,6 +51,8 @@ export class FormaPage {
     loader.present();
     const response = await this.serverService.getData('/v1/formacorp/all');
     this.FormArray = response;
+
+    this.store.set("forma", this.FormArray);
     console.log(response);
 
     loader.dismiss();
@@ -78,15 +82,15 @@ export class FormaPage {
   // }
 
   loadArrayViews(a) {
-    if (a.formStatus === 'Approved') {
+    if (a.status === 'A') {
       this.arrayViews = ['View'];
     };
 
-    if (a.formStatus === 'Submitted') {
+    if (a.status === 'S') {
       this.arrayViews = ['View', 'Edit'];
     };
 
-    if (a.formStatus === 'Saved') {
+    if (a.status === 'P') {
       this.arrayViews = ['View', 'Edit']
     };
   }

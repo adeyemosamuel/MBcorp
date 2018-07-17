@@ -4,6 +4,7 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
 import { ControllerProvider } from '../../providers/controller/controller';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
+import { Storage } from "@ionic/storage";
 
 @IonicPage()
 @Component({
@@ -24,6 +25,7 @@ export class FormmPage {
     private control: ControllerProvider,
     private serverService: ServerServiceProvider,
     // private appdata: AppdataProvider,
+    private store: Storage,
     private verify: VerifyServiceProvider,
     public navParams: NavParams) {
   }
@@ -43,7 +45,7 @@ export class FormmPage {
     const response = await this.serverService.getData('/v1/formm/all');
     this.FormM = response;
     console.log(response);
-
+    this.store.set("formm", this.FormM);
     loader.dismiss();
 
     //referenced here
@@ -74,15 +76,19 @@ export class FormmPage {
   // }
 
   loadArrayViews(a){
-    if (a.formStatus === 'Approved'){
+    if (a.status === 'A'){
       this.arrayViews=['View'];
     };
  
-    if (a.formStatus ==='Submitted'){
+    if (a.status ==='S'){
       this.arrayViews=['View'];
     };
  
-    if (a.formStatus ==='Saved'){
+    if (a.status ==='P'){
+      this.arrayViews=['View']
+    };
+
+    if (a.status ==='R'){
       this.arrayViews=['View']
     };
   }
