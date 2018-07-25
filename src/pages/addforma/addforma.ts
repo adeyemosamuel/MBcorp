@@ -51,13 +51,7 @@ export class AddformaPage {
   hideButton5: boolean = false;
   hideButton6: boolean = false;
   Data: any = [];
-  // moneyData:any=[];
-  // stateData: any = [];
-  // countryData: any = [];
-  // purposeData:any = [];
-  // amountData: any =[];
-  // chargeData: any= [];
-  // accountData: any=[];
+
 
   constructor(public navCtrl: NavController,
     private alertCtrl: AlertController,
@@ -71,14 +65,7 @@ export class AddformaPage {
   async ionViewDidLoad() {
     this.selectedItem = this.navParams.get('b');
     this.getData();
-    // this.moneyData=this.appdata.getMoney2();
-    // this.purposeData= this.appdata.getPurpose();
-    // this.amountData= this.appdata.getAmount();
-    // this.chargeData= this.appdata.getCharge();
-    // this.accountData= this.appdata.getAccount();
-    // this.stateData = this.appdata.getState();
-    // this.countryData = this.appdata.getCountry();
-    // this.iData= this.appdata.getID();
+
     if (this.selectedItem) {
       this.hideButton = !this.hideButton
     }

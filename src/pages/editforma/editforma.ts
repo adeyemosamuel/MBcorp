@@ -15,15 +15,7 @@ export class EditformaPage {
   no:any;
   selectedItem: any;
   id: number;
-  // iData: any = [];
-  // stateData: any = [];
-  // countryData: any = [];
-  // purposeData:any = [];
-  // amountData: any =[];
-  // chargeData: any= [];
-  // accountData: any=[];
-  // forexData: any=[];
-  // moneyData:any=[];
+
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
@@ -37,14 +29,7 @@ export class EditformaPage {
   }
 
   ionViewDidLoad() {
-    // this.moneyData=this.appdata.getMoney2();
-    // this.purposeData= this.appdata.getPurpose();
-    // this.amountData= this.appdata.getAmount();
-    // this.chargeData= this.appdata.getCharge();
-    // this.accountData= this.appdata.getAccount();
-    // this.stateData = this.appdata.getState();
-    // this.countryData = this.appdata.getCountry();
-    // this.iData= this.appdata.getID();
+
 
     this.selectedItem= this.navParams.get('a');
     console.log(this.selectedItem)
