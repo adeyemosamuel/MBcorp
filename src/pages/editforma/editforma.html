@@ -57,7 +57,7 @@
           <ion-input [ngModel]="selectedItem?.beneBankCity" (ngModelChange)="selectedItem.beneBankCity= $event" type="text"></ion-input>
         </ion-item>
 
-        <ion-item no-lines> 
+        <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Country*</ion-label>
           <ion-input [ngModel]="selectedItem?.beneBankCtry" (ngModelChange)="selectedItem.beneBankCtry= $event" type="text"></ion-input>
         </ion-item>
@@ -134,7 +134,7 @@
         <ion-item no-lines>
           <ion-label stacked>Purpose of Payment*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.purposeOfPayment" (ngModelChange)="selectedItem.purposeOfPayment= $event">
-            <ion-option class="option" [value]="purposeOfPayment" >{{selectedItem.purposeOfPayment}}</ion-option>
+            <ion-option class="option"  >{{selectedItem.purposeOfPayment}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -144,7 +144,7 @@
                   <ion-item no-lines>
                       <ion-label stacked>Currency</ion-label>
                       <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.currencyCode" (ngModelChange)="selectedItem.currencyCode= $event">
-                        <ion-option class="option" [value]="currencyCode" >{{selectedItem.currencyCode}}</ion-option>
+                        <ion-option class="option" >{{selectedItem.currencyCode}}</ion-option>
                       </ion-select>
                     </ion-item>
               </ion-col>
@@ -168,10 +168,10 @@
         <ion-item no-lines>
             <ion-label stacked>Transfer Account*</ion-label>
             <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.transferAccounts" (ngModelChange)="selectedItem.transferAccounts= $event">
-              <ion-option class="option" [value]="transferAccounts">{{selectedItem.transferAccounts}}</ion-option>
+              <ion-option class="option" >{{selectedItem.transferAccounts}}</ion-option>
             </ion-select>
           </ion-item>
-  
+
               <ion-item no-lines>
                 <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
                 <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.transactionDebitAmt" (ngModelChange)="selectedItem.transactionDebitAmt= $event" type="number"></ion-input>
@@ -180,7 +180,7 @@
         <ion-item no-lines>
           <ion-label stacked>Charge Amount*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.chargeAccounts" (ngModelChange)="selectedItem.chargeAccounts= $event">
-            <ion-option class="option" [value]="chargeAccounts" >{{selectedItem.chargeAccounts}}</ion-option>
+            <ion-option class="option" >{{selectedItem.chargeAccounts}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -198,13 +198,13 @@
         <ion-item no-lines>
           <ion-label stacked>Valid for Forex*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.forexValue" (ngModelChange)="selectedItem.forexValue= $event">
-            <ion-option class="option" [value]="forexValue">{{selectedItem.forexValue}}</ion-option>
+            <ion-option class="option" >{{selectedItem.forexValue}}</ion-option>
           </ion-select>
         </ion-item>
 
         <!-- remember this for ion-options in case they passed an array of data later *ngFor="let c of chargeData"  -->
 
-         
+
       </ion-list>
 
     </div>
@@ -216,7 +216,7 @@
     </ion-item-divider>
     <div *ngIf="hideButton4" padding>
       <ion-list>
-        
+
       </ion-list>
 
     </div> -->
@@ -265,27 +265,27 @@
         <i *ngIf="!hideButton4" class="fas fa-angle-down" item-end></i>
         <i *ngIf="hideButton4" class="fas fa-angle-up" item-end></i>
       </ion-item-divider>
-  
+
       <div *ngIf="hideButton4" padding>
         <ion-list>
-          <ion-item no-lines class="file"> 
-  
-            <input type="file" [(ngModel)]="fileupload" />
+          <ion-item no-lines class="file">
+
+            <input type="file" [(ngModel)]="file" />
             <p style="white-space:normal">Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
           </ion-item>
           <div>
             <button ion-button small color="fcmb" (click)="upload()">Upload</button>
           </div>
-  
+
         </ion-list>
       </div>
-      
+
       <ion-item-divider (click)="mikilo6()">
           <span>TERMS & CONDITIONS</span>
           <i *ngIf="!hideButton6" class="fas fa-angle-down" item-end></i>
           <i *ngIf="hideButton6" class="fas fa-angle-up" item-end></i>
         </ion-item-divider>
-    
+
         <div *ngIf="hideButton6" padding>
           <p style="white-space:normal">I hereby declare that the above written particulars are true to the best of my knowledge and belief
             <a color="fcmb">Read more...</a>

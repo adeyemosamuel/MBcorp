@@ -9,15 +9,15 @@
       </ion-buttons>
   </ion-navbar>
 
-</ion-header> 
+</ion-header>
 
 
 <ion-content padding>
   <ion-list>
     <ion-item no-lines *ngFor="let b of bdata" (click)="itemTapped(b)" >
-      <p>{{b.bname}}</p>
+      <p>{{b.beneficiaryName}}</p>
     </ion-item>
-    
+
   </ion-list>
 
 </ion-content>

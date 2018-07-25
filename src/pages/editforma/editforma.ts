@@ -10,17 +10,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'editforma.html',
 })
 export class EditformaPage {
+  file: any;
+  yes: any;
+  no:any;
   selectedItem: any;
   id: number;
-  iData: any = []; 
-  stateData: any = [];
-  countryData: any = [];
-  purposeData:any = [];
-  amountData: any =[];
-  chargeData: any= []; 
-  accountData: any=[];
-  forexData: any=[];
-  moneyData:any=[];
+  // iData: any = [];
+  // stateData: any = [];
+  // countryData: any = [];
+  // purposeData:any = [];
+  // amountData: any =[];
+  // chargeData: any= [];
+  // accountData: any=[];
+  // forexData: any=[];
+  // moneyData:any=[];
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
@@ -32,7 +35,7 @@ export class EditformaPage {
     // private appdata: AppdataProvider,
      public navParams: NavParams) {
   }
- 
+
   ionViewDidLoad() {
     // this.moneyData=this.appdata.getMoney2();
     // this.purposeData= this.appdata.getPurpose();
@@ -42,7 +45,7 @@ export class EditformaPage {
     // this.stateData = this.appdata.getState();
     // this.countryData = this.appdata.getCountry();
     // this.iData= this.appdata.getID();
-   
+
     this.selectedItem= this.navParams.get('a');
     console.log(this.selectedItem)
     if (this.selectedItem) {
@@ -76,7 +79,14 @@ export class EditformaPage {
   }
 
   isReadonly() {
-    return this.isReadonly;   //return true/false  
+    return this.isReadonly;   //return true/false
+  }
+  update(){
+
+  }
+
+  upload(){
+
   }
 
 }

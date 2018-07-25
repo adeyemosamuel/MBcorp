@@ -29,12 +29,12 @@
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Name*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneficiaryName" (ngModelChange)="selectedItem.beneficiaryName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Account Number*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.baccount" (ngModelChange)="selectedItem.baccount= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneficiaryAccount" (ngModelChange)="selectedItem.beneficiaryAccount= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
@@ -44,7 +44,7 @@
 
         <ion-item no-lines>
           <ion-label stacked>Swift Code*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbswiftcode" (ngModelChange)="selectedItem.bbswiftcode= $event"
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankSwiftCode" (ngModelChange)="selectedItem.beneBankSwiftCode= $event"
             type="number"></ion-input>
         </ion-item>
         <div>
@@ -55,37 +55,37 @@
         <div *ngIf="viewButton">
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank Name*</ion-label>
-            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbname" type="text"></ion-input>
+            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankName" type="text"></ion-input>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank Address*</ion-label>
-            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbaddress" type="text"></ion-input>
+            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankAddr" type="text"></ion-input>
           </ion-item>
 
           <!-- <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank Address*</ion-label>
             <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbaddress" type="text"></ion-input>
           </ion-item> -->
- 
+
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank City*</ion-label>
-            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbcity" type="text"></ion-input>
+            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankCity" type="text"></ion-input>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank Country*</ion-label>
-            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbcountry" type="text"></ion-input>
+            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankCtry" type="text"></ion-input>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank State*</ion-label>
-            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbstate" type="text"></ion-input>
+            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankState" type="text"></ion-input>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Beneficiary Bank Postal Code*</ion-label>
-            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbpostalcode" type="number"></ion-input>
+            <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankPoCode" type="number"></ion-input>
           </ion-item>
         </div>
 
@@ -103,38 +103,38 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Name</ion-label>
-          <ion-input [(ngModel)]="ibname" type="text"></ion-input>
+          <ion-input [(ngModel)]="interBankName" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Swift Code</ion-label>
-          <ion-input [(ngModel)]="ibswiftcode" type="text"></ion-input>
+          <ion-input [(ngModel)]="interBankSwiftCode" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Address</ion-label>
-          <ion-input [(ngModel)]="ibaddress" type="text"></ion-input>
+          <ion-input [(ngModel)]="interBankAddr" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank City</ion-label>
-          <ion-input [(ngModel)]="ibcity" type="text"></ion-input>
+          <ion-input [(ngModel)]="interBankCity" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank State</ion-label>
-          <ion-input [(ngModel)]="ibstate" type="text"></ion-input>
+          <ion-input [(ngModel)]="interBankState" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Country</ion-label>
-          <ion-input [(ngModel)]="ibcountry" type="text"></ion-input>
+          <ion-input [(ngModel)]="interBankCtry" type="text"></ion-input>
         </ion-item>
 
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Postal Code</ion-label>
-          <ion-input [(ngModel)]="ibpostalcode" type="number"></ion-input>
+          <ion-input [(ngModel)]="interBankPoCode" type="number"></ion-input>
         </ion-item>
       </ion-list>
     </div>
@@ -149,8 +149,8 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Purpose of Payment*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="payment">
-            <ion-option class="option" [value]="p.purpose" *ngFor="let p of purposeData">{{p.purpose}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="purposeOfPaymentDesc">
+            <ion-option class="option" [value]="p.purposeOfPaymentDesc" *ngFor="let p of Data">{{p.purposeOfPaymentDesc}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -159,8 +159,8 @@
             <ion-col col-4 text-left>
               <ion-item no-lines>
                 <ion-label stacked>Currency</ion-label>
-                <ion-select interface="action-sheet" class="Select" [ngModel]="money">
-                  <ion-option class="option" [value]="a.money" *ngFor="let a of moneyData">{{a.money}}</ion-option>
+                <ion-select interface="action-sheet" class="Select" [ngModel]="currencyCode">
+                  <ion-option class="option" [value]="c.currencyCode" *ngFor="let c of Data">{{c.currencyCode}}</ion-option>
                 </ion-select>
               </ion-item>
             </ion-col>
@@ -183,39 +183,38 @@
 
         <ion-item no-lines>
           <ion-label stacked>Transfer Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="transfer">
-            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="transferAccounts">
+            <ion-option class="option" [value]="t.transferAccounts" *ngFor="let t of Data">{{t.transferAccounts}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.transactionDebitAmt" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Charge Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge">
-            <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="chargeAccounts">
+            <ion-option class="option" [value]="c.chargeAccounts" *ngFor="let c of Data">{{c.chargeAccounts}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Amount applied in words*</ion-label>
-          <ion-input [(ngModel)]="applied" type="text"></ion-input>
+          <ion-input [(ngModel)]="amountInWords" type="text"></ion-input>
         </ion-item>
 
 
         <ion-item no-lines class="text-area">
           <ion-label stacked>Remittance Info</ion-label>
-          <ion-textarea [(ngModel)]="info" rows="2" placeholder="Remittance Info"></ion-textarea>
+          <ion-textarea [(ngModel)]="remittanceInfo" rows="2" placeholder="Remittance Info"></ion-textarea>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Valid for Forex*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="valid">
-            <ion-option value="yes">Yes</ion-option>
-            <ion-option value="no">No</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="forexValue">
+              <ion-option class="option" [value]="f.forexValue" *ngFor="let f of Data">{{f.forexValue}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -273,7 +272,7 @@
       <ion-list>
         <ion-item no-lines class="file">
 
-          <input type="file" [(ngModel)]="fileupload" />
+          <input type="file" [(ngModel)]="file" />
           <p style="white-space:normal">Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
         </ion-item>
         <div>

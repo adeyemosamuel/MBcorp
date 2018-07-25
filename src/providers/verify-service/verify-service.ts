@@ -13,94 +13,46 @@ export class VerifyServiceProvider {
     console.log('Hello VerifyServiceProvider Provider');
   }
 
-  submitforma(bname, baccount, name, bbswiftcode, bbname, bbaddress, bbcity,bbcountry, bbstate, bbpostalcode, ibname, ibswiftcode, ibaddress, ibcity, ibstate, ibcountry, ibpostalcode, payment, money, amount, transfer, estimated, charge, applied, info, valid, fileupload): boolean {
-    // if (bname == null || bname == '') {
-    //   this.errorMessage = 'Beneficiary name is required';
-    //   return false;
-    // }
+  submitforma(beneficiaryName, beneficiaryAccount, name, beneBankSwiftCode, beneBankName, beneBankAddr, beneBankCity,beneBankCtry, beneBankState, beneBankPoCode, interBankName, interBankSwiftCode, interBankAddr, interBankCity, interBankState, interBankCtry, interBankPoCode, purposeOfPaymentDesc, currencyCode, amount, transferAccounts, transactionDebitAmt, chargeAccounts, amountInWords, remittanceInfo, forexValue, file): boolean {
 
-    // if (name == null || name == '') {
-    //   this.errorMessage = 'Account name is required';
-    //   return false;
-    // }
 
-    // if (baccount == null || baccount == '') {
-    //   this.errorMessage = 'Account Number is required';
-    //   return false;
-    // }
-
-    // if (bbswiftcode == null || bbswiftcode == '') {
-    //   this.errorMessage = 'Swift Code is required';
-    //   return false;
-    // }
-
-    // if (bbname == null || bbname == '') {
-    //   this.errorMessage = 'Beneficiary bank name is required';
-    //   return false;
-    // }
-
-    // if (bbaddress == null || bbaddress == '') {
-    //   this.errorMessage = 'Beneficiary bank address is required';
-    //   return false;
-    // }
-
-    // if (bbcity == null || bbcity == '') {
-    //   this.errorMessage = 'Beneficiary bank city is required';
-    //   return false;
-    // }
-
-    // if (bbcountry == null || bbcountry == '') {
-    //   this.errorMessage = 'Beneficiary bank country is required';
-    //   return false;
-    // }
-
-    // if (bbstate == null || bbstate == '') {
-    //   this.errorMessage = 'Beneficiary bank state is required';
-    //   return false;
-    // }
-
-    // if (bbpostalcode == null || bbpostalcode == '') {
-    //   this.errorMessage = 'Beneficiary bank postal code is required';
-    //   return false;
-    // }
-
-    if (payment == null || payment == '') {
-      this.errorMessage = 'Select Purpose of Payment'; 
+    if (purposeOfPaymentDesc == null || purposeOfPaymentDesc == '') {
+      this.errorMessage = 'Select Purpose of Payment';
       return false;
     }
 
     if (amount == null || amount == '') {
-      this.errorMessage = 'Enter Amount'; 
+      this.errorMessage = 'Enter Amount';
       return false;
     }
 
-    if (charge == null || charge == '') {
-      this.errorMessage = 'Select Charge Account'; 
+    if (chargeAccounts == null || chargeAccounts == '') {
+      this.errorMessage = 'Select Charge Account';
       return false;
     }
 
-    if (applied == null || applied == '') {
-      this.errorMessage = 'Enter amount applied in words'; 
+    if (amountInWords == null || amountInWords == '') {
+      this.errorMessage = 'Enter amount applied in words';
       return false;
     }
 
-    if (valid == null || valid == '') {
-      this.errorMessage = 'Select Valid for Forex'; 
+    if (forexValue == null || forexValue == '') {
+      this.errorMessage = 'Select Valid for Forex';
       return false;
     }
 
-    if (transfer == null || transfer == '') {
-      this.errorMessage = 'Select Transfer Account'; 
+    if (transferAccounts == null || transferAccounts == '') {
+      this.errorMessage = 'Select Transfer Account';
       return false;
     }
 
-    if (estimated == null || estimated == '') {
-      this.errorMessage = 'Enter Estimated Debit Amount'; 
+    if (transactionDebitAmt == null || transactionDebitAmt == '') {
+      this.errorMessage = 'Enter Estimated Debit Amount';
       return false;
     }
 
-    if (fileupload == null || fileupload == '') {
-      this.errorMessage = 'Attach files'; 
+    if (file == null || file == '') {
+      this.errorMessage = 'Attach files';
       return false;
     }
 

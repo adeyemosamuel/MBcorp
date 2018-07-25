@@ -21,7 +21,7 @@ export class MorePage {
   }
 
   logout() {
-    this.viewCtrl.dismiss();
+    // this.viewCtrl.dismiss();
     // this.store.clearStorage('out');
     this.navCtrl.setRoot('LoginPage');
   }
