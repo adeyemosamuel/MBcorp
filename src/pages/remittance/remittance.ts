@@ -49,16 +49,16 @@ export class RemittancePage {
     console.log('got here')
     let loader = this.control.loadCtrl('Please wait...');
     loader.present();
-    // const response = await this.serverService.getData('/v1/remittance/all');
-    // this.FormREM = response;
+    const response = await this.serverService.getData('/v1/remittance/all');
+    this.FormREM = response;
 
-    // this.store.set("remittance", this.FormREM);
-    // console.log(response);
+    this.store.set("remittance", this.FormREM);
+    console.log(response);
 
-    this.store.get('remittance').then((val) => {
-      this.FormREM = val;
-      console.log(this.FormREM);
-    });
+    // this.store.get('remittance').then((val) => {
+    //   this.FormREM = val;
+    //   console.log(this.FormREM);
+    // });
 
     loader.dismiss();
 

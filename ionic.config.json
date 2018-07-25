@@ -5,10 +5,10 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://172.27.15.65:8080/api"
+      "proxyUrl": "https://313889c2-e37f-4cf4-8502-b69c3aeda13f.mock.pstmn.io/api"
     }
   ],
-  
+
   "integrations": {
     "cordova": {}
   }

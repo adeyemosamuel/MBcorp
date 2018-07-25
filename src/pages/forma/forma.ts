@@ -49,16 +49,16 @@ export class FormaPage {
     console.log('got here')
     let loader = this.control.loadCtrl('Please wait...');
     loader.present();
-    // const response = await this.serverService.getData('/v1/formacorp/all');
-    // this.FormArray = response;
+    const response = await this.serverService.getData('/v1/formacorp/all');
+    this.FormArray = response;
 
-    // this.store.set("forma", this.FormArray);
-    // console.log(response);
+    this.store.set("forma", this.FormArray);
+    console.log(response);
 
-    this.store.get('forma').then((val) => {
-      this.FormArray = val;
-      console.log(this.FormArray);
-    });
+    // this.store.get('forma').then((val) => {
+    //   this.FormArray = val;
+    //   console.log(this.FormArray);
+    // });
 
     loader.dismiss();
 

@@ -12,16 +12,16 @@ page-forma {
 
     .main-content {
         height: 100%;
-      } 
+      }
 
       [text-color="my-custom-color"] {
         color: #ffb822;
-    } 
+    }
 
     [text-color="my-custom-color2"] {
         color: #5c2684;
-    } 
- 
+    }
+
     // ion-item-sliding {
     //     border-bottom: 8px solid map-get($colors, light) !important;
     //     height: 100px !important;
@@ -40,6 +40,7 @@ page-forma {
 
     ion-item:first-child {
         border-top: 8px solid map-get($colors, light) !important;
+        margin-top: 3px !important;
     }
 
     // ion-item-options {
@@ -48,8 +49,8 @@ page-forma {
     // }
 
     ion-item:last-child {
-        border-bottom: none !important;
-        
+        border-bottom: 8px solid map-get($colors, light)!important;
+
         // ion-item-options {
         //     border-bottom: none !important;
         // }
@@ -67,24 +68,30 @@ page-forma {
             font-size: 20px !important;
             color: map-get($colors, fcmb);
         }
-           
-    
+
+
             button {
                 font-weight: bold !important;
                 text-transform: capitalize !important;
             }
- 
+
             .A{
                 border-left:3px solid green !important;
             }
-         
+
             .S{
                 border-left: 3px solid orange !important;
             }
-        
+
             .P{
                 border-left: 3px solid grey !important;
             }
-        
+
+            .p {
+              white-space: normal !important;
+          }
+
+          h2 {font-weight: bold !important;}
+
 
 }
