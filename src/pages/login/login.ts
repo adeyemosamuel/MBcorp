@@ -7,7 +7,7 @@ import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
-@IonicPage() 
+@IonicPage()
 @Component({
     selector: 'page-login',
     templateUrl: 'login.html',
@@ -15,7 +15,7 @@ import { ControllerProvider } from '../../providers/controller/controller';
 export class LoginPage {
     userName: string = '';
     passWord: string = '';
-    // disableButton: boolean = false; 
+    // disableButton: boolean = false;
 
 
 
@@ -47,22 +47,29 @@ export class LoginPage {
         loader.present();
 
         let body = {
-            userName: '0000098',
-            passWord: '172.27.15.43'  
+            userName: this.userName,
+            passWord:this.passWord
         };
 
         try {
             let response = await this.server.processData(body, '/user/Signin');
             console.log(response);
             if (response.status === '00') {
+              this.control.toastCtrl(response.message, 'middle', false);
                 this.store.set('token', response.data.token);
                 this.navCtrl.push('TabsPage');
-            } else {
-                this.createToaster(response.message);
+            } else if (response.status == '99') {
+              this.control.toastCtrl(response.message, 'middle', false);
+            } else if(response.status == '100'){
+              this.control.toastCtrl(response.message, 'middle', false);
+            } else{
+              this.control.toastCtrl("Login Failed. Please try again", 'middle', false);
             }
+
+
         } catch (err) {
             console.log(err);
-        this.createToaster('Unable to login. Try again later.');
+        // this.createToaster('Unable to login. Try again later.');
         }
 
         loader.dismiss();
@@ -75,7 +82,7 @@ export class LoginPage {
 
      // Toast Creation Method
   createToaster(msg){
-    
+
     let toaster = this.toastCtrl.create({
       message: msg,
       showCloseButton: true,

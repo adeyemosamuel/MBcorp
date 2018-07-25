@@ -24,52 +24,52 @@
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Name*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bname" (ngModelChange)="selectedItem.bname= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneficiaryName" (ngModelChange)="selectedItem.beneficiaryName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Account Number*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.baccount" (ngModelChange)="selectedItem.baccount= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneficiaryAccount" (ngModelChange)="selectedItem.beneficiaryAccount= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Account Name*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.name" (ngModelChange)="selectedItem.name= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankName" (ngModelChange)="selectedItem.beneBankName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Swift Code*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbswiftcode" (ngModelChange)="selectedItem.bbswiftcode= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankSwiftCode" (ngModelChange)="selectedItem.beneBankSwiftCode= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Name*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbname" (ngModelChange)="selectedItem.bbname= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankName" (ngModelChange)="selectedItem.beneBankName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Address*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbaddress" (ngModelChange)="selectedItem.bbaddress= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankAddr" (ngModelChange)="selectedItem.beneBankAddr= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank City*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbcity" (ngModelChange)="selectedItem.bbcity= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankCity" (ngModelChange)="selectedItem.beneBankCity= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Country*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbcountry" (ngModelChange)="selectedItem.bbcountry= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankCtry" (ngModelChange)="selectedItem.beneBankCtry= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank State*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.bbstate" (ngModelChange)="selectedItem.bbstate= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankState" (ngModelChange)="selectedItem.beneBankState= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Postal Code*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.bbpostalcode" (ngModelChange)="selectedItem.bbpostalcode= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.beneBankPoCode" (ngModelChange)="selectedItem.beneBankPoCode= $event" type="number"></ion-input>
         </ion-item>
 
 
@@ -87,38 +87,38 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Name</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.ibname" (ngModelChange)="selectedItem.ibname= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.interBankName" (ngModelChange)="selectedItem.interBankName= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Swift Code</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibswiftcode" (ngModelChange)="selectedItem.ibswiftcode= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.interBankSwiftCode" (ngModelChange)="selectedItem.interBankSwiftCode= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Address</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibaddress" (ngModelChange)="selectedItem.ibaddress= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.interBankAddr" (ngModelChange)="selectedItem.interBankAddr= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank City</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibcity" (ngModelChange)="selectedItem.ibcity= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.interBankCity" (ngModelChange)="selectedItem.interBankCity= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank State</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibstate" (ngModelChange)="selectedItem.ibstate= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.interBankState" (ngModelChange)="selectedItem.interBankState= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Country</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibcountry" (ngModelChange)="selectedItem.ibcountry= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.interBankCtry" (ngModelChange)="selectedItem.interBankCtry= $event" type="text"></ion-input>
         </ion-item>
 
 
         <ion-item no-lines>
           <ion-label stacked>Intermediary Bank Postal Code</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.ibpostalcode" (ngModelChange)="selectedItem.ibpostalcode= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.interBankPoCode" (ngModelChange)="selectedItem.interBankPoCode= $event" type="number"></ion-input>
         </ion-item>
       </ion-list>
     </div>
@@ -133,7 +133,7 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Purpose of Payment*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.payment" (ngModelChange)="selectedItem.ibpostalcode= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.purposeOfPaymentDesc" (ngModelChange)="selectedItem.purposeOfPaymentDesc= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-grid>
@@ -141,7 +141,7 @@
               <ion-col col-4 text-left>
                   <ion-item no-lines>
                       <ion-label stacked>Currency</ion-label>
-                      <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.money" (ngModelChange)="selectedItem.money= $event" type="text"></ion-input>
+                      <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.currencyCode" (ngModelChange)="selectedItem.currencyCode= $event" type="text"></ion-input>
                     </ion-item>
               </ion-col>
               <ion-col col-8 text-right>
@@ -155,43 +155,43 @@
 
           <ion-item no-lines>
               <ion-label stacked>Transfer Account*</ion-label>
-              <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.transfer" (ngModelChange)="selectedItem.transfer= $event" type=“text”></ion-input>
+              <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.transferAccounts" (ngModelChange)="selectedItem.transferAccounts= $event" type=“text”></ion-input>
             </ion-item>
-    
+
                 <ion-item no-lines>
                   <ion-label stacked>Estimated Debit Amount in Foreign Currency*</ion-label>
-                  <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.estimated" (ngModelChange)="selectedItem.estimated= $event" type="number"></ion-input>
+                  <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.transactionDebitAmt" (ngModelChange)="selectedItem.transactionDebitAmt= $event" type="number"></ion-input>
                 </ion-item>
 
-        
+
 
         <ion-item no-lines>
           <ion-label stacked>Charge Amount*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.charge" (ngModelChange)="selectedItem.charge= $event" type=“text”></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.chargeAccounts" (ngModelChange)="selectedItem.chargeAccounts= $event" type=“text”></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Amount applied in words*</ion-label>
-          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.applied" (ngModelChange)="selectedItem.applied= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.amountInWords" (ngModelChange)="selectedItem.amountInWords= $event" type="text"></ion-input>
         </ion-item>
 
 
         <ion-item no-lines class="text-area">
           <ion-label stacked>Remittance Info</ion-label>
-          <ion-textarea [readonly]="isReadonly()"  [ngModel]="selectedItem?.info" (ngModelChange)="selectedItem.info= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
+          <ion-textarea [readonly]="isReadonly()"  [ngModel]="selectedItem?.remittanceInfo" (ngModelChange)="selectedItem.remittanceInfo= $event" rows="2" placeholder="Remittance Info"></ion-textarea>
         </ion-item>
 
-        
 
-         
+
+
       </ion-list>
 
     </div>
 
-    
 
-    
-    
+
+
+
   </ion-item-group>
 
 

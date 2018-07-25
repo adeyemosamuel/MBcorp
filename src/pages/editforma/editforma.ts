@@ -14,7 +14,7 @@ export class EditformaPage {
   yes: any;
   no:any;
   selectedItem: any;
-  id: number;
+
 
   hideButton: boolean = false;
   hideButton2: boolean = false;
