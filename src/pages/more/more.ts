@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ViewController,NavController, NavParams } from 'ionic-angular';
+// import { Storage } from '@ionic/storage';
 
-/**
- * Generated class for the MorePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MorePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    // private store: Storage,
+    private viewCtrl: ViewController,
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePage');
+  }
+
+  logout() {
+    this.viewCtrl.dismiss();
+    // this.store.clearStorage('out');
+    this.navCtrl.setRoot('LoginPage');
   }
 
 }
