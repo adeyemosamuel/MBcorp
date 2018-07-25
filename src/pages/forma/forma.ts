@@ -19,7 +19,7 @@ export class FormaPage {
   formStatus: any;
   a: any;
   searchTerm: any;
-  FormArray: Array<any> = []; 
+  FormArray: Array<any> = [];
   arrayViews: Array<any> = [];
 
 
@@ -49,15 +49,23 @@ export class FormaPage {
     console.log('got here')
     let loader = this.control.loadCtrl('Please wait...');
     loader.present();
-    const response = await this.serverService.getData('/v1/formacorp/all');
-    this.FormArray = response;
+    // const response = await this.serverService.getData('/v1/formacorp/all');
+    // this.FormArray = response;
 
-    this.store.set("forma", this.FormArray);
-    console.log(response);
+    // this.store.set("forma", this.FormArray);
+    // console.log(response);
+
+    this.store.get('forma').then((val) => {
+      this.FormArray = val;
+      console.log(this.FormArray);
+    });
 
     loader.dismiss();
 
     //referenced here
+
+
+
   }
 
   getItems(ev: any) {
@@ -78,7 +86,7 @@ export class FormaPage {
   // itemTapped(a) {
   //   this.navCtrl.push('EditformaPage', {
   //     a: a
-  //   }); 
+  //   });
   // }
 
   loadArrayViews(a) {

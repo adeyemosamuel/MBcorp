@@ -42,17 +42,22 @@ export class FormmPage {
     console.log('got here')
     let loader = this.control.loadCtrl('Please wait...');
     loader.present();
-    const response = await this.serverService.getData('/v1/formm/all');
-    this.FormM = response;
-    console.log(response);
-    this.store.set("formm", this.FormM);
+    // const response = await this.serverService.getData('/v1/formm/all');
+    // this.FormM = response;
+    // console.log(response);
+    // this.store.set("formm", this.FormM);
+
+    this.store.get('formm').then((val) => {
+      this.FormM = val;
+      console.log(this.FormM);
+    });
     loader.dismiss();
 
     //referenced here
   }
 
 
- 
+
 
   getItems(ev: any) {
     // Reset items back to all of the items
@@ -72,18 +77,18 @@ export class FormmPage {
   // itemTapped(a) {
   //   this.navCtrl.push('EditformaPage', {
   //     a: a
-  //   }); 
+  //   });
   // }
 
   loadArrayViews(a){
     if (a.status === 'A'){
       this.arrayViews=['View'];
     };
- 
+
     if (a.status ==='S'){
       this.arrayViews=['View'];
     };
- 
+
     if (a.status ==='P'){
       this.arrayViews=['View']
     };

@@ -19,7 +19,7 @@ export class FormnxpPage {
   a: any;
   searchTerm: any;
   FormNXP: Array<any> = [];
-  arrayViews: Array<any> = []; 
+  arrayViews: Array<any> = [];
 
   constructor(public navCtrl: NavController,
     private control: ControllerProvider,
@@ -46,11 +46,17 @@ export class FormnxpPage {
     console.log('got here')
     let loader = this.control.loadCtrl('Please wait...');
     loader.present();
-    const response = await this.serverService.getData('/v1/formnxp/all');
-    this.FormNXP = response;
+    // const response = await this.serverService.getData('/v1/formnxp/all');
+    // this.FormNXP = response;
 
-    this.store.set("formnxp", this.FormNXP);
-    console.log(response);
+    // this.store.set("formnxp", this.FormNXP);
+    // console.log(response);
+
+
+    this.store.get('formnxp').then((val) => {
+      this.FormNXP = val;
+      console.log(this.FormNXP);
+    });
 
     loader.dismiss();
 
@@ -75,7 +81,7 @@ export class FormnxpPage {
   // itemTapped(a) {
   //   this.navCtrl.push('EditformaPage', {
   //     a: a
-  //   }); 
+  //   });
   // }
 
   fab() {

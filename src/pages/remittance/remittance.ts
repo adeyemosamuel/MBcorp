@@ -49,17 +49,22 @@ export class RemittancePage {
     console.log('got here')
     let loader = this.control.loadCtrl('Please wait...');
     loader.present();
-    const response = await this.serverService.getData('/v1/remittance/all');
-    this.FormREM = response;
+    // const response = await this.serverService.getData('/v1/remittance/all');
+    // this.FormREM = response;
 
-    this.store.set("remittance", this.FormREM);
-    console.log(response);
+    // this.store.set("remittance", this.FormREM);
+    // console.log(response);
+
+    this.store.get('remittance').then((val) => {
+      this.FormREM = val;
+      console.log(this.FormREM);
+    });
 
     loader.dismiss();
 
     //referenced here
   }
- 
+
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -78,7 +83,7 @@ export class RemittancePage {
   // itemTapped(a) {
   //   this.navCtrl.push('EditformaPage', {
   //     a: a
-  //   }); 
+  //   });
   // }
 
   fab() {
@@ -89,11 +94,11 @@ export class RemittancePage {
     if (a.status === 'A'){
       this.arrayViews=['View'];
     };
- 
+
     if (a.status ==='S'){
       this.arrayViews=['View', 'Edit'];
     };
- 
+
     if (a.status ==='P'){
       this.arrayViews=['View', 'Edit']
     };
@@ -113,7 +118,7 @@ export class RemittancePage {
     pop.present({ ev: ev });
     pop.onDidDismiss((data) => {
       if (data=== 'Edit') {
-        this.navCtrl.push('EditremPage', { 
+        this.navCtrl.push('EditremPage', {
           a: a
         });
       } else if (data === 'View') {
