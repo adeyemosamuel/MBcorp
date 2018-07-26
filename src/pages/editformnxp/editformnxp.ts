@@ -10,11 +10,14 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 export class EditformnxpPage {
   selectedItem: any;
   a: any;
+  yes:any;
+  no: any;
+  file: any;
   // stateData: any = [];
   // countryData: any = [];
-  // cityData: any = []; 
+  // cityData: any = [];
   // methodData: any = [];
-  // domiciliaryData: any = []; 
+  // domiciliaryData: any = [];
   // formpurposeData: any = [];
   // chargeData: any = [];
   // prefixData: any = [];
@@ -33,7 +36,7 @@ export class EditformnxpPage {
   hideButton8: boolean = false;
 
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
     // private appdata: AppdataProvider,
     public navParams: NavParams) {
@@ -44,11 +47,11 @@ export class EditformnxpPage {
     // this.countryData = this.appdata.getCountry();
     // this.cityData = this.appdata.getCity();
     // this.methodData = this.appdata.getMethod();
-    // this.shipmentData = this.appdata.getShipment(); 
+    // this.shipmentData = this.appdata.getShipment();
     // this.dischargeData = this.appdata.getDischarge();
     // this.currencyData = this.appdata.getCurrency();
     this.selectedItem= this.navParams.get('a');
-  
+
     if (this.selectedItem) {
       this.hideButton = !this.hideButton
     }
@@ -92,7 +95,7 @@ export class EditformnxpPage {
 
 
   isReadonly() {
-    return this.isReadonly;   //return true/false 
+    return this.isReadonly;   //return true/false
   }
 
   itemTapped(selectedItem,doctype){
@@ -101,13 +104,21 @@ export class EditformnxpPage {
       selectedItem: selectedItem.items,
       docType: doctype
     });
-    modal.present(); 
+    modal.present();
   }
 
   details(selectedItem){
     this.navCtrl.push('NxpdetailsPage', {
       selectedItem:selectedItem.good.items,
     });
+  }
+
+  upload(){
+
+  }
+
+  update(){
+
   }
 
 }

@@ -20,6 +20,7 @@ export class FormnxpPage {
   searchTerm: any;
   FormNXP: Array<any> = [];
   arrayViews: Array<any> = [];
+  _data: any;
 
   constructor(public navCtrl: NavController,
     private control: ControllerProvider,
@@ -30,12 +31,12 @@ export class FormnxpPage {
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  async ionViewDidLoad() {
     this.getFormNXP();
   }
 
-  initializeItems() {
-    this.getFormNXP();
+  async initializeItems() {
+   this._data= this.FormNXP;
   }
 
   // showSlide() {
@@ -48,6 +49,7 @@ export class FormnxpPage {
     loader.present();
     const response = await this.serverService.getData('/v1/formnxp/all');
     this.FormNXP = response;
+    this._data= response;
 
     this.store.set("formnxp", this.FormNXP);
     console.log(response);
@@ -62,6 +64,8 @@ export class FormnxpPage {
 
     //referenced here
   }
+
+
 
   getItems(ev: any) {
     // Reset items back to all of the items

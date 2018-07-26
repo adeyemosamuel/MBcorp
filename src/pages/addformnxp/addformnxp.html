@@ -6,7 +6,7 @@
     </ion-title>
   </ion-navbar>
 
-</ion-header> 
+</ion-header>
 
 
 <ion-content>
@@ -22,52 +22,47 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Name*</ion-label>
-          <ion-input [(ngModel)]="name" type="text"></ion-input>
+          <ion-input [(ngModel)]="exporterName" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Address*</ion-label>
-          <ion-input [(ngModel)]="address" type="text"></ion-input>
-        </ion-item>
-
-        <ion-item no-lines>
-          <ion-label stacked>Address*</ion-label>
-          <ion-input [(ngModel)]="address" type="text"></ion-input>
+          <ion-input [(ngModel)]="exporterAddress" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>City*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="city">
-            <ion-option class="option" [value]="c.city" *ngFor="let c of cityData">{{c.city}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="exporterCity">
+            <ion-option class="option" [value]="e.exporterCity" *ngFor="let e of Data">{{e.exporterCity}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>State*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="states">
-            <ion-option *ngFor="let s of stateData">{{s.label}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="exporterState">
+            <ion-option *ngFor="let s of Data">{{s.exporterState}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Phone*</ion-label>
-          <ion-input [(ngModel)]="phone" type="tel"></ion-input>
+          <ion-input [(ngModel)]="exporterPhone" type="tel"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>NEPC Reg No*</ion-label>
-          <ion-input [(ngModel)]="nepc" type="number"></ion-input>
+          <ion-input [(ngModel)]="exporterNepcReg" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>RC Number*</ion-label>
-          <ion-input [(ngModel)]="rcnumber" type="text"></ion-input>
+          <ion-input [(ngModel)]="exporterRcNo" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Method of Payment*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="method">
-            <ion-option *ngFor="let m of methodData">{{m.method}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="methodOfPayment">
+            <ion-option *ngFor="let m of Data">{{m.methodOfPayment}}</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -90,17 +85,17 @@
 
         <ion-item no-lines>
           <ion-label stacked>Consignee First Name*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.cfname" (ngModelChange)="selectedItem.cfname= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.congFirstname" (ngModelChange)="selectedItem.congFirstname= $event" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Consignee Last Name*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.clname" (ngModelChange)="selectedItem.clname= $event" type="number"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.congLastName" (ngModelChange)="selectedItem.congLastName= $event" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Consignee Address*</ion-label>
-          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.caddress" (ngModelChange)="selectedItem.caddress= $event" type="text"></ion-input>
+          <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.congAddress" (ngModelChange)="selectedItem.congAddress= $event" type="text"></ion-input>
         </ion-item>
 
         <div>
@@ -111,22 +106,22 @@
         <div *ngIf="viewButton">
           <ion-item no-lines>
             <ion-label stacked>Consignee City*</ion-label>
-            <ion-select interface="action-sheet" class="Select" [(ngModel)]="city">
-              <ion-option class="option" [value]="c.city" *ngFor="let c of cityData">{{c.city}}</ion-option>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="congCity">
+              <ion-option class="option" [value]="c.congCity" *ngFor="let c of Data">{{c.congCity}}</ion-option>
             </ion-select>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Consignee State*</ion-label>
-            <ion-select interface="action-sheet" class="Select" [(ngModel)]="states">
-              <ion-option *ngFor="let s of stateData">{{s.label}}</ion-option>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="congState">
+              <ion-option *ngFor="let s of Data">{{s.congState}}</ion-option>
             </ion-select>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Consignee Country*</ion-label>
-            <ion-select interface="action-sheet" class="Select" [(ngModel)]="countries">
-              <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+            <ion-select interface="action-sheet" class="Select" [(ngModel)]="congCountry">
+              <ion-option class="option" [value]="c.congCountry" *ngFor="let c of Data">{{c.congCountry}}</ion-option>
             </ion-select>
           </ion-item>
 
@@ -146,36 +141,36 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>First Name</ion-label>
-          <ion-input [(ngModel)]="fname" type="text"></ion-input>
+          <ion-input [(ngModel)]="otherFirstName" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Last Name</ion-label>
-          <ion-input [(ngModel)]="lname" type="text"></ion-input>
+          <ion-input [(ngModel)]="otherLastName" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Address</ion-label>
-          <ion-input [(ngModel)]="address" type="text"></ion-input>
+          <ion-input [(ngModel)]="otherAddress" type="text"></ion-input>
         </ion-item>
         <ion-item no-lines>
           <ion-label stacked>City</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="city">
-            <ion-option class="option" [value]="c.city" *ngFor="let c of cityData">{{c.city}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="otherCity">
+            <ion-option class="option" [value]="c.otherCity" *ngFor="let c of Data">{{c.otherCity}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>State</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="states">
-            <ion-option *ngFor="let s of stateData">{{s.label}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="otherState">
+            <ion-option *ngFor="let s of Data">{{s.otherState}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Country</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="countries">
-            <ion-option class="option" [value]="c.country" *ngFor="let c of countryData">{{c.country}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="otherCountry">
+            <ion-option class="option" [value]="c.otherCountry" *ngFor="let c of Data">{{c.otherCountry}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -192,41 +187,41 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Transfer Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="account">
-            <ion-option class="option" [value]="a.account" *ngFor="let a of accountData">{{a.account}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="transferAccount">
+            <ion-option class="option" [value]="a.transferAccount" *ngFor="let a of Data">{{a.transferAccount}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Charge Account*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="charge">
-            <ion-option class="option" [value]="c.charge" *ngFor="let c of chargeData">{{c.charge}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="chargeAccount">
+            <ion-option class="option" [value]="c.chargeAccount" *ngFor="let c of Data">{{c.chargeAccount}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Domiciliary Account</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="domiciliary">
-            <ion-option class="option" [value]="d.domiciliary" *ngFor="let d of domiciliaryData">{{d.domiciliary}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="domAcct">
+            <ion-option class="option" [value]="d.domAcct" *ngFor="let d of Data">{{d.domAcct}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Domiciliary Amount*</ion-label>
-          <ion-input [(ngModel)]="domammount" type="text"></ion-input>
+          <ion-input [(ngModel)]="domAmt" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Form Purpose Code*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="formpurpose">
-            <ion-option class="option" [value]="f.formpurpose" *ngFor="let f of formpurposeData">{{f.formpurpose}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="formPurposeCode">
+            <ion-option class="option" [value]="f.formPurposeCode" *ngFor="let f of Data">{{f.formPurposeCode}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Prefix*</ion-label>
           <ion-select interface="action-sheet" class="Select" [(ngModel)]="prefix">
-            <ion-option class="option" [value]="p.prefix" *ngFor="let p of prefixData">{{p.prefix}}</ion-option>
+            <ion-option class="option" [value]="p.prefix" *ngFor="let p of Data">{{p.prefix}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -237,7 +232,7 @@
 
         <ion-item no-lines>
           <ion-label stacked>Due Date Payment</ion-label>
-          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="date"></ion-datetime>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="dueDatePay"></ion-datetime>
         </ion-item>
 
       </ion-list>
@@ -254,31 +249,31 @@
       <ion-list>
         <ion-item no-lines>
           <ion-label stacked>Shipment Date</ion-label>
-          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="sdate"></ion-datetime>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="shippedOn"></ion-datetime>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Port of Destination/Discharge*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="discharge">
-            <ion-option class="option" [value]="d.discharge" *ngFor="let d of dischargeData">{{d.discharge}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="portOfDestination">
+            <ion-option class="option" [value]="d.portOfDestination" *ngFor="let d of Data">{{d.portOfDestination}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Expected Port of Shipment*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="shipment">
-            <ion-option class="option" [value]="s.shipment" *ngFor="let s of shipmentData">{{s.shipment}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="expectedPortShipment">
+            <ion-option class="option" [value]="s.expectedPortShipment" *ngFor="let s of Data">{{s.expectedPortShipment}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Proforma Inv. No.</ion-label>
-          <ion-input [(ngModel)]="proforma" type="number"></ion-input>
+          <ion-input [(ngModel)]="proformaNo" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Proforma Inv. Date</ion-label>
-          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="pdate"></ion-datetime>
+          <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM DD YYYY" [(ngModel)]="proformaDate"></ion-datetime>
         </ion-item>
       </ion-list>
 
@@ -294,54 +289,54 @@
       <ion-list>
         <ion-item no-lines class="text-area">
           <ion-label stacked>Description of Goods</ion-label>
-          <ion-textarea [(ngModel)]="description" rows="2" placeholder="Remittance Info"></ion-textarea>
+          <ion-textarea [(ngModel)]="goodsDescription" rows="2" placeholder="Remittance Info"></ion-textarea>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Quantity*</ion-label>
-          <ion-input [(ngModel)]="quantity" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalQuantity" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>No of Items Expected (as per H.S codes)*</ion-label>
-          <ion-input [(ngModel)]="hs" type="number"></ion-input>
+          <ion-input [(ngModel)]="noOfItems" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Net Weight/Mass(kg)*</ion-label>
-          <ion-input [(ngModel)]="weight" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalNetweight" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Gross Weight/Mass(kg)*</ion-label>
-          <ion-input [(ngModel)]="gross" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalGrossWeight" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Currency*</ion-label>
-          <ion-select interface="action-sheet" class="Select" [(ngModel)]="currency">
-            <ion-option class="option" [value]="c.currency" *ngFor="let c of currencyData">{{c.currency}}</ion-option>
+          <ion-select interface="action-sheet" class="Select" [(ngModel)]="currencyCode">
+            <ion-option class="option" [value]="c.currencyCode" *ngFor="let c of Data">{{c.currencyCode}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Value of Goods in Foreign Currency*</ion-label>
-          <ion-input [(ngModel)]="goods" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalValueOfGoods" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Value FOB*</ion-label>
-          <ion-input [(ngModel)]="fob" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalFOB" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total Freight Charges*</ion-label>
-          <ion-input [(ngModel)]="freight" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalFreightFOB" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Total C & F Value*</ion-label>
-          <ion-input [(ngModel)]="cf" type="number"></ion-input>
+          <ion-input [(ngModel)]="totalFC" type="number"></ion-input>
         </ion-item>
 
       </ion-list>
@@ -352,60 +347,60 @@
       </div>
 
       <div *ngIf="itemDetails" padding>
-      
+
           <ion-item no-lines>
             <ion-label stacked>HS Code</ion-label>
-            <ion-input [(ngModel)]="hsc" type="number"></ion-input>
+            <ion-input [(ngModel)]="hsCode" type="number"></ion-input>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Description of Goods</ion-label>
-            <ion-input [(ngModel)]="describe" type="text"></ion-input>
+            <ion-input [(ngModel)]="goodsDescription" type="text"></ion-input>
           </ion-item>
 
           <ion-item no-lines>
             <ion-label stacked>Sectorial Purpose</ion-label>
-            <ion-input [(ngModel)]="sectorial" type="text"></ion-input>
+            <ion-input [(ngModel)]="sectoralPurpose" type="text"></ion-input>
           </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Unit of Measure</ion-label>
-          <ion-input [(ngModel)]="unit" type="text"></ion-input>
+          <ion-input [(ngModel)]="unitMeasure" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>FOB</ion-label>
-          <ion-input [(ngModel)]="FOB" type="text"></ion-input>
+          <ion-input [(ngModel)]="fobvalue" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Freight Charges</ion-label>
-          <ion-input [(ngModel)]="charges" type="number"></ion-input>
+          <ion-input [(ngModel)]="frieghtCharge" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Unit Price</ion-label>
-          <ion-input [(ngModel)]="price" type="number"></ion-input>
+          <ion-input [(ngModel)]="unitPrice" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Quantity</ion-label>
-          <ion-input [(ngModel)]="quantity2" type="number"></ion-input>
+          <ion-input [(ngModel)]="quantity" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Mode of Packaging</ion-label>
-          <ion-input [(ngModel)]="mode" type="text"></ion-input>
+          <ion-input [(ngModel)]="modeOfPackaging" type="text"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Net Weight</ion-label>
-          <ion-input [(ngModel)]="net" type="number"></ion-input>
+          <ion-input [(ngModel)]="netWeight" type="number"></ion-input>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Gross Weight</ion-label>
-          <ion-input [(ngModel)]="gweight" type="number"></ion-input> 
+          <ion-input [(ngModel)]="grossWeight" type="number"></ion-input>
         </ion-item>
 
       </div>
@@ -422,7 +417,7 @@
       <ion-list>
         <ion-item no-lines class="file">
 
-          <input type="file" [(ngModel)]="fileupload" />
+          <input type="file" [(ngModel)]="file" />
           <p style="white-space:normal">Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
         </ion-item>
         <div>

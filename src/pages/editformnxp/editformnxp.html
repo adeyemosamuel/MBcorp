@@ -9,7 +9,7 @@
 </ion-header>
 
 
-<ion-content> 
+<ion-content>
   <ion-item-group>
 
     <ion-item-divider (click)="mikilo()">
@@ -33,7 +33,7 @@
         <ion-item no-lines>
           <ion-label stacked>City*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.exporterCity" (ngModelChange)="selectedItem.exporterCity= $event">
-            <ion-option class="option" [value]="exporterCity">{{selectedItem.exporterCity}}</ion-option>
+            <ion-option class="option" >{{selectedItem.exporterCity}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -98,7 +98,7 @@
         <ion-item no-lines>
           <ion-label stacked>Consignee City*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.congCity" (ngModelChange)="selectedItem.congCity= $event">
-            <ion-option class="option" [value]="congCity" >{{selectedItem.congCity}}</ion-option>
+            <ion-option class="option"  >{{selectedItem.congCity}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -112,7 +112,7 @@
         <ion-item no-lines>
           <ion-label stacked>Consignee Country*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.congCountry" (ngModelChange)="selectedItem.congCountry= $event">
-            <ion-option class="option" [value]="congCountry" >{{selectedItem.congCountry}}</ion-option>
+            <ion-option class="option" >{{selectedItem.congCountry}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -145,7 +145,7 @@
         <ion-item no-lines>
           <ion-label stacked>City</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.otherCity" (ngModelChange)="selectedItem.otherCity= $event">
-            <ion-option class="option" [value]="otherCity" >{{selectedItem.otherCity}}</ion-option>
+            <ion-option class="option"  >{{selectedItem.otherCity}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -159,7 +159,7 @@
         <ion-item no-lines>
           <ion-label stacked>Country</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.otherCountry" (ngModelChange)="selectedItem.otherCountry= $event">
-            <ion-option class="option" [value]="otherCountry" >{{selectedItem.otherCountry}}</ion-option>
+            <ion-option class="option"  >{{selectedItem.otherCountry}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -177,21 +177,21 @@
         <ion-item no-lines>
           <ion-label stacked>Transfer Account*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.transferAccount" (ngModelChange)="selectedItem.transferAccount= $event">
-            <ion-option class="option" [value]="transferAccount" >{{selectedItem.transferAccount}}</ion-option>
+            <ion-option class="option" >{{selectedItem.transferAccount}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Charge Account*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.chargeAccount" (ngModelChange)="selectedItem.chargeAccount= $event">
-            <ion-option class="option" [value]="chargeAccount" >{{selectedItem.chargeAccount}}</ion-option>
+            <ion-option class="option"  >{{selectedItem.chargeAccount}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Domiciliary Account</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.domAcct" (ngModelChange)="selectedItem.domAcct= $event">
-            <ion-option class="option" [value]="domAcct">{{selectedItem.domAcct}}</ion-option>
+            <ion-option class="option" >{{selectedItem.domAcct}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -203,14 +203,14 @@
         <ion-item no-lines>
           <ion-label stacked>Form Purpose Code*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.formPurposeCode" (ngModelChange)="selectedItem.formPurposeCode= $event">
-            <ion-option class="option" [value]="formPurposeCode" >{{selectedItem.formPurposeCode}}</ion-option>
+            <ion-option class="option" >{{selectedItem.formPurposeCode}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Prefix*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.prefix" (ngModelChange)="selectedItem.prefix= $event">
-            <ion-option class="option" [value]="prefix" >{{selectedItem.prefix}}</ion-option>
+            <ion-option class="option" >{{selectedItem.prefix}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -244,14 +244,14 @@
         <ion-item no-lines>
           <ion-label stacked>Port of Destination/Discharge*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.portOfDestination" (ngModelChange)="selectedItem.portOfDestination= $event">
-            <ion-option class="option" [value]="portOfDestination" >{{selectedItem.portOfDestination}}</ion-option>
+            <ion-option class="option" >{{selectedItem.portOfDestination}}</ion-option>
           </ion-select>
         </ion-item>
 
         <ion-item no-lines>
           <ion-label stacked>Expected Port of Shipment*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.expectedPortShipment" (ngModelChange)="selectedItem.expectedPortShipment= $event">
-            <ion-option class="option" [value]="expectedPortShipment" >{{selectedItem.expectedPortShipment}}</ion-option>
+            <ion-option class="option" >{{selectedItem.expectedPortShipment}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -307,7 +307,7 @@
         <ion-item no-lines>
           <ion-label stacked>Currency*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.currencyCode" (ngModelChange)="selectedItem.currencyCode= $event">
-            <ion-option class="option" [value]="currencyCode" >{{selectedItem.currencyCode}}</ion-option>
+            <ion-option class="option">{{selectedItem.currencyCode}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -317,7 +317,7 @@
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'value')"></i>
         </ion-item>
 
-        <ion-item no-lines> 
+        <ion-item no-lines>
           <ion-label stacked>Total Value FOB*</ion-label>
           <ion-input [ngModel]="selectedItem?.totalFOB" (ngModelChange)="selectedItem.totalFOB= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'fob')"></i>
@@ -352,7 +352,7 @@
       <ion-list>
         <ion-item no-lines class="file">
 
-          <input type="file" [(ngModel)]="fileupload" />
+          <input type="file" [(ngModel)]="file" />
           <p style="white-space:normal">Supported formats .doc,.docs and .pdf[Max file size: 500KB]</p>
         </ion-item>
         <div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
+import { ServerServiceProvider } from '../../providers/server-service/server-service';
 
 
 
@@ -10,68 +11,65 @@ import { AppdataProvider } from '../../providers/appdata/appdata';
   templateUrl: 'addformnxp.html',
 })
 export class AddformnxpPage {
+  yes: any;
+  no:any;
+  file: any;
   selectedItem: any;
   b: any;
-  name: any;
-  address: any;
-  city: any;
-  states: any;
-  phone: any;
-  nepc: any;
-  rcnumber: any;
-  method: any;
-  cfname: any;
-  clname: any;
-  caddress: any;
-  countries: any;
-  fname: any;
-  lname: any;
-  account: any;
-  domiciliary: any;
-  domammount: any;
-  formpurpose: any;
-  pincode: any;
-  charge: any;
-  prefix: any;
-  date: any;
-  sdate: any;
-  shipment: any;
-  pdate: any;
-  discharge: any;
-  proforma: any;
-  description: any;
-  quantity: any;
-  weight: any;
-  currency: any;
-  fob: any;
-  cf: any;
-  hs: any;
-  gross: any;
-  goods: any;
-  freight: any;
-  hsc: any;
-  describe: any;
-  sectorial: any;
-  unit: any;
-  FOB: any;
-  charges: any;
-  price: any;
-  quantity2: any;
-  mode: any;
-  net: any;
-  gweight: any;
-  stateData: any = [];
-  countryData: any = [];
-  cityData: any = [];
-  methodData: any = [];
-  domiciliaryData: any = [];
-  formpurposeData: any = [];
-  chargeData: any = [];
-  prefixData: any = [];
-  accountData: any = [];
-  currencyData: any = [];
-  dischargeData: any = [];
-  shipmentData: any = [];
+
+  exporterName:any;
+  exporterAddress:any;
+  exporterCity:any;
+  exporterState:any;
+  exporterPhone:any;
+  exporterNepcReg:any;
+  exporterRcNo:any;
+  methodOfPayment:any;
+  congCity:any;
+  congState:any;
+  congCountry:any;
+  otherFirstName:any;
+  otherLastName:any;
+  otherAddress:any;
+  otherCity:any;
+  otherState:any;
+  otherCountry:any;
+  transferAccount:any;
+  chargeAccount:any;
+  domAcct:any;
+  domAmt:any;
+  formPurposeCode:any;
+  prefix:any;
+  pincode:any;
+  dueDatePay:any;
+  shippedOn:any;
+  portOfDestination:any;
+  expectedPortShipment:any;
+  proformaNo:any;
+  proformaDate:any;
+  goodsDescription:any;
+  totalQuantity:any;
+  noOfItems:any;
+  totalNetweight:any;
+  totalGrossWeight:any;
+  currencyCode:any;
+  totalValueOfGoods:any;
+  totalFOB:any;
+  totalFreightFOB:any;
+  totalFC:any;
+  hsCode:any;
+  sectoralPurpose:any;
+  unitMeasure:any;
+  fobvalue:any;
+  frieghtCharge:any;
+  unitPrice:any;
+  quantity:any;
+  modeOfPackaging:any;
+  netWeight:any;
+  grossWeight:any;
+
+
+  Data: any = [];
   viewButton: boolean = false;
   itemDetails: boolean = false;
   hideButton: boolean = false;
@@ -87,21 +85,20 @@ export class AddformnxpPage {
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
     public modalCtrl: ModalController,
+    private serverService: ServerServiceProvider,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.selectedItem = this.navParams.get('b');
-    this.stateData = this.appdata.getState();
-    this.countryData = this.appdata.getCountry();
-    this.cityData = this.appdata.getCity();
-    this.methodData = this.appdata.getMethod();
-    this.shipmentData = this.appdata.getShipment();
-    this.dischargeData = this.appdata.getDischarge();
-    this.currencyData = this.appdata.getCurrency();
     if (this.selectedItem) {
       this.hideButton2 = !this.hideButton2
     }
+  }
+
+  async getData(){
+    const response = await this.serverService.getData('/v1/formnxp/all');
+    this.Data = response;
   }
 
   mikilo() {
@@ -146,11 +143,19 @@ export class AddformnxpPage {
   }
 
   isReadonly() {
-    return this.isReadonly;   //return true/false 
+    return this.isReadonly;   //return true/false
   }
 
   details() {
     this.itemDetails = !this.itemDetails;
+  }
+
+  upload(){
+
+  }
+
+  submit(){
+
   }
 
 }
