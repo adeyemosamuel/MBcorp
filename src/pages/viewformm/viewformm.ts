@@ -13,10 +13,10 @@ export class ViewformmPage {
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
-  hideButton4: boolean = false; 
+  hideButton4: boolean = false;
   hideButton5: boolean = false;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
     public navParams: NavParams) {
   }
@@ -40,7 +40,7 @@ export class ViewformmPage {
     this.hideButton3 = !this.hideButton3;
   }
 
- 
+
   mikilo4() {
     this.hideButton4 = !this.hideButton4;
   }
@@ -50,20 +50,20 @@ export class ViewformmPage {
   }
 
   isReadonly() {
-    return this.isReadonly;   //return true/false 
+    return this.isReadonly;   //return true/false
   }
 
   itemTapped(selectedItem, doctype){
     let modal = this.modalCtrl.create('ModallPage', {
       selectedItem:selectedItem.items,
       docType: doctype
-    }); 
+    });
     modal.present();
   }
 
-  details(selectedItem){
+  details(){
     this.navCtrl.push('MdetailsPage', {
-      selectedItem:selectedItem.items,
+      send_details:this.selectedItem,
     });
     console.log(this.selectedItem);
   }

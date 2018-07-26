@@ -5,11 +5,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-mdetails',
-  templateUrl: 'mdetails.html',
+  selector: 'page-ndetails',
+  templateUrl: 'ndetails.html',
 })
-export class MdetailsPage {
-  Mikilo: any={};
+export class NdetailsPage {
+  Mikilo: any=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

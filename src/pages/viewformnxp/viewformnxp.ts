@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
   selector: 'page-viewformnxp',
   templateUrl: 'viewformnxp.html',
 })
-export class ViewformnxpPage { 
+export class ViewformnxpPage {
 
   selectedItem: any;
   hideButton: boolean = false;
@@ -17,7 +17,7 @@ export class ViewformnxpPage {
   hideButton4: boolean = false;
   hideButton5: boolean = false;
   hideButton6: boolean = false;
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
     public navParams: NavParams) {
   }
@@ -57,16 +57,22 @@ export class ViewformnxpPage {
 
 
   isReadonly() {
-    return this.isReadonly;   //return true/false 
+    return this.isReadonly;   //return true/false
   }
 
   itemTapped(selectedItem, doctype){
     let modal = this.modalCtrl.create('ModalPage', {
       selectedItem:selectedItem.items,
       docType: doctype
-    }); 
+    });
     modal.present();
   }
 
+  details(){
+    this.navCtrl.push('NdetailsPage', {
+      send_details:this.selectedItem.items,
+    });
+    console.log(this.selectedItem);
+  }
 
 }

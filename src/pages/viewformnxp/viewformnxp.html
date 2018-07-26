@@ -9,7 +9,7 @@
 </ion-header>
 
 
-<ion-content> 
+<ion-content>
   <ion-item-group>
 
     <ion-item-divider (click)="mikilo()">
@@ -146,7 +146,7 @@
         </ion-item>
 
       </ion-list>
-    </div> 
+    </div>
 
     <ion-item-divider (click)="mikilo4()">
       <span>PAYMENT DETAILS</span>
@@ -275,7 +275,7 @@
         <ion-item no-lines>
           <ion-label stacked>Currency*</ion-label>
           <ion-select interface="action-sheet" class="Select" [ngModel]="selectedItem?.currencyCode" (ngModelChange)="selectedItem.currencyCode= $event">
-            <ion-option class="option" [value]="currencyCode" >{{selectedItem.currencyCode}}</ion-option>
+            <ion-option class="option"  >{{selectedItem.currencyCode}}</ion-option>
           </ion-select>
         </ion-item>
 
@@ -285,7 +285,7 @@
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem, 'value')"></i>
         </ion-item>
 
-        <ion-item no-lines> 
+        <ion-item no-lines>
           <ion-label stacked>Total Value FOB*</ion-label>
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.totalFOB" (ngModelChange)="selectedItem.totalFOB= $event" type="number"></ion-input>
           <i class="fas fa-eye" item-end (click)="itemTapped(selectedItem,'fobvalue')"></i>
@@ -304,13 +304,13 @@
         </ion-item>
 
         <div>
-          <button color="fcmb" ion-button item-end (click)="details(selectedItem)">Item Details</button>
+          <button color="fcmb" ion-button item-end (click)="details()">Item Details</button>
         </div>
       </ion-list>
     </div>
 
 
-  
+
   </ion-item-group>
 
 

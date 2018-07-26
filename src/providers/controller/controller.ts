@@ -7,7 +7,7 @@ export class ControllerProvider {
   constructor(
     private toast: ToastController,
     private loader: LoadingController,
-   
+
   ) {
     console.log('Hello ControllerProvider Provider');
   }
@@ -17,7 +17,7 @@ export class ControllerProvider {
       message: toastMsg,
       position: toastPosition,
       showCloseButton: closeButton,
-      duration: 7000
+      duration: 3000
     }
 
     this.toast.create(options).present();
@@ -29,6 +29,6 @@ export class ControllerProvider {
     });
   }
 
-  
+
 
 }

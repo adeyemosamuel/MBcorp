@@ -15,7 +15,8 @@ export class NxpdetailsPage {
   }
 
   ionViewDidLoad() {
-    this.Mikilo = this.navParams.get('selectedItem');
+    this.Mikilo = this.navParams.get('send_details');
+    console.log(this.navParams.get('send_details'))
   }
 
 }

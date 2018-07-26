@@ -12,15 +12,15 @@
 
 <ion-content>
   <ion-list>
-    <ion-item no-lines *ngFor="let m of Mikilo">
-        
-        <p>Form Number:{{m.formnumber}}</p>
-        <p>Created On:{{m.created}}</p>
-        <p style="white-space:normal;">Goods Description:{{m.description}}</p>
-        <p>Beneficiary:{{m.beneficiary}}</p>
-        <p>Allocation:{{m.allocation}}</p>
-        <p>Utilization:{{m.utilization}}</p>
-        <p>Status:{{m.status}}</p>
+    <ion-item no-lines>
+
+        <p>Form Number:{{Mikilo.formNumber}}</p>
+        <p>Created On:{{Mikilo.dateCreated}}</p>
+        <p style="white-space:normal;">Goods Description:{{Mikilo.goodsDescription}}</p>
+        <p>Beneficiary:{{Mikilo.beneficiary}}</p>
+        <p>Allocation:{{Mikilo.allocatedAmount}}</p>
+        <p>Utilization:{{Mikilo.utilization}}</p>
+        <p>Status:{{Mikilo.status}}</p>
     </ion-item>
   </ion-list>
 

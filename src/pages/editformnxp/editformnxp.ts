@@ -107,9 +107,9 @@ export class EditformnxpPage {
     modal.present();
   }
 
-  details(selectedItem){
+  details(){
     this.navCtrl.push('NxpdetailsPage', {
-      selectedItem:selectedItem.good.items,
+      send_details:this.selectedItem.items
     });
   }
 
