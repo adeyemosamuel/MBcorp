@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ToastController, ToastOptions, LoadingController} from 'ionic-angular';
+import { ToastController, ToastOptions, LoadingController, PopoverController} from 'ionic-angular';
 
 @Injectable()
 export class ControllerProvider {
@@ -7,7 +7,7 @@ export class ControllerProvider {
   constructor(
     private toast: ToastController,
     private loader: LoadingController,
-
+    private popCtrl: PopoverController
   ) {
     console.log('Hello ControllerProvider Provider');
   }
@@ -27,6 +27,15 @@ export class ControllerProvider {
     return this.loader.create({
       content: val
     });
+  }
+
+  popOver(val) {
+    return this.popCtrl.create(val);
+  }
+
+  miscPopOver(val, ev) {
+    let pop = this.popCtrl.create(val);
+    pop.present({ev : ev});
   }
 
 

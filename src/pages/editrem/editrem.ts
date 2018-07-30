@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 @IonicPage()
 @Component({
@@ -21,7 +21,7 @@ export class EditremPage {
   hideButton6:boolean = false;
 
   constructor(public navCtrl: NavController,
-    private appdata: AppdataProvider,
+    private controller: ControllerProvider,
      public navParams: NavParams) {
   }
 
@@ -76,6 +76,10 @@ export class EditremPage {
 
   upload(){
 
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 
 

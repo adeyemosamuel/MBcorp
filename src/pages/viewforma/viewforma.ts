@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
@@ -8,14 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-viewforma',
   templateUrl: 'viewforma.html',
 })
-export class ViewformaPage { 
+export class ViewformaPage {
 
   selectedItem: any;
   hideButton: boolean = false;
   hideButton2: boolean = false;
   hideButton3: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  } 
+  constructor(public navCtrl: NavController,
+    private controller: ControllerProvider, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     this.selectedItem= this.navParams.get('a');
@@ -37,7 +39,11 @@ export class ViewformaPage {
   }
 
   isReadonly() {
-    return this.isReadonly;   //return true/false  
+    return this.isReadonly;   //return true/false
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 
 }

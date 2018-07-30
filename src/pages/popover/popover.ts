@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LcexportPage } from '../lcexport/lcexport';
 
 
 @IonicPage()
@@ -9,17 +9,35 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'popover.html',
 })
 export class PopoverPage {
-a:any;
-  constructor(public navCtrl: NavController,
-    private viewCtrl: ViewController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    
+
   }
 
-  itemTapped(a) {
-    this.viewCtrl.dismiss(a);
+  forma(){
+    this.navCtrl.push('FormaPage');
   }
 
+  remittance(){
+    this.navCtrl.push('RemittancePage');
+  }
+
+  formnxp(){
+    this.navCtrl.push('FormnxpPage');
+  }
+
+  formm(){
+    this.navCtrl.push('FormmPage');
+  }
+
+  importlc(){
+    this.navCtrl.push('LcimportPage');
+  }
+
+  exportlc(){
+    this.navCtrl.push('LcexportPage');
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
@@ -12,9 +13,10 @@ export class ViewremPage {
 
   selectedItem: any;
   hideButton: boolean = false;
-  hideButton2: boolean = false; 
+  hideButton2: boolean = false;
   hideButton3: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    private controller: ControllerProvider,public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -37,7 +39,11 @@ export class ViewremPage {
   }
 
   isReadonly() {
-    return this.isReadonly;   //return true/false 
+    return this.isReadonly;   //return true/false
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 
 }

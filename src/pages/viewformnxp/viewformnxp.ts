@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
@@ -19,6 +20,7 @@ export class ViewformnxpPage {
   hideButton6: boolean = false;
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
+    private controller: ControllerProvider,
     public navParams: NavParams) {
   }
 
@@ -73,6 +75,10 @@ export class ViewformnxpPage {
       send_details:this.selectedItem.items,
     });
     console.log(this.selectedItem);
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, AlertController }
 import { AppdataProvider } from '../../providers/appdata/appdata';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
@@ -57,6 +58,7 @@ export class AddformaPage {
     private alertCtrl: AlertController,
     private verify: VerifyServiceProvider,
     private appdata: AppdataProvider,
+    private controller: ControllerProvider,
     public modalCtrl: ModalController,
     private serverService: ServerServiceProvider,
     public navParams: NavParams) {
@@ -153,5 +155,9 @@ this.file)) {
      return false;
      }
     this.navCtrl.push('SuccessPage');
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 }

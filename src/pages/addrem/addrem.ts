@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
-import { AppdataProvider } from '../../providers/appdata/appdata';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
 import { VerifyServiceProvider } from '../../providers/verify-service/verify-service';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 @IonicPage()
 @Component({
@@ -52,7 +52,7 @@ export class AddremPage {
 
 
   constructor(public navCtrl: NavController,
-    private appdata: AppdataProvider,
+    private controller: ControllerProvider,
     public modalCtrl: ModalController,
     private alertCtrl: AlertController,
     private verify: VerifyServiceProvider,
@@ -150,6 +150,10 @@ export class AddremPage {
            return false;
            }
           this.navCtrl.push('SuccessPage');
+        }
+
+        popover(ev) {
+          this.controller.miscPopOver('PopoverPage', ev);
         }
 
 

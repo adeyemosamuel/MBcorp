@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AppdataProvider } from '../../providers/appdata/appdata';
 import { ServerServiceProvider } from '../../providers/server-service/server-service';
+import { ControllerProvider } from '../../providers/controller/controller';
 
 
 
@@ -85,6 +86,7 @@ export class AddformnxpPage {
   constructor(public navCtrl: NavController,
     private appdata: AppdataProvider,
     public modalCtrl: ModalController,
+    private controller: ControllerProvider,
     private serverService: ServerServiceProvider,
     public navParams: NavParams) {
   }
@@ -156,6 +158,10 @@ export class AddformnxpPage {
 
   submit(){
 
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 
 }

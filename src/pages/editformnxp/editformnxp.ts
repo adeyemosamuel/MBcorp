@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { ControllerProvider } from '../../providers/controller/controller';
 // import { AppdataProvider } from '../../providers/appdata/appdata';
 
 @IonicPage()
@@ -38,7 +39,7 @@ export class EditformnxpPage {
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
-    // private appdata: AppdataProvider,
+    private controller: ControllerProvider,
     public navParams: NavParams) {
   }
 
@@ -119,6 +120,10 @@ export class EditformnxpPage {
 
   update(){
 
+  }
+
+  popover(ev) {
+    this.controller.miscPopOver('PopoverPage', ev);
   }
 
 }

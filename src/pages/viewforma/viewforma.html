@@ -4,6 +4,11 @@
     <ion-title text-center>
       <span text-color="my-custom-color">FORM A</span>
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="popover($event)">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -57,7 +62,7 @@
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankCity" (ngModelChange)="selectedItem.beneBankCity= $event" type="text"></ion-input>
         </ion-item>
 
-        <ion-item no-lines> 
+        <ion-item no-lines>
           <ion-label stacked>Beneficiary Bank Country*</ion-label>
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.beneBankCtry" (ngModelChange)="selectedItem.beneBankCtry= $event" type="text"></ion-input>
         </ion-item>
@@ -153,14 +158,14 @@
             </ion-row>
           </ion-grid>
 
-        
+
 
 
         <ion-item no-lines>
             <ion-label stacked>Transfer Account*</ion-label>
             <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.transferAccounts" (ngModelChange)="selectedItem.transferAccounts= $event" type=“text”></ion-input>
           </ion-item>
-  
+
               <ion-item no-lines>
                 <ion-label stacked>Estimated Debit Amount in Naira*</ion-label>
                 <ion-input [readonly]="isReadonly()" [ngModel]="selectedItem?.transactionDebitAmt" (ngModelChange)="selectedItem.transactionDebitAmt= $event" type="number"></ion-input>
@@ -185,16 +190,16 @@
         <ion-item no-lines>
           <ion-label stacked>Valid for Forex*</ion-label>
           <ion-input [readonly]="isReadonly()"  [ngModel]="selectedItem?.forexValue" (ngModelChange)="selectedItem.forexValue= $event" type=“text”></ion-input>
-        </ion-item> 
+        </ion-item>
 
-         
+
       </ion-list>
 
     </div>
 
-    
 
-    
+
+
   </ion-item-group>
 
 
