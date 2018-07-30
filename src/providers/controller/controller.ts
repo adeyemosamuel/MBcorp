@@ -17,7 +17,7 @@ export class ControllerProvider {
       message: toastMsg,
       position: toastPosition,
       showCloseButton: closeButton,
-      duration: 3000
+      duration: 1000
     }
 
     this.toast.create(options).present();
