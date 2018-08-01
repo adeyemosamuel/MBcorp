@@ -101,6 +101,14 @@ export class FormaPage {
     if (a.status === 'P') {
       this.arrayViews = ['View', 'Edit']
     };
+
+    if (a.status === 'PA') {
+      this.arrayViews = ['View', 'Edit']
+    };
+
+    if (a.status === 'D') {
+      this.arrayViews = ['View', 'Edit']
+    };
   }
 
 

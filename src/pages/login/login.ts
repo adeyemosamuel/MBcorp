@@ -15,7 +15,7 @@ import { ControllerProvider } from '../../providers/controller/controller';
 export class LoginPage {
     userName: string = '';
     passWord: string = '';
-    // disableButton: boolean = false;
+    disableButton: boolean = false;
 
 
 
@@ -34,13 +34,13 @@ export class LoginPage {
         console.log('ionViewDidLoad LoginPage');
     }
 
-    // validateInput(val){
-    //   if (this.userName.trim != null && this.passWord != ''){
-    //     this.disableButton = false;
-    //   }else{
-    //     this.disableButton = true;
-    //   }
-    // }
+    validateInput(val){
+      if (this.userName.trim != null && this.passWord != ''){
+        this.disableButton = false;
+      }else{
+        this.disableButton = true;
+      }
+    }
 
     async Login() {
         let loader = this.control.loadCtrl('Please wait...');

@@ -8,14 +8,14 @@ export class ServerServiceProvider {
   // url: string = 'http://a8926e6a.ngrok.io';
   // url: string = 'http://hbbom.hbng.com:9000/api';
   url: string = '/api';
-  
+
   header: Headers = new Headers({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwMDk4IiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTMxODE4MjAzNzcyLCJleHAiOjE1MzQ4MTgyMDN9.7Iq5GZG-jR9RA9NJtygtKiC2qR0TGeejzydomHwZSNK-6qMS4vRcrAVbBDPxGyLh6bBWGyZXHHS4i7sUdOiTUw'
+    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTMzNzUzIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTMzMTI0NTc5NTE4LCJleHAiOjE1MzYxMjQ1Nzl9.dyjKl0yOcgaTsZblQDuQQtTL8yflIfmokUdKqtO_tNsMKRCnzSwpvbMcIS1YeVLYaz6ca_aQjJRcihF0UgKhgA'
   });
 
   constructor(
-    private http: Http 
+    private http: Http
   ) {
     console.log('Hello ServerProvider Provider');
   }
@@ -47,7 +47,7 @@ async getData(funcName): Promise<any> {
     return response.json();
   }
   catch(err) {
-    console.log(err.json()); 
+    console.log(err.json());
     return {responseCode: "96", message: 'Something went wrong. Try again'};
   }
 }
