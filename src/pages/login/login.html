@@ -19,15 +19,22 @@
 
     <!-- Login form -->
     <div>
-      <ion-item no-lines  style="color:white"  class="item1">
+      <ion-item no-lines  style="color:white">
         <ion-icon color="money" name="mail" item-start ></ion-icon>
+        <ion-input  [(ngModel)]="cifid" placeholder="Enter Corporate ID" type="text"></ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+      <ion-item no-lines  style="color:white" >
+        <ion-icon color="money" name="person" item-start ></ion-icon>
         <ion-input  [(ngModel)]="userName" placeholder="Enter Username" type="text"></ion-input>
       </ion-item>
     </div>
 
     <div>
 
-      <ion-item no-lines style="color:white" class="item2">
+      <ion-item no-lines style="color:white">
         <ion-icon color="money" name="lock" item-start ></ion-icon>
         <ion-input [(ngModel)]="passWord" placeholder="Enter your password" type="password"></ion-input>
       </ion-item>
